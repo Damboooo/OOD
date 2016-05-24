@@ -1,0 +1,35 @@
+\contentsline {section}{\numberline {1}نمونه‌ی اولیه‌ی واسط کاربری}{2}{section.1}
+\contentsline {subsection}{\numberline {1‏.‏1}صفحات حساب کاربری}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1‏.‏2}صفحات کارمند}{5}{subsection.1.2}
+\contentsline {subsection}{\numberline {1‏.‏3}صفحات مدیریت پروژه}{8}{subsection.1.3}
+\contentsline {subsection}{\numberline {1‏.‏4}صفحات مدیریت کل}{14}{subsection.1.4}
+\contentsline {subsection}{\numberline {1‏.‏5}صفحات ابزار گزارش‌گیری}{21}{subsection.1.5}
+\contentsline {subsection}{\numberline {1‏.‏6}صفحات ابزارپیش‌بینی }{24}{subsection.1.6}
+\contentsline {section}{\numberline {2}فهرست اولویت‌بندی شده‌ی ریسک‌ها}{27}{section.2}
+\contentsline {subsection}{\numberline {2‏.‏1}درک نادرست از خواسته‌های پروژه}{27}{subsection.2.1}
+\contentsline {subsection}{\numberline {2‏.‏2}مشکل در برقراری ارتباط با مشتری}{27}{subsection.2.2}
+\contentsline {subsection}{\numberline {2‏.‏3}مقاومت کاربران}{27}{subsection.2.3}
+\contentsline {subsection}{\numberline {2‏.‏4}اختلاف در معیارهای موفقیت پروژه}{27}{subsection.2.4}
+\contentsline {subsection}{\numberline {2‏.‏5}کمبود زمان}{28}{subsection.2.5}
+\contentsline {subsection}{\numberline {2‏.‏6}تغییر نیازمندی‌ها}{28}{subsection.2.6}
+\contentsline {subsection}{\numberline {2‏.‏7}کمبود منابع (تخمین نادرست از منابع مورد نیاز)}{28}{subsection.2.7}
+\contentsline {subsection}{\numberline {2‏.‏8}به روز رسانی شدن تکنولوژی مورد استفاده در پروژه}{28}{subsection.2.8}
+\contentsline {section}{\numberline {3}ریسک تکنیکی}{30}{section.3}
+\contentsline {section}{\numberline {4}فهرست اولویت‌بندی‌شده‌ی نیازمندی‌ها}{31}{section.4}
+\contentsline {section}{\numberline {5}Architecturally Significant Requirements}{32}{section.5}
+\contentsline {section}{\numberline {6}Executable Architectural Baseline}{32}{section.6}
+\contentsline {section}{\numberline {7}کارت‌های CRC}{33}{section.7}
+\contentsline {section}{\numberline {8}نمودار و مشخصات موارد کاربردساختاردهی‌شده}{36}{section.8}
+\contentsline {subsection}{\numberline {8‏.‏1}زیرسیستم کاربری}{36}{subsection.8.1}
+\contentsline {subsection}{\numberline {8‏.‏2}زیرسیستم تولید و نگهداری}{42}{subsection.8.2}
+\contentsline {subsection}{\numberline {8‏.‏3}زیرسیستم توزیع}{50}{subsection.8.3}
+\contentsline {subsection}{\numberline {8‏.‏4}زیرسیستم گزارش‌گیری}{53}{subsection.8.4}
+\contentsline {subsection}{\numberline {8‏.‏5}زیرسیستم پیش‌بینی}{56}{subsection.8.5}
+\contentsline {section}{\numberline {9}نمودارهای فعالیت}{59}{section.9}
+\contentsline {subsection}{\numberline {9‏.‏1}زیرسیستم کاربری}{59}{subsection.9.1}
+\contentsline {subsection}{\numberline {9‏.‏2}زیرسیستم تولید و نگهداری}{74}{subsection.9.2}
+\contentsline {subsection}{\numberline {9‏.‏3}زیرسیستم توزیع}{90}{subsection.9.3}
+\contentsline {subsection}{\numberline {9‏.‏4}زیرسیستم گزارش‌گیری}{95}{subsection.9.4}
+\contentsline {subsection}{\numberline {9‏.‏5}زیرسیستم پیش‌بینی}{98}{subsection.9.5}
+\contentsline {section}{\numberline {10}واژه‌نامه}{102}{section.10}
+\contentsline {section}{\numberline {11}برنامه‌ی زمان‌بندی‌شده‌ی گروه‌}{103}{section.11}
