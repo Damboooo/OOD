@@ -1,0 +1,55 @@
+\contentsline {section}{\numberline {1}نمونه‌ی اولیه‌ی واسط کاربری}{3}{section.1}
+\contentsline {subsection}{\numberline {1‏.‏1}صفحات حساب کاربری}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1‏.‏2}صفحات کارمند}{6}{subsection.1.2}
+\contentsline {subsection}{\numberline {1‏.‏3}صفحات مدیریت پروژه}{9}{subsection.1.3}
+\contentsline {subsection}{\numberline {1‏.‏4}صفحات مدیریت کل}{15}{subsection.1.4}
+\contentsline {subsection}{\numberline {1‏.‏5}صفحات ابزار گزارش‌گیری}{22}{subsection.1.5}
+\contentsline {subsection}{\numberline {1‏.‏6}صفحات ابزارپیش‌بینی }{25}{subsection.1.6}
+\contentsline {section}{\numberline {2}فهرست اولویت‌بندی شده‌ی ریسک‌ها}{28}{section.2}
+\contentsline {subsection}{\numberline {2‏.‏1}درک نادرست از خواسته‌های پروژه}{28}{subsection.2.1}
+\contentsline {subsection}{\numberline {2‏.‏2}مشکل در برقراری ارتباط با مشتری}{28}{subsection.2.2}
+\contentsline {subsection}{\numberline {2‏.‏3}مقاومت کاربران}{28}{subsection.2.3}
+\contentsline {subsection}{\numberline {2‏.‏4}اختلاف در معیارهای موفقیت پروژه}{28}{subsection.2.4}
+\contentsline {subsection}{\numberline {2‏.‏5}کمبود زمان}{29}{subsection.2.5}
+\contentsline {subsection}{\numberline {2‏.‏6}تغییر نیازمندی‌ها}{29}{subsection.2.6}
+\contentsline {subsection}{\numberline {2‏.‏7}کمبود منابع (تخمین نادرست از منابع مورد نیاز)}{29}{subsection.2.7}
+\contentsline {subsection}{\numberline {2‏.‏8}به روز رسانی شدن تکنولوژی مورد استفاده در پروژه}{29}{subsection.2.8}
+\contentsline {section}{\numberline {3}ریسک تکنیکی}{31}{section.3}
+\contentsline {section}{\numberline {4}فهرست اولویت‌بندی‌شده‌ی نیازمندی‌ها}{32}{section.4}
+\contentsline {section}{\numberline {5}\pLRE {\latinfont Architecturally Significant Requirements}}{33}{section.5}
+\contentsline {section}{\numberline {6}\pLRE {\latinfont Executable Architectural Baseline}}{33}{section.6}
+\contentsline {section}{\numberline {7}کارت‌های CRC}{34}{section.7}
+\contentsline {section}{\numberline {8}نمودار و مشخصات موارد کاربردساختاردهی‌شده}{37}{section.8}
+\contentsline {subsection}{\numberline {8‏.‏1}زیرسیستم کاربری}{37}{subsection.8.1}
+\contentsline {subsection}{\numberline {8‏.‏2}زیرسیستم تولید و نگهداری}{43}{subsection.8.2}
+\contentsline {subsection}{\numberline {8‏.‏3}زیرسیستم توزیع}{51}{subsection.8.3}
+\contentsline {subsection}{\numberline {8‏.‏4}زیرسیستم گزارش‌گیری}{54}{subsection.8.4}
+\contentsline {subsection}{\numberline {8‏.‏5}زیرسیستم پیش‌بینی}{57}{subsection.8.5}
+\contentsline {section}{\numberline {9}نمودارهای فعالیت}{59}{section.9}
+\contentsline {subsection}{\numberline {9‏.‏1}زیرسیستم کاربری}{59}{subsection.9.1}
+\contentsline {subsection}{\numberline {9‏.‏2}زیرسیستم تولید و نگهداری}{74}{subsection.9.2}
+\contentsline {subsection}{\numberline {9‏.‏3}زیرسیستم توزیع}{90}{subsection.9.3}
+\contentsline {subsection}{\numberline {9‏.‏4}زیرسیستم گزارش‌گیری}{95}{subsection.9.4}
+\contentsline {subsection}{\numberline {9‏.‏5}زیرسیستم پیش‌بینی}{98}{subsection.9.5}
+\contentsline {section}{\numberline {10}نمودارهای فعالیت غنی‌شده}{100}{section.10}
+\contentsline {subsection}{\numberline {10‏.‏1}زیرسیستم کاربری}{100}{subsection.10.1}
+\contentsline {subsection}{\numberline {10‏.‏2}زیرسیستم تولید و نگهداری}{115}{subsection.10.2}
+\contentsline {subsection}{\numberline {10‏.‏3}زیرسیستم توزیع}{131}{subsection.10.3}
+\contentsline {subsection}{\numberline {10‏.‏4}زیرسیستم گزارش‌گیری}{136}{subsection.10.4}
+\contentsline {subsection}{\numberline {10‏.‏5}زیرسیستم پیش‌بینی}{139}{subsection.10.5}
+\contentsline {section}{\numberline {11}نمودارهای توالی تحلیل و تحقق موارد کاربرد}{141}{section.11}
+\contentsline {subsection}{\numberline {11‏.‏1}زیرسیستم کاربری}{141}{subsection.11.1}
+\contentsline {subsection}{\numberline {11‏.‏2}زیرسیستم تولید و نگهداری}{172}{subsection.11.2}
+\contentsline {subsection}{\numberline {11‏.‏3}زیرسیستم توزیع}{204}{subsection.11.3}
+\contentsline {subsection}{\numberline {11‏.‏4}زیرسیستم گزارش‌گیری}{215}{subsection.11.4}
+\contentsline {subsection}{\numberline {11‏.‏5}زیرسیستم پیش‌بینی}{221}{subsection.11.5}
+\contentsline {section}{\numberline {12}نمودار کلاس‌های تحلیل}{225}{section.12}
+\contentsline {section}{\numberline {13}نمودارهای بسته}{226}{section.13}
+\contentsline {subsection}{\numberline {13‏.‏1}نمودار بسته کلی}{226}{subsection.13.1}
+\contentsline {subsection}{\numberline {13‏.‏2}نمودار بسته مدیریت پروژه}{227}{subsection.13.2}
+\contentsline {subsection}{\numberline {13‏.‏3}نمودار بسته مدیریت منابع}{228}{subsection.13.3}
+\contentsline {subsection}{\numberline {13‏.‏4}نمودار بسته ابزار پیش‌بینی}{229}{subsection.13.4}
+\contentsline {subsection}{\numberline {13‏.‏5}نمودار بسته ابزار گزارش‌گیری}{230}{subsection.13.5}
+\contentsline {section}{\numberline {14}چک لیست فاز دوم پروژه}{231}{section.14}
+\contentsline {section}{\numberline {15}واژه‌نامه}{232}{section.15}
+\contentsline {section}{\numberline {16}برنامه‌ی زمان‌بندی‌شده‌ی گروه‌}{233}{section.16}
