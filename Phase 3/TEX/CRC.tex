@@ -1,0 +1,398 @@
+\newpage
+\section{کارت‌های CRC}
+
+کارت‌های CRC که در تحلیل مشخص شده‌اند، در ادامه آمده است:
+
+\vspace{1cm}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: User
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+نگهداری اطلاعات شخصی و غیر شخصی کاربر (از قبیل نام، شماره پرسنلی و ... و زمان آزاد، پروژه های مشغول در هر زمان و ... )
+\newline
+مدیریت حساب کاربری
+\newline
+مدیریت نقش کاربر درسیستم
+\newline
+ورود و خروج از سیستم
+&
+همکاران:
+\newline
+Project
+\newline
+Task
+\newline
+Module
+\\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: UserCatalogue
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+مدیریت حسابهای کاربری
+\newline
+جستجو در بین کاربران
+\newline
+حذف و اضافه کردن کاربران
+\newline
+تغییر برخی اطلاعات کاربران
+\newline
+تایید کاربر
+\newline
+تشخیص کاربر
+&
+همکاران:
+\newline
+User
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: Module
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+نگهداری اطلاعات ماژول
+\newline
+ثبت و نگهداری اطلاعات تغییر ماژول
+\newline
+نگهداری اطلاعات ارتباط ماژول با وظیفه ها
+&
+همکاران:
+\newline
+Task
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: ModuleCatalogue
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+مدیریت ماژول ها
+\newline
+ایجاد یک ماژول
+\newline
+نگهداری لیست همه ماژول ها
+&
+همکاران:
+\newline
+Module
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: Task
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+نگهداری و به روزرسانی مشخصات وظیفه
+\newline
+ویرایش محدود وظیفه
+\newline
+نگهداری اطلاعات ارتباط وظیفه با پروژه
+&
+همکاران:
+\newline
+Project
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: TaskCatalogue
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+مدیریت وظیفه ها
+\newline
+لیست همه وظیفه ها
+\newline
+ایجاد و تخصیص وظیفه
+
+&
+همکاران:
+\newline
+Task
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: Project
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+مدیریت پروژه
+\newline
+نگهداری اطلاعات پروژه
+\newline
+لیست وظایف مربوط به پروژه
+
+&
+همکاران:
+\newline
+ Task
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: ProjectCatalogue
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+لیست پروژه ها
+\newline
+ایجاد پروژه
+\newline
+مدیریت پروژه ها 
+&
+همکاران:
+\newline
+ Project
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: ResourceCatalogue
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+نگهداری لیست منابع
+\newline
+تخصیص منبع به پروژه
+\newline
+تخصیص منبع به وظیفه
+\newline
+جستجو در میان منابع
+
+&
+همکاران:
+\newline
+Project
+\newline
+Task
+\newline
+UserCatalogue
+\newline
+KnowledgeCatalogue
+\newline
+AssetCatalogue
+\newline
+Finance
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: Knowledge
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+نگهداری مشخصات منبع دانشی ( نوع، توصیف و ... )
+\newline
+اعمال تغییرات منبع دانشی
+
+&
+همکاران:
+\newline
+ModuleCatalogue
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: KnowledgeCatalogue
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+لیست منابع دانشی
+\newline
+ایجاد منبع دانشی 
+\newline
+حذف منبع دانشی
+\newline
+جستجو در میان منابع دانشی
+&
+همکاران:
+\newline
+Knowledge
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: Asset
+&
+نام پدر: - 
+\\
+\hline
+مسئولیت‌ها:
+\newline
+نگهداری اطلاعات سخت افزارها از جمله (زمان آزاد، پروژه های مشغول در هر زمان و ... )
+&
+همکاران:
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: AssetCatalogue
+&
+نام پدر: - 
+\\
+\hline
+مسئولیت‌ها:
+\newline
+لیست منابع سخت افزاری
+\newline
+ایجاد منبع سخت افزاری
+\newline
+حذف منبع سخت افزاری
+\newline
+جستجو در میان منابع سخت افزاری
+&
+همکاران:
+\newline
+Knowledge
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: Finance
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+نگهداری اطلاعات منابع مالی
+\newline
+نگهداری اطلاعات پرداخت‌ها
+&
+همکاران: -
+\\
+\hline
+\end{tabular}
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: Report
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+نگهداری تاریخچه گزارش ها
+\newline
+انجام گزارش گیری بر اساس معیار مشخص
+
+&
+همکاران:
+\newline
+ResourceCatalogue
+\newline
+ProjectCatalogue
+\\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+نام کلاس: Predict
+&
+نام پدر: -
+\\
+\hline
+مسئولیت‌ها:
+\newline
+نگهداری تاریخچه جستجوها
+\newline
+جستجو پروژه ها بر اساس معیار مشخص (سایز پروژه، تکنولوژی، منابع مورد استفاده و ...)
+&
+همکاران:
+\newline
+ProjectCatalogue
+\newline
+ResourceCatalogue
+\\
+\hline
+\end{tabular}
