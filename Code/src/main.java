@@ -5,7 +5,8 @@ public class main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-	FirstWindow x  = new FirstWindow();
+		// TODO Auto-generated method stub
+		UserWindow f = new UserWindow(new User());
 	}
 
 }
