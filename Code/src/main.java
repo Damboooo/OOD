@@ -9,7 +9,11 @@ public class main {
 	//LoginWindow y  = new LoginWindow();
 	//UserWindow f = new UserWindow(new User());
 	//	RegisterWindow f = new RegisterWindow();
+	//RegisterWindow x  = new RegisterWindow(new User());
+	//LoginWindow y  = new LoginWindow();
 
+		// TODO Auto-generated method stub
+		EmployeeMainWindow f = new EmployeeMainWindow(new User());
 	}
 
 }
