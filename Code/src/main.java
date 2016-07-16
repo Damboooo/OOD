@@ -13,7 +13,8 @@ public class main {
 	//LoginWindow y  = new LoginWindow();
 
 		// TODO Auto-generated method stub
-		EmployeeMainWindow f = new EmployeeMainWindow(new User());
+		//EmployeeMainWindow f = new EmployeeMainWindow(new User());
+		ModuleListWindow f = new ModuleListWindow(new User());
 	}
 
 }

@@ -15,6 +15,7 @@ public class UserWindow extends JFrame {
 		add(panel);
 		panel.setLayout(null);
 		setVisible(true);
+		
 		userProfileButton = new JButton("3");
 		logoutButton = new JButton("2");
 		returnButton = new JButton("1");
