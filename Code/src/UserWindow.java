@@ -7,12 +7,13 @@ public class UserWindow extends JFrame {
 	private JButton userProfileButton;
 	private JButton logoutButton;
 	private JButton returnButton;
-	private JPanel panel;
+	 JPanel panel;
 
 	public UserWindow(User user) {
 		setBounds(300, 100, 800, 600);
 		panel = new JPanel();
 		add(panel);
+		panel.setLayout(null);
 		setVisible(true);
 		userProfileButton = new JButton("مدیریت صفحه شخصی");
 		logoutButton = new JButton("خروج");
