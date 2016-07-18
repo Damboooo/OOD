@@ -10,6 +10,8 @@ import javax.swing.JFormattedTextField.AbstractFormatter;
 import org.jdatepicker.*;
 import org.jdatepicker.impl.*;
 
+import ResourceManagement.User;
+
 public class RegisterWindow extends JFrame {
 	private JTextField[] textField = new JTextField[4];
 	private JLabel[] label = new JLabel[6];
@@ -51,7 +53,9 @@ public class RegisterWindow extends JFrame {
 
 		createLabel("تاریخ تولد:" , 630,130,70,25);
 		//JDatePicker datePicker = new JDatePicker();
-			datePicker();
+		//	datePicker();
+		createLabel("وضعیت تاهل:" , 630,160,70,25);
+		createLabel("مدرک تحصیلی:" , 630,190,70,25);
 	}
 	private void createLabel(String s , int x , int y , int w , int h){
 		JLabel label = new JLabel(s);
@@ -66,39 +70,5 @@ public class RegisterWindow extends JFrame {
 		panel.add(t);
 	}
 	
-   private void datePicker(){
-	   UtilDateModel model = new UtilDateModel();
-	 //model.setDate(20,04,2014);
-	 // Need this...
-	 Properties p = new Properties();
-	 p.put("text.today", "Today");
-	 p.put("text.month", "Month");
-	 p.put("text.year", "Year");
-	 
-	 JDatePanelImpl datePanel = new JDatePanelImpl(model, p);
-	 // Don't know about the formatter, but there it is...
-	 JDatePickerImpl datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
-
    }
-}
- class DateLabelFormatter extends AbstractFormatter {
-
-    private String datePattern = "yyyy-MM-dd";
-    private SimpleDateFormat dateFormatter = new SimpleDateFormat(datePattern);
-
-    @Override
-    public Object stringToValue(String text) throws ParseException {
-        return dateFormatter.parseObject(text);
-    }
-
-    @Override
-    public String valueToString(Object value) throws ParseException {
-        if (value != null) {
-            Calendar cal = (Calendar) value;
-            return dateFormatter.format(cal.getTime());
-        }
-
-        return "";
-    }
-
-}
+ 

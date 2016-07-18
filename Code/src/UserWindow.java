@@ -2,6 +2,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import ResourceManagement.User;
+
 public class UserWindow extends JFrame {
 	User user;
 	private JButton userProfileButton;

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
+import ProjectManagement.Module;
+import ResourceManagement.User;
+
 public class   ModuleListWindow extends UserWindow{
 	
 	private Module[] modules = new Module[6];
