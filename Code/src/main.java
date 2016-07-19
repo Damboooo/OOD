@@ -26,7 +26,7 @@ public class main {
 	//EditProfileWindow x12  = new EditProfileWindow(new User());
 //	ProfileWindow x13  = new ProfileWindow(new User());
 //	LoginWindow y  = new LoginWindow();
-//ChangePasswordWindow n = new ChangePasswordWindow();
+//ChangePasswordWindow n = new ChaqngePasswordWindow();
 //ForgetPasswordWindow m = new ForgetPasswordWindow();
 //		EmployeeMainWindow f = new EmployeeMainWindow(new User());
 	//ModuleListWindow f = new ModuleListWindow(new User());
