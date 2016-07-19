@@ -9,6 +9,7 @@ import ResourceManagement.User;
 import UI.Accounting.ProfileWindow;
 import UI.Employee.EditModuleWindow;
 import UI.Employee.ModuleListWindow;
+import UI.Employee.TasksListWindow;
 
 public class main {
 
@@ -30,7 +31,8 @@ public class main {
 //		EmployeeMainWindow f = new EmployeeMainWindow(new User());
 	//ModuleListWindow f = new ModuleListWindow(new User());
 	//	UserDetailsWindow udw = new UserDetailsWindow(new User());
-		EditModuleWindow dq = new EditModuleWindow(null, null);
+	//	EditModuleWindow dq = new EditModuleWindow(null, null);
+	TasksListWindow dc = new TasksListWindow(null);
 	}
 
 }
