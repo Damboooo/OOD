@@ -1,3 +1,5 @@
+package UI.Employee;
+
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -60,7 +62,7 @@ public class   ModuleListWindow extends UserWindow{
 	        super.paint(g2);
 	        Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[]{5}, 0);
 	        g2.setStroke(dashed);
-	        g2.drawRect(120, 150, 550, 300);
+	        g2.drawRect(115, 150, 560, 370);
 	        
 	    }
 	
