@@ -1,13 +1,16 @@
+package UI.Employee;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import ResourceManagement.User;
 
 public class UserWindow extends JFrame {
 	User user;
 	private JButton userProfileButton;
 	private JButton logoutButton;
 	private JButton returnButton;
-	 JPanel panel;
+	protected JPanel panel;
 
 	public UserWindow(User user) {
 		setBounds(300, 100, 800, 600);
@@ -15,8 +18,9 @@ public class UserWindow extends JFrame {
 		add(panel);
 		panel.setLayout(null);
 		setVisible(true);
+		
 		userProfileButton = new JButton("مدیریت صفحه شخصی");
-		logoutButton = new JButton("خروج");
+		logoutButton = new JButton("خروچ");
 		returnButton = new JButton("بازگشت");
 		userProfileButton.setBounds(100, 10, 180, 25);
 	    panel.add(userProfileButton);

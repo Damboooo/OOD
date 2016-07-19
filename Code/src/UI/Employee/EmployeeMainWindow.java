@@ -1,12 +1,14 @@
+package UI.Employee;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import ResourceManagement.User;
 
 
 public class EmployeeMainWindow extends UserWindow {
 
 	private JButton changeModuleInformationButton;
 	private JButton tasksListButton;
-	private JPanel panel;
+	//private JPanel panel;
 	
 	public EmployeeMainWindow(User user) {
 		super(user);
@@ -21,12 +23,6 @@ public class EmployeeMainWindow extends UserWindow {
 		tasksListButton.setSize(180,25);
 		tasksListButton.setLocation(300,280);
 		super.panel.add(tasksListButton);
-		
-	
-	
-	}
-	
-	private void login(){
 		
 	}
 
