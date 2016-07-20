@@ -9,9 +9,9 @@ import ProjectManagement.Module;
 import ProjectManagement.Task;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
-import UI.Predict.UserWindow;
 
-public class ReportWindow extends UserWindow {
+
+public class ReportWindow extends UI.Employee.UserWindow {
 
 	JCheckBox[] checkBoxes = new JCheckBox[100];
 	JCheckBox checkBoxAll = new JCheckBox();

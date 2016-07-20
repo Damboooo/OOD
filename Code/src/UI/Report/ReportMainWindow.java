@@ -2,10 +2,10 @@ package UI.Report;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import ResourceManagement.User;
-import UI.Predict.UserWindow;
 
 
-public class ReportMainWindow extends UserWindow {
+
+public class ReportMainWindow extends UI.Employee.UserWindow {
 
 	private JButton resourceReportButton;
 	private JButton usageReportButton;
@@ -29,7 +29,7 @@ public class ReportMainWindow extends UserWindow {
 
 		requirementReportButton = new JButton("گزارش گیری منابع مورد نیاز");
 		requirementReportButton.setSize(180,25);
-		requirementReportButton.setLocation(300,320);
+		requirementReportButton.setLocation(300,330);
 		super.panel.add(requirementReportButton);
 	}
 

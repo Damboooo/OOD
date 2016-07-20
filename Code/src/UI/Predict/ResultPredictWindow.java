@@ -14,7 +14,7 @@ import ProjectManagement.Module;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
 
-public class ResultPredictWindow extends UserWindow {
+public class ResultPredictWindow extends UI.Employee.UserWindow {
 	
 	private Module[] projects = new Module[6];
 	private JLabel[] labels = new JLabel[6];

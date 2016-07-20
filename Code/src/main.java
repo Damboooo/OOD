@@ -6,19 +6,11 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 import ResourceManagement.User;
-import UI.Accounting.ProfileWindow;
-import UI.Employee.EditModuleWindow;
-import UI.Employee.ModuleListWindow;
-import UI.Employee.UserWindow;
-import UI.Employee.TasksListWindow;
-import UI.Predict.PredictMainWindow;
-import UI.Predict.RequirementPredictWindow;
-import UI.Predict.ResourcePredictWindow;
-import UI.Predict.ResultPredictWindow;
-import UI.Report.ReportWindow;
-import UI.Report.RequirementReportWindow;
-import UI.Report.ResourceReportWindow;
-import UI.Report.UsageReportWindow;
+import UI.Accounting.*;
+import UI.Employee.*;
+import UI.Predict.*;
+import UI.Report.*;
+
 //import UI.Report.ResourceReportWindow;
 public class main {
 
@@ -27,7 +19,7 @@ public class main {
 	 */
 	public static void main(String[] args) {
 		
-		ResourcePredictWindow x = new ResourcePredictWindow(new User());
+	//	ResourcePredictWindow x = new ResourcePredictWindow(new User());
 		
 //	FirstWindow x  = new FirstWindow();
 //	LoginWindow y  = new LoginWindow();
@@ -45,6 +37,16 @@ public class main {
 //		EditModuleWindow dq = new EditModuleWindow(null, null);
 //		EditModuleWindow dq = new EditModuleWindow(null, null);
 //	TasksListWindow dc = new TasksListWindow(null);
+	    new ReportMainWindow(null);
+		new ReportWindow(null);
+		new ResourceReportWindow(null);
+		new RequirementReportWindow(null);
+		new UsageReportWindow(null);
+		
+//		new PredictMainWindow(null);
+//		new RequirementPredictWindow(null);
+//		new ResourcePredictWindow(null);
+		//new ResultPredictWindow(null);
 	}
 
 }

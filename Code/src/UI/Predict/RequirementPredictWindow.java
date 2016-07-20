@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
 
-public class RequirementPredictWindow extends UserWindow {
+public class RequirementPredictWindow extends UI.Employee.UserWindow {
 
 	private JLabel[] modulesNameLabel = new JLabel[100];
 	private Resource[] resources;
@@ -30,7 +30,7 @@ public class RequirementPredictWindow extends UserWindow {
 
 		label = new JLabel("جستجو در پروژه های مشابه برای پیش بینی");
 		label.setSize(280, 25);
-		label.setLocation(340, 152);
+		label.setLocation(480, 90);
 		super.panel.add(label);
 
 		resourceTextField = new JTextField();
@@ -50,7 +50,7 @@ public class RequirementPredictWindow extends UserWindow {
 
 		predicButtonButton = new JButton("پیش بینی");
 		predicButtonButton.setSize(80, 25);
-		predicButtonButton.setLocation(270, 340);
+		predicButtonButton.setLocation(140, 440);
 		panel.add(predicButtonButton);
 
 	}
@@ -78,7 +78,8 @@ public class RequirementPredictWindow extends UserWindow {
 		Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT,
 				BasicStroke.JOIN_BEVEL, 0, new float[] { 5 }, 0);
 		g2.setStroke(dashed);
-		g2.drawRect(270, 210, 250, 190);
+		//g2.drawRect(270, 210, 250, 190);
+		g2.drawRect(115, 150, 560, 370);
 
 		// Stroke simple = new BasicStroke(1, BasicStroke.JOIN_ROUND,
 		// BasicStroke.JOIN_ROUND, 0, new float[]{5},0);

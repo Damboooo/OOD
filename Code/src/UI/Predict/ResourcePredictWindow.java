@@ -10,7 +10,7 @@ import javax.swing.*;
 import ProjectManagement.Module;
 import ResourceManagement.User;
 
-public class ResourcePredictWindow extends UserWindow {
+public class ResourcePredictWindow extends UI.Employee.UserWindow {
 
 	private JLabel alertLabel;
 	private JLabel sizeLabel;
@@ -96,7 +96,7 @@ public class ResourcePredictWindow extends UserWindow {
 
 		predictButton = new JButton("پیش بینی");
 		predictButton.setSize(80, 25);
-		predictButton.setLocation(480, 430);
+		predictButton.setLocation(140, 440);
 		panel.add(predictButton);
 
 	}
