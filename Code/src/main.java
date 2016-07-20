@@ -8,6 +8,7 @@ import javax.swing.JRadioButton;
 import ResourceManagement.User;
 import UI.Accounting.*;
 import UI.Employee.*;
+import UI.HeadManager.*;
 import UI.Predict.*;
 import UI.ProjectManager.*;
 import UI.Report.*;
@@ -41,7 +42,7 @@ public class main {
 //	TasksListWindow dc = new TasksListWindow(null);
 //	    new ReportMainWindow(null);
 //		new ReportWindow(null);
-//		new ResourceReportWindow(null);
+	//	new ResourceReportWindow(null);
 //		new RequirementReportWindow(null);
 //		new UsageReportWindow(null);
 		
@@ -58,7 +59,19 @@ public class main {
 //		new ProjectRequiermentsWindow(null);
 	//	new ProjectResourcesWindow(null);
 		//new ProjectRequiermentsWindow(null);
+<<<<<<< HEAD
 //		new ProjectRequiermentsWindow(null);
+=======
+	//	new ProjectRequiermentsWindow(null);
+	//	new AccountsListWindow(null);
+	//	new GuestsListWindow(null);
+	//	new EditUserProfileWindow(null);
+		//new ManageProjectsWindow(null);
+		//new ProjectsListWindow(null);
+	//	new ManageResourcesWindow(null);
+	//	new AddProjectResourcesWindow(null);
+			new NewProjectWindow(null);
+>>>>>>> da3250a40c72b06599a49a9f79d56bf54bf33520
 	}
 
 }

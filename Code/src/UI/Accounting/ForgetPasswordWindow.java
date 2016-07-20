@@ -8,6 +8,8 @@ import javafx.scene.control.Alert;
 
 import javax.swing.*;
 
+import ResourceManagement.User;
+
 public class ForgetPasswordWindow  extends JFrame{
 
 	
@@ -17,6 +19,7 @@ public class ForgetPasswordWindow  extends JFrame{
 	private JTextField mailTextField;
 	private JLabel currentPasswordLabel;
 	private JLabel alertLabel;
+	private User user;
 	
 	
 	public ForgetPasswordWindow(){
@@ -73,9 +76,12 @@ public class ForgetPasswordWindow  extends JFrame{
 		panel.add(currentPasswordLabel);
 	
 	}
-	
 
-	
-	
+    public ForgetPasswordWindow(User user) {
+        this.user = user;
+    }
 
+    public void sendEmail() {
+
+    }
 }

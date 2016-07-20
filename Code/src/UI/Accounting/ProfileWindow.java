@@ -12,6 +12,7 @@ import UI.ProjectManager.ProjectListWindow;
 
 public class ProfileWindow extends UserDetailsWindow {
 
+<<<<<<< HEAD
 	private JLabel nameLabel = new JLabel();
 	private JLabel familyNameLabel = new JLabel();
 	private JLabel nationalIDLabel = new JLabel();
@@ -98,7 +99,7 @@ public class ProfileWindow extends UserDetailsWindow {
 				if (usernameLabel.getText().toCharArray()[0] == 'm')
 					pl = new ProjectListWindow(new User());
 				else if (usernameLabel.getText().toCharArray()[0] == 'h')
-					hm = new HeadManagerMainWindow();
+					hm = new HeadManagerMainWindow(user);
 				else
 					em = new EmployeeMainWindow(new User());
 				dispose();
@@ -122,7 +123,7 @@ public class ProfileWindow extends UserDetailsWindow {
 				if (usernameLabel.getText().toCharArray()[0] == 'm')
 					pl = new ProjectListWindow(new User());
 				else if (usernameLabel.getText().toCharArray()[0] == 'h')
-					hm = new HeadManagerMainWindow();
+					hm = new HeadManagerMainWindow(user);
 				else
 					em = new EmployeeMainWindow(new User());
 				dispose();
@@ -139,5 +140,21 @@ public class ProfileWindow extends UserDetailsWindow {
 		panel.add(t);
 		return t;
 	}
+
+    public void edit() {
+
+    }
+
+    public void back() {
+
+    }
+
+    public boolean confirmEdit() {
+        return false;
+    }
+
+    public void changePassword() {
+
+    }
 
 }

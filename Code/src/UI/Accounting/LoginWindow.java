@@ -71,7 +71,7 @@ public class LoginWindow extends JFrame {
 				if (usernameTextField.getText().toCharArray()[0] == 'm')
 					pl = new ProjectListWindow(user);
 				else if (usernameTextField.getText().toCharArray()[0] == 'h')
-					hm = new HeadManagerMainWindow();
+					hm = new HeadManagerMainWindow(user);
 				else
 					em = new EmployeeMainWindow(user);
 				dispose();

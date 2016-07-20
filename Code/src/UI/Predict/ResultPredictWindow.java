@@ -87,5 +87,4 @@ public class ResultPredictWindow extends UserWindow {
 		g2.drawRect(115, 150, 560, 370);
 
 	}
-
 }

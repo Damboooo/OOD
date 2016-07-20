@@ -28,7 +28,7 @@ public class EditProfileWindow extends UserDetailsWindow {
 //	private JRadioButton marriageStatusButton = new JRadioButton("وضعیت تاهل");
 	//private JDatePicker birthDate = new JDatePicker;=================================>
 
-	public EditProfileWindow(User user) {
+	public EditProfileWindow(final User user) {
 		super(user);
 		setTitle("ویرایش اطلاعات");
 	
@@ -83,7 +83,7 @@ public class EditProfileWindow extends UserDetailsWindow {
 				if (usernameLabel.getText().toCharArray()[0] == 'm')
 					pl = new ProjectListWindow(new User());
 				else if (usernameLabel.getText().toCharArray()[0] == 'h')
-					hm = new HeadManagerMainWindow();
+					hm = new HeadManagerMainWindow(user);
 				else
 					em = new EmployeeMainWindow(new User());
 				dispose();
@@ -107,7 +107,7 @@ public class EditProfileWindow extends UserDetailsWindow {
 				if (usernameLabel.getText().toCharArray()[0] == 'm')
 					pl = new ProjectListWindow(new User());
 				else if (usernameLabel.getText().toCharArray()[0] == 'h')
-					hm = new HeadManagerMainWindow();
+					hm = new HeadManagerMainWindow(user);
 				else
 					em = new EmployeeMainWindow(new User());
 				dispose();

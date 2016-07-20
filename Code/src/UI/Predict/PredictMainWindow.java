@@ -8,38 +8,39 @@ import java.awt.Stroke;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import ResourceManagement.User;
 
 public class PredictMainWindow extends UserWindow {
 
-	private JButton resourcePredictButton;
-	private JButton requirementPredictButton;
+    private JButton resourcePredictButton;
+    private JButton requirementPredictButton;
 //	private JLabel label;
-	
-	// private JPanel panel;
 
-	public PredictMainWindow(User user) {
-		super(user);
-		setTitle("پنل پیش بینی");
-		
+    // private JPanel panel;
+
+    public PredictMainWindow(User user) {
+        super(user);
+        setTitle("پنل پیش بینی");
+
 //		label = new JLabel("جستجو در پروژه های مشابه برای پیش بینی");
 //		label.setSize(280, 25);
 //		label.setLocation(340, 152);
 //		super.panel.add(label);
-		
-		resourcePredictButton = new JButton("پیش بینی منابع");
-		resourcePredictButton.setSize(180, 25);
-		resourcePredictButton.setLocation(300, 230);
-		super.panel.add(resourcePredictButton);
 
-		requirementPredictButton = new JButton("پیش بینی نیازمندی های ضروری");
-		requirementPredictButton.setSize(180, 25);
-		requirementPredictButton.setLocation(300, 280);
-		super.panel.add(requirementPredictButton);
+        resourcePredictButton = new JButton("پیش بینی منابع");
+        resourcePredictButton.setSize(180, 25);
+        resourcePredictButton.setLocation(300, 230);
+        super.panel.add(resourcePredictButton);
 
-	}
+        requirementPredictButton = new JButton("پیش بینی نیازمندی های ضروری");
+        requirementPredictButton.setSize(180, 25);
+        requirementPredictButton.setLocation(300, 280);
+        super.panel.add(requirementPredictButton);
 
-	//@Override
+    }
+
+    //@Override
 //	public void paint(Graphics g) {
 //		Graphics2D g2 = (Graphics2D) g;
 //		super.paint(g2);
@@ -54,5 +55,13 @@ public class PredictMainWindow extends UserWindow {
 //		// BasicStroke.JOIN_ROUND, 0, new float[]{5},0);
 //
 //	}
+
+    public void resourcePredict() {
+
+    }
+
+    public void requirementPredict() {
+
+    }
 
 }

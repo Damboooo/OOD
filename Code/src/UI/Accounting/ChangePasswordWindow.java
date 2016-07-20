@@ -1,12 +1,15 @@
 package UI.Accounting;
 
 
+import ResourceManagement.User;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+<<<<<<< HEAD
 import ResourceManagement.User;
 
 public class ChangePasswordWindow  extends JFrame{
@@ -87,6 +90,12 @@ public class ChangePasswordWindow  extends JFrame{
 		panel.add(t);
 		return t;
 	}
-	
 
+   public boolean confirm() {
+       return false;
+   }
+
+   public void cancel() {
+
+   }
 }

@@ -104,4 +104,11 @@ public class TasksListWindow extends UserWindow {
 
 	}
 
+    public boolean doneTask() {
+        return false;
+    }
+
+    public boolean confirmChanges() {
+        return false;
+    }
 }

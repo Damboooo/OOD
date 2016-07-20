@@ -1,14 +1,16 @@
 package UI.Employee;
+
 import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.util.ArrayList;
 import javax.swing.*;
 
 import ProjectManagement.Module;
+import ResourceManagement.Resource;
 import ResourceManagement.User;
 import UI.Accounting.FirstWindow;
 
@@ -90,5 +92,7 @@ public class EditModuleWindow extends UserWindow {
 	        
 	    }
 
-
+	    public boolean confirmChanges(){
+	        return false;
+	    }
 }

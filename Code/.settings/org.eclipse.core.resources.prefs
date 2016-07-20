@@ -15,8 +15,20 @@ encoding//src/UI/Employee/EmployeeMainWindow.java=UTF-8
 encoding//src/UI/Employee/ModuleListWindow.java=UTF-8
 encoding//src/UI/Employee/TasksListWindow.java=UTF-8
 encoding//src/UI/Employee/UserWindow.java=UTF-8
+encoding//src/UI/HeadManager/AccountsListWindow.java=UTF-8
+encoding//src/UI/HeadManager/AddProjectResourcesWindow.java=UTF-8
 encoding//src/UI/HeadManager/EditUserProfileWindow.java=UTF-8
+<<<<<<< HEAD
 encoding//src/UI/HeadManager/UserWindow.java=UTF-8
+=======
+encoding//src/UI/HeadManager/GuestsListWindow.java=UTF-8
+encoding//src/UI/HeadManager/HeadManagerMainWindow.java=UTF-8
+encoding//src/UI/HeadManager/ManageAccountsWindow.java=UTF-8
+encoding//src/UI/HeadManager/ManageProjectsWindow.java=UTF-8
+encoding//src/UI/HeadManager/ManageResourcesWindow.java=UTF-8
+encoding//src/UI/HeadManager/NewProjectWindow.java=UTF-8
+encoding//src/UI/HeadManager/ProjectsListWindow.java=UTF-8
+>>>>>>> da3250a40c72b06599a49a9f79d56bf54bf33520
 encoding//src/UI/Predict/PredictMainWindow.java=UTF-8
 encoding//src/UI/Predict/RequirementPredictWindow.java=UTF-8
 encoding//src/UI/Predict/ResourcePredictWindow.java=UTF-8

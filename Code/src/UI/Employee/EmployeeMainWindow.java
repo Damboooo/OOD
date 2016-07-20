@@ -1,9 +1,9 @@
 package UI.Employee;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
 import ResourceManagement.User;
 import UI.Accounting.FirstWindow;
 
@@ -48,6 +48,13 @@ public class EmployeeMainWindow extends UserWindow {
 		
 	}
 
+    public void changeModuleInformation() {
+
+    }
+
+    public void viewTasksList() {
+
+    }
 
 
 }

@@ -2,9 +2,9 @@ package UI.Accounting;
 //import java.awt.*;
 //import java.text.*;
 //import java.util.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 //
 //import org.jdatepicker.*;
@@ -13,38 +13,36 @@ import javax.swing.*;
 import ResourceManagement.User;
 
 public class RegisterWindow extends UserDetailsWindow {
-	
- //   private JPanel panel = new JPanel();
+    //   private JPanel panel = new JPanel();
     private JPasswordField passwordField1;
     private JPasswordField passwordField2;
-	private JTextField nameTextField = new JTextField();
-	private JTextField familyNameTextField = new JTextField();
-	private JTextField nationalIDTextField = new JTextField();
-	private JTextField userNameTextField = new JTextField();
-	
-	private JButton firstButton = new JButton();
-	private JButton secondButton = new JButton();
-	
-//	private JTextField jobExperienceTextField = new JTextField();
-	private JTextField phoneNumber1 = new JTextField();
-	private JTextField phoneNumber2 = new JTextField();
-	private JTable educationalResume = new JTable();
-//	private JRadioButton marriageStatusButton = new JRadioButton("وضعیت تاهل");
-	//private JDatePicker birthDate = new JDatePicker;=================================>
+    private JTextField nameTextField = new JTextField();
+    private JTextField familyNameTextField = new JTextField();
+    private JTextField nationalIDTextField = new JTextField();
+    private JTextField userNameTextField = new JTextField();
 
-	public RegisterWindow(User user) {
-		super(user);
-		setTitle("ثبت نام");
-	
-		     nameTextField =  createTextField("" , 480,40);
-		      familyNameTextField = createTextField("" , 480,40+30);
-		      nationalIDTextField = createTextField("" , 480,40+30*2);
-		      userNameTextField = createTextField("" , 480-300,40);
-		      phoneNumber1 = createTextField("", 480, 40+30*9);
-		      phoneNumber2 = createTextField("", 330, 40+30*9);
-		      
-					 
-		     
+    private JButton firstButton = new JButton();
+    private JButton secondButton = new JButton();
+
+    //	private JTextField jobExperienceTextField = new JTextField();
+    private JTextField phoneNumber1 = new JTextField();
+    private JTextField phoneNumber2 = new JTextField();
+    private JTable educationalResume = new JTable();
+//	private JRadioButton marriageStatusButton = new JRadioButton("وضعیت تاهل");
+    //private JDatePicker birthDate = new JDatePicker;=================================>
+
+    public RegisterWindow(User user) {
+        super(user);
+        setTitle("ثبت نام");
+
+        nameTextField = createTextField("", 480, 40);
+        familyNameTextField = createTextField("", 480, 40 + 30);
+        nationalIDTextField = createTextField("", 480, 40 + 30 * 2);
+        userNameTextField = createTextField("", 480 - 300, 40);
+        phoneNumber1 = createTextField("", 480, 40 + 30 * 9);
+        phoneNumber2 = createTextField("", 330, 40 + 30 * 9);
+
+
 //		  	JPanel radioPanel = new JPanel();
 //		  	add(radioPanel); 	
 //		      JRadioButton married = new JRadioButton("متاهل");
@@ -58,6 +56,7 @@ public class RegisterWindow extends UserDetailsWindow {
 //		      radioPanel.add(married);
 //		      radioPanel.add(single);
 //		      married.setSelected(true);
+
 		     
 		      
 		      
@@ -120,7 +119,13 @@ public class RegisterWindow extends UserDetailsWindow {
 		panel.add(t);
 		return t;
 	}
-	
-   }
- 
 
+   public boolean register() {
+       return false;
+   }
+
+   public void cancel() {
+
+   }
+
+   }
