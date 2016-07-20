@@ -6,7 +6,7 @@ import ProjectManagement.Module;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
 
-public class ProjectListWindow  extends UserWindow {
+public class ProjectListWindow  extends UI.Employee.UserWindow {
   
   private Module[] projects = new Module[6];
   private JLabel[] labels = new JLabel[6];
@@ -18,7 +18,7 @@ public class ProjectListWindow  extends UserWindow {
 
   public ProjectListWindow (User user) {
     super(user);
-    setTitle("پنل مدیریت");
+    setTitle("پنل مدیریت پروژه");
     // Rectangle r = new Rectangle(0, 0, 100, 100);
     // super.panel.add(r);
 

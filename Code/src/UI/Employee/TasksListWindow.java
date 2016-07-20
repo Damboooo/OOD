@@ -1,6 +1,8 @@
 package UI.Employee;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -8,6 +10,7 @@ import javax.swing.*;
 import ProjectManagement.Module;
 import ProjectManagement.Task;
 import ResourceManagement.User;
+import UI.Accounting.FirstWindow;
 
 public class TasksListWindow extends UserWindow {
 
@@ -17,7 +20,7 @@ public class TasksListWindow extends UserWindow {
 	private JButton saveButton;
 	private JLabel label;
 
-	public TasksListWindow(User user) {
+	public TasksListWindow(final User user) {
 		super(user);
 		setTitle("پنل کارمند");
 
@@ -51,6 +54,15 @@ public class TasksListWindow extends UserWindow {
 		saveButton = new JButton("تایید");
 		saveButton.setSize(70, 25);
 		saveButton.setLocation(100, 520);
+		saveButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				EmployeeMainWindow em = new EmployeeMainWindow(user);
+				dispose();
+			}
+		});
 		panel.add(saveButton);
 
 	}

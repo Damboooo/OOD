@@ -3,11 +3,14 @@ import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
 import ProjectManagement.Module;
 import ResourceManagement.User;
+import UI.Accounting.FirstWindow;
 
 
 public class EditModuleWindow extends UserWindow {
@@ -20,7 +23,7 @@ public class EditModuleWindow extends UserWindow {
 	private JTextField addResourceTextField;
 	//private JPanel panel;
 	
-	public EditModuleWindow(Module module,User user) {
+	public EditModuleWindow(Module module,final User user) {
 		super(user);
 		setTitle("پنل کارمند");
 		
@@ -57,6 +60,15 @@ public class EditModuleWindow extends UserWindow {
 			saveButton = new JButton("ثبت تغییرات");
 			saveButton.setSize(80, 25);
 			saveButton.setLocation(100,520);
+			saveButton.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// display/center the jdialog when the button is pressed
+					EmployeeMainWindow em = new EmployeeMainWindow(user);
+					dispose();
+				}
+			});
 			panel.add(saveButton);
 	
 		

@@ -56,6 +56,9 @@ public class main {
 		//new ProjectModuleWindow(null);
 		//new ProjectResourceWindow(null);
 //		new ProjectRequiermentsWindow(null);
+	//	new ProjectResourcesWindow(null);
+		//new ProjectRequiermentsWindow(null);
+//		new ProjectRequiermentsWindow(null);
 	}
 
 }

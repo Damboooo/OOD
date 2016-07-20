@@ -63,15 +63,17 @@ public class LoginWindow extends JFrame {
 				ProjectListWindow pl;
 				HeadManagerMainWindow hm;
 				EmployeeMainWindow em;
+				User user = new User();
+				user.setUsername(usernameTextField.getText());
 				// display/center the jdialog when the button is pressed
 				if (usernameTextField.getText().toCharArray().length == 0)
 					return;
 				if (usernameTextField.getText().toCharArray()[0] == 'm')
-					pl = new ProjectListWindow(new User());
+					pl = new ProjectListWindow(user);
 				else if (usernameTextField.getText().toCharArray()[0] == 'h')
 					hm = new HeadManagerMainWindow();
 				else
-					em = new EmployeeMainWindow(new User());
+					em = new EmployeeMainWindow(user);
 				dispose();
 			}
 		});

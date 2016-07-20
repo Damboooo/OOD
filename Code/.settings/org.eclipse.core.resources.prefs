@@ -29,7 +29,12 @@ encoding//src/UI/ProjectManager/ProjectModuleListWindow.java=UTF-8
 encoding//src/UI/ProjectManager/ProjectModuleWindow.java=UTF-8
 encoding//src/UI/ProjectManager/ProjectRequiermentsWindow.java=UTF-8
 encoding//src/UI/ProjectManager/ProjectResourceWindow.java=UTF-8
+<<<<<<< HEAD
 encoding//src/UI/ProjectManager/UserWindow.java=UTF-8
+=======
+encoding//src/UI/ProjectManager/ProjectResourcesWindow.java=UTF-8
+encoding//src/UI/ProjectManager/ProjectTasksWindow.java=UTF-8
+>>>>>>> a7bbdab60cc525997e52e4cd3ed531643b807fd0
 encoding//src/UI/Report/ReportMainWindow.java=UTF-8
 encoding//src/UI/Report/ReportWindow.java=UTF-8
 encoding//src/UI/Report/RequirementReportWindow.java=UTF-8

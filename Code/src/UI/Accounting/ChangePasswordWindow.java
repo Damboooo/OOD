@@ -2,11 +2,15 @@ package UI.Accounting;
 
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
+
+import ResourceManagement.User;
 
 public class ChangePasswordWindow  extends JFrame{
 
-	
 	private JButton acceptButton;
 	private JButton cancelButton;
 	private JPanel panel;
@@ -17,7 +21,7 @@ public class ChangePasswordWindow  extends JFrame{
 	private JLabel newPasswordLabel;
 	private JLabel newPasswordRepeatLabel;
 	
-	public ChangePasswordWindow(){
+	public ChangePasswordWindow(final User user){
 		//setLayout(null);
 		setTitle("تغییر کلمه عبور");
 		setSize(400,200);
@@ -38,14 +42,32 @@ public class ChangePasswordWindow  extends JFrame{
 		newPasswordRepeatTextField = createPasswordField(100,70);
 
 		
-		acceptButton = new JButton("ورود");
+		acceptButton = new JButton("تایید");
 		acceptButton.setSize(80, 25);
 		acceptButton.setLocation(200,115);
+		acceptButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				ProfileWindow cp = new ProfileWindow(user);
+				dispose();
+			}
+		});
 		panel.add(acceptButton);
 		
 		cancelButton = new JButton("انصراف");
 		cancelButton.setSize(80, 25);
 		cancelButton.setLocation(100,115);
+		cancelButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				ProfileWindow cp = new ProfileWindow(user);
+				dispose();
+			}
+		});
 		panel.add(cancelButton);
 	
 	
