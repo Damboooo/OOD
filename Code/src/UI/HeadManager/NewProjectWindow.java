@@ -39,6 +39,10 @@ public class NewProjectWindow extends UI.Employee.UserWindow {
 		createLabel("هزینه نگهداری:" , 220,180+35*5);
 		createLabel("منابع فیزیکی:" , 220,180+35*6);
 		
+//		createLabel("تعداد نیروی انسانی ایجاد کننده:" , 220,180+35*0);
+//		createLabel("تعداد کاربران:" , 220,180+35*1);
+		
+		
 		 humanResourcesTextField= createTextField("28", 100, 180+35*0);
 		 userCountTextField= createTextField("100-250", 100, 180+35*1);
 		 moduleCountTextField= createTextField("16", 100, 180+35*2);
