@@ -1,7 +1,14 @@
 package UI.Accounting;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
+
+import ResourceManagement.User;
+import UI.Employee.EmployeeMainWindow;
+import UI.ProjectManager.ProjectListWindow;
 
 public class LoginWindow  extends JFrame{
 
@@ -49,11 +56,41 @@ public class LoginWindow  extends JFrame{
 		loginButton = new JButton("ورود");
 		loginButton.setSize(80, 25);
 		loginButton.setLocation(100,70);
+		cancelButton.addActionListener(new ActionListener()
+		{
+
+		@Override
+		  public void actionPerformed(ActionEvent e)
+		  {
+			ProjectListWindow pl;
+			EmployeeMainWindow rw;
+			EmployeeMainWindow em;
+		    // display/center the jdialog when the button is pressed
+			if(usernameTextField.getText().toCharArray()[0] == 'm')
+				pl = new ProjectListWindow();
+			else if(usernameTextField.getText().toCharArray()[0] == 'p')
+				rw = new EmployeeMainWindow(new User());
+			else
+				em = new EmployeeMainWindow(new User());
+			dispose();
+		  }
+		});
 		panel.add(loginButton);
 		
 		cancelButton = new JButton("انصراف");
 		cancelButton.setSize(80, 25);
 		cancelButton.setLocation(200,70);
+		cancelButton.addActionListener(new ActionListener()
+		{
+
+		@Override
+		  public void actionPerformed(ActionEvent e)
+		  {
+		    // display/center the jdialog when the button is pressed
+			FirstWindow rw = new FirstWindow();
+			dispose();
+		  }
+		});
 		panel.add(cancelButton);
 		
 		retrieveButton = new JButton("بازیابی نام کاربری و کلمه عبور");
