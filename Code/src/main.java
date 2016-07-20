@@ -9,6 +9,7 @@ import ResourceManagement.User;
 import UI.Accounting.*;
 import UI.Employee.*;
 import UI.Predict.*;
+import UI.ProjectManager.*;
 import UI.Report.*;
 
 //import UI.Report.ResourceReportWindow;
@@ -48,6 +49,13 @@ public class main {
 //		new RequirementPredictWindow(null);
 //		new ResourcePredictWindow(null);
 		//new ResultPredictWindow(null);
+	//	new ProjectListWindow (null);
+		//new ProjectManagementMainWindow(null);
+		//new ProjectModuleListWindow(null);
+		//new ProjectDetailsWindow(null);
+		//new ProjectModuleWindow(null);
+		//new ProjectResourceWindow(null);
+		new ProjectRequiermentsWindow(null);
 	}
 
 }
