@@ -10,17 +10,28 @@ import UI.Accounting.ProfileWindow;
 import UI.Employee.EditModuleWindow;
 import UI.Employee.ModuleListWindow;
 import UI.Employee.UserWindow;
-
+import UI.Employee.TasksListWindow;
+import UI.Predict.PredictMainWindow;
+import UI.Predict.RequirementPredictWindow;
+import UI.Predict.ResourcePredictWindow;
+import UI.Predict.ResultPredictWindow;
+import UI.Report.ReportWindow;
+import UI.Report.RequirementReportWindow;
+import UI.Report.ResourceReportWindow;
+import UI.Report.UsageReportWindow;
+//import UI.Report.ResourceReportWindow;
 public class main {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
+		
+		ResourcePredictWindow x = new ResourcePredictWindow(new User());
+		
 //	FirstWindow x  = new FirstWindow();
 //	LoginWindow y  = new LoginWindow();
-	UserWindow f = new UserWindow(new User());
+//	UserWindow f = new UserWindow(new User());
 //		RegisterWindow f = new RegisterWindow();
 	//RegisterWindow x  = new RegisterWindow(new User());
 	//EditProfileWindow x12  = new EditProfileWindow(new User());
@@ -32,6 +43,8 @@ public class main {
 	//ModuleListWindow f = new ModuleListWindow(new User());
 	//	UserDetailsWindow udw = new UserDetailsWindow(new User());
 //		EditModuleWindow dq = new EditModuleWindow(null, null);
+//		EditModuleWindow dq = new EditModuleWindow(null, null);
+//	TasksListWindow dc = new TasksListWindow(null);
 	}
 
 }
