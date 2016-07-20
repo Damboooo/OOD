@@ -83,8 +83,7 @@ public class LoginWindow extends JFrame {
 		cancelButton.setSize(80, 25);
 		cancelButton.setLocation(200, 70);
 		cancelButton.addActionListener(new ActionListener() {
-
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				FirstWindow rw = new FirstWindow();
