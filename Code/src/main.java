@@ -37,11 +37,11 @@ public class main {
 //		EditModuleWindow dq = new EditModuleWindow(null, null);
 //		EditModuleWindow dq = new EditModuleWindow(null, null);
 //	TasksListWindow dc = new TasksListWindow(null);
-	    new ReportMainWindow(null);
-		new ReportWindow(null);
-		new ResourceReportWindow(null);
-		new RequirementReportWindow(null);
-		new UsageReportWindow(null);
+//	    new ReportMainWindow(null);
+//		new ReportWindow(null);
+//		new ResourceReportWindow(null);
+//		new RequirementReportWindow(null);
+//		new UsageReportWindow(null);
 		
 //		new PredictMainWindow(null);
 //		new RequirementPredictWindow(null);
