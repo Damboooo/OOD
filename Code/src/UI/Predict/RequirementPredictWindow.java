@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
 
-public class RequirementPredictWindow extends UI.Employee.UserWindow {
+public class RequirementPredictWindow extends UserWindow {
 
     private JLabel[] modulesNameLabel = new JLabel[100];
     private Resource[] resources;

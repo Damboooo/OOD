@@ -8,20 +8,20 @@ import javax.swing.*;
 import ProjectManagement.Module;
 import ResourceManagement.User;
 
-public class ProjectModuleListWindow extends UI.Employee.UserWindow {
+public class   ProjectModuleListWindow extends UserWindow{
+	
+	private Module[] modules = new Module[6];
+//	private JLabel[] labels = new JLabel[6];
+	private JButton[] editButton = new JButton[6];
+	
+	private JButton addModuleButton;
+	private JLabel label;
+	private JButton searchButton;
+	private JTextField searchTextField;
 
-    private Module[] modules = new Module[6];
-    //	private JLabel[] labels = new JLabel[6];
-    private JButton[] editButton = new JButton[6];
-
-    private JButton addModuleButton;
-    private JLabel label;
-    private JButton searchButton;
-    private JTextField searchTextField;
-
-    public ProjectModuleListWindow(User user) {
-        super(user);
-        setTitle("ثبت اطلاعات تغییر ماژول ها");
+	public ProjectModuleListWindow(User user) {
+		super(user);
+		setTitle("ثبت اطلاعات تغییر ماژول ها");
 //		Rectangle r = new Rectangle(0, 0, 100, 100);
 //		super.panel.add(r);
 

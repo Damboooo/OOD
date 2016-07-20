@@ -6,7 +6,7 @@ import javax.swing.*;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
 
-public class ProjectModuleWindow extends UI.Employee.UserWindow {
+public class ProjectModuleWindow extends UserWindow {
 
 
     private JButton editButton;

@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import ResourceManagement.User;
 
 
-public class ReportMainWindow extends UI.Employee.UserWindow {
+public class ReportMainWindow extends UserWindow {
 
     private JButton resourceReportButton;
     private JButton usageReportButton;

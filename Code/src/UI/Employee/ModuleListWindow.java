@@ -2,12 +2,15 @@ package UI.Employee;
 
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
 
 import ProjectManagement.Module;
 import ResourceManagement.User;
+import UI.Accounting.FirstWindow;
 
 public class ModuleListWindow extends UserWindow {
 
@@ -16,10 +19,9 @@ public class ModuleListWindow extends UserWindow {
     private JButton[] editButton = new JButton[6];
     private JButton searchButton;
     private JLabel label;
-
     private JTextField searchTextField;
-
-    public ModuleListWindow(User user) {
+    
+    public ModuleListWindow(final User user) {
         super(user);
         setTitle("ثبت اطلاعات تغییر ماژول ها");
 //		Rectangle r = new Rectangle(0, 0, 100, 100);
@@ -42,18 +44,21 @@ public class ModuleListWindow extends UserWindow {
 
 //==================================> خوندن از دیتابیس
 
-        for (int i = 0; i < 6; i++) {
-            editButton[i] = new JButton("ماژول  " + (i + 1));
-            editButton[i].setSize(180, 25);
-            editButton[i].setLocation(300, 200 + 30 * i);
-            super.panel.add(editButton[i]);
+		for (int i = 0; i < 6; i++) {
+			editButton[i] = new JButton("ماژول  "+(i+1));
+			editButton[i].setSize(180, 25);
+			editButton[i].setLocation(300,200+30*i);
+			editButton[i].addActionListener(new ActionListener() {
 
-//			labels[i] = new JLabel("نام ماژول");
-//			labels[i].setSize(120, 25);
-//			labels[i].setLocation(600,200+30*i);
-//			super.panel.add(labels[i]);
-        }
-
+			
+				public void actionPerformed(ActionEvent e) {
+					// display/center the jdialog when the button is pressed
+					EditModuleWindow em = new EditModuleWindow(new Module(),user);
+					dispose();
+				}
+			});
+			super.panel.add(editButton[i]);
+		}
     }
 
     @Override

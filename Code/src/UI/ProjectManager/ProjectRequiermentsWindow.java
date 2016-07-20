@@ -5,16 +5,18 @@ import java.util.Date;
 import javax.swing.*;
 
 import ProjectManagement.Task;
-import ResourceManagement.Requirement;
+import ResourceManagement.Resource;
 import ResourceManagement.User;
 
-public class ProjectRequiermentsWindow extends UI.Employee.UserWindow {
+public class ProjectRequiermentsWindow extends UserWindow {
 
-    //private Requierment[] modules = new Requierment[100];
-    private JButton addRequiermentButton;
-    private JLabel label;
-    private JCheckBox checkBox;
 
+	private JButton[] editButtons = new JButton[100];
+	
+	//private Requierment[] modules = new Requierment[100];
+	private JButton addRequiermentButton;
+	private JLabel label;
+	private JCheckBox checkBox;
     public ProjectRequiermentsWindow(User user) {
         super(user);
         setTitle("پنل مدیریت پروژه");
@@ -87,11 +89,11 @@ public class ProjectRequiermentsWindow extends UI.Employee.UserWindow {
     }
 
 
-    public boolean removeRequirement(Requirement requirement, Date date) {
+    public boolean removeRequirement(Resource requirement, Date date) {
         return false;
     }
 
-    public boolean editRequirement(Requirement requirement) {
+    public boolean editRequirement(Resource requirement) {
         return false;
     }
 

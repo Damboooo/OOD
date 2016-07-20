@@ -1,7 +1,13 @@
 package UI.Accounting;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 import ResourceManagement.User;
+import UI.Employee.EmployeeMainWindow;
+import UI.HeadManager.HeadManagerMainWindow;
+import UI.ProjectManager.ProjectListWindow;
 
 public class EditProfileWindow extends UserDetailsWindow {
 
@@ -22,7 +28,7 @@ public class EditProfileWindow extends UserDetailsWindow {
 //	private JRadioButton marriageStatusButton = new JRadioButton("وضعیت تاهل");
 	//private JDatePicker birthDate = new JDatePicker;=================================>
 
-	public EditProfileWindow(User user) {
+	public EditProfileWindow(final User user) {
 		super(user);
 		setTitle("ویرایش اطلاعات");
 	
@@ -55,7 +61,7 @@ public class EditProfileWindow extends UserDetailsWindow {
 				changePasswordButton.setLocation(100,20);
 				panel.add(	changePasswordButton);
 				
-				usernameLabel = new JLabel("majidK");
+				usernameLabel = new JLabel(user.getUsername());
 				usernameLabel.setSize(90, 25);
 				usernameLabel.setLocation(40,20);
 				panel.add(usernameLabel);
@@ -64,11 +70,49 @@ public class EditProfileWindow extends UserDetailsWindow {
 	 	firstButton = new JButton("ثبت اطلاعات");
 	 	firstButton.setSize(90, 25);
 	 	firstButton.setLocation(500,40+30*13);
+	 	firstButton.addActionListener(new ActionListener() {
+
+
+			public void actionPerformed(ActionEvent e) {
+				ProjectListWindow pl;
+				HeadManagerMainWindow hm;
+				EmployeeMainWindow em;
+				// display/center the jdialog when the button is pressed
+				if (usernameLabel.getText().toCharArray().length == 0)
+					return;
+				if (usernameLabel.getText().toCharArray()[0] == 'm')
+					pl = new ProjectListWindow(new User());
+				else if (usernameLabel.getText().toCharArray()[0] == 'h')
+					hm = new HeadManagerMainWindow(user);
+				else
+					em = new EmployeeMainWindow(new User());
+				dispose();
+			}
+		});
 		panel.add(firstButton);
 		
 		secondButton = new JButton("انصراف");
 		secondButton.setSize(90, 25);
 		secondButton.setLocation(400,40+30*13);
+		secondButton.addActionListener(new ActionListener() {
+
+		
+			public void actionPerformed(ActionEvent e) {
+				ProjectListWindow pl;
+				HeadManagerMainWindow hm;
+				EmployeeMainWindow em;
+				// display/center the jdialog when the button is pressed
+				if (usernameLabel.getText().toCharArray().length == 0)
+					return;
+				if (usernameLabel.getText().toCharArray()[0] == 'm')
+					pl = new ProjectListWindow(new User());
+				else if (usernameLabel.getText().toCharArray()[0] == 'h')
+					hm = new HeadManagerMainWindow(user);
+				else
+					em = new EmployeeMainWindow(new User());
+				dispose();
+			}
+		});
 		panel.add(secondButton);
 		
 	}

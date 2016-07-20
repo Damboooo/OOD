@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 import ResourceManagement.User;
 
-public class PredictMainWindow extends UI.Employee.UserWindow {
+public class PredictMainWindow extends UserWindow {
 
     private JButton resourcePredictButton;
     private JButton requirementPredictButton;

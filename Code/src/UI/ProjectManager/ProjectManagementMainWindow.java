@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import ResourceManagement.User;
 
 
-public class ProjectManagementMainWindow extends UI.Employee.UserWindow {
+public class ProjectManagementMainWindow extends UserWindow {
 
 
     private JButton projectDetailsButton;

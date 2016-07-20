@@ -10,7 +10,7 @@ import javax.swing.*;
 import ProjectManagement.Module;
 import ResourceManagement.User;
 
-public class ResourcePredictWindow extends UI.Employee.UserWindow {
+public class ResourcePredictWindow extends UserWindow {
 
     private JLabel alertLabel;
     private JLabel sizeLabel;

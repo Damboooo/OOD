@@ -14,7 +14,7 @@ import ProjectManagement.Project;
 import ResourceManagement.User;
 
 
-public class ProjectDetailsWindow extends UI.Employee.UserWindow {
+public class ProjectDetailsWindow extends UserWindow {
 
     private JTextField humanResourcesTextField;
     private JTextField userCountTextField;

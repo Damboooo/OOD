@@ -3,6 +3,8 @@ package UI.Accounting;
 //import java.text.*;
 //import java.util.*;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 //
 //import org.jdatepicker.*;
@@ -55,56 +57,74 @@ public class RegisterWindow extends UserDetailsWindow {
 //		      radioPanel.add(single);
 //		      married.setSelected(true);
 
+		     
+		      
+		      
+		      
+		 createLabel("نام کاربری:" , 630-300,40);
+		 createLabel("کلمه عبور:" , 630-300,40+30*1);
+		 createLabel("تکرار کلمه عبور:" , 630-300,40+30*2);
+		 
+		passwordField1 = new JPasswordField();
+		passwordField1.setSize(120, 25);
+		passwordField1.setLocation(180,70);
+		panel.add(passwordField1);
+		
+		passwordField2 = new JPasswordField();
+		passwordField2.setSize(120, 25);
+		passwordField2.setLocation(180,100);
+		panel.add(passwordField2);
+		 
+	 	firstButton = new JButton("ثبت اطلاعات");
+	 	firstButton.setSize(90, 25);
+	 	firstButton.setLocation(500,40+30*13);
+	 	firstButton.addActionListener(new ActionListener() {
 
-        createLabel("نام کاربری:", 630 - 300, 40);
-        createLabel("کلمه عبور:", 630 - 300, 40 + 30 * 1);
-        createLabel("تکرار کلمه عبور:", 630 - 300, 40 + 30 * 2);
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				if(userNameTextField.getText().length() == 0)
+					return;
+				FirstWindow rw = new FirstWindow();
+				dispose();
+			}
+		});
+		panel.add(firstButton);
+		
+		secondButton = new JButton("انصراف");
+		secondButton.setSize(90, 25);
+		secondButton.setLocation(400,40+30*13);
+		secondButton.addActionListener(new ActionListener() {
 
-        passwordField1 = new JPasswordField();
-        passwordField1.setSize(120, 25);
-        passwordField1.setLocation(180, 70);
-        panel.add(passwordField1);
+	
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				FirstWindow rw = new FirstWindow();
+				dispose();
+			}
+		});
+		panel.add(secondButton);
+		
+	}
+	private void createLabel(String s , int x , int y){
+		JLabel label = new JLabel(s);
+		label.setSize(70,25);
+		label.setLocation(x,y);
+		panel.add(label);
+	}
+   private JTextField createTextField(String s , int x , int y ){
+		JTextField t = new JTextField(s);
+		t.setSize(120,25);
+		t.setLocation(x,y);
+		panel.add(t);
+		return t;
+	}
 
-        passwordField2 = new JPasswordField();
-        passwordField2.setSize(120, 25);
-        passwordField2.setLocation(180, 100);
-        panel.add(passwordField2);
+   public boolean register() {
+       return false;
+   }
 
-        firstButton = new JButton("ثبت اطلاعات");
-        firstButton.setSize(90, 25);
-        firstButton.setLocation(500, 40 + 30 * 13);
-        panel.add(firstButton);
+   public void cancel() {
 
-        secondButton = new JButton("انصراف");
-        secondButton.setSize(90, 25);
-        secondButton.setLocation(400, 40 + 30 * 13);
-        panel.add(secondButton);
+   }
 
-    }
-
-    private void createLabel(String s, int x, int y) {
-        JLabel label = new JLabel(s);
-        label.setSize(70, 25);
-        label.setLocation(x, y);
-        panel.add(label);
-    }
-
-    private JTextField createTextField(String s, int x, int y) {
-        JTextField t = new JTextField(s);
-        t.setSize(120, 25);
-        t.setLocation(x, y);
-        panel.add(t);
-        return t;
-    }
-
-    public boolean register() {
-        return false;
-    }
-
-    public void cancel() {
-
-    }
-
-}
- 
-
+   }
