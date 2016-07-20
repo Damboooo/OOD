@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.Stroke;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -21,15 +22,19 @@ public class NewProjectWindow extends UI.Employee.UserWindow {
 	private JTextField technologiesTextField;
 	private JTextField developementsCostsTextField;
 	private JTextField maintainanceCostsTextField;
+	private JTextField projectNameTextField;
 	private JTextField physicalResourcesTextField;
 	private JButton saveButton;
+    private JComboBox<String> typeComboBox = new JComboBox<String>();
+
 	//private JPanel panel;
 	
 	public NewProjectWindow(User user) {
 		super(user);
 		setTitle("پنل مدیریت پروژه");
-		;
-		createLabel("اطلاعات تجمیعی پروژه یک:" , 550,90);
+		
+		createLabel("مدیریت پروژه جدید" , 560,90);
+		createLabel("اطلاعات تجمیعی پروژه جدید" , 230,90);
 		createLabel("تعداد نیروی انسانی ایجاد کننده:" , 220,180+35*0);
 		createLabel("تعداد کاربران:" , 220,180+35*1);
 		createLabel("تعداد ماژول ها:" , 220,180+35*2);
@@ -39,9 +44,22 @@ public class NewProjectWindow extends UI.Employee.UserWindow {
 		createLabel("هزینه نگهداری:" , 220,180+35*5);
 		createLabel("منابع فیزیکی:" , 220,180+35*6);
 		
-//		createLabel("تعداد نیروی انسانی ایجاد کننده:" , 220,180+35*0);
-//		createLabel("تعداد کاربران:" , 220,180+35*1);
+		createLabel("نام پروژه:" , 570,180+35*0);
+     	createLabel("مدیر پروژه:" , 570,180+35*1);
+     	
+     	typeComboBox.addItem("مجید قوسیان");
+		typeComboBox.addItem("شمیم کریمی");
+		typeComboBox.addItem("زهرا کاکاوند");
+		panel.add(typeComboBox);
+		typeComboBox.setSelectedIndex(0);
+		typeComboBox.setBounds(430, 180+35, 110, 20);
 		
+		 projectNameTextField= createTextField("", 430, 180);
+		 
+			saveButton = new JButton("تخصیص منبع");
+			saveButton.setSize(100, 25);
+			saveButton.setLocation(440,180+80);
+			panel.add(saveButton);
 		
 		 humanResourcesTextField= createTextField("28", 100, 180+35*0);
 		 userCountTextField= createTextField("100-250", 100, 180+35*1);
