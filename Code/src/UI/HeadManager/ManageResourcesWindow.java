@@ -114,4 +114,8 @@ public class ManageResourcesWindow extends UI.Employee.UserWindow {
 
 	
 
+    public void addResource() {
+
+    }
+
 }

@@ -51,4 +51,13 @@ public class ManageAccountsWindow extends UI.Employee.UserWindow {
 	
 
 
+
+    public void viewAccountsList() {
+
+    }
+
+    public void viewGuestsList() {
+
+    }
+
 }

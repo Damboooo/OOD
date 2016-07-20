@@ -7,11 +7,11 @@ import ResourceManagement.Resource;
 import ResourceManagement.User;
 
 public class ProjectsListWindow  extends UI.Employee.UserWindow {
-	
+
 	private Module[] projects = new Module[6];
 	private JLabel[] labels = new JLabel[6];
 	private JButton[] editButton = new JButton[6];
-	
+
 	private JLabel label;
 	private JButton searchButton;
 	private JTextField searchTextField;
@@ -36,7 +36,7 @@ public class ProjectsListWindow  extends UI.Employee.UserWindow {
 		searchButton.setSize(65, 25);
 		searchButton.setLocation(200, 150);
 		super.panel.add(searchButton);
-		
+
 
 		// ==================================> خوندن از دیتابیس
 
@@ -80,5 +80,13 @@ public class ProjectsListWindow  extends UI.Employee.UserWindow {
 		g2.drawRect(115, 150, 560, 370);
 
 	}
+
+    public void editProject(Project project) {
+
+    }
+
+    public void search() {
+
+    }
 
 }

@@ -8,72 +8,83 @@ import javax.swing.*;
 import ProjectManagement.Module;
 import ResourceManagement.User;
 
-public class   ProjectModuleListWindow extends UI.Employee.UserWindow{
-	
-	private Module[] modules = new Module[6];
-//	private JLabel[] labels = new JLabel[6];
-	private JButton[] editButton = new JButton[6];
-	
-	private JButton addModuleButton;
-	private JLabel label;
-	private JButton searchButton;
-	private JTextField searchTextField;
+public class ProjectModuleListWindow extends UI.Employee.UserWindow {
 
-	public ProjectModuleListWindow(User user) {
-		super(user);
-		setTitle("ثبت اطلاعات تغییر ماژول ها");
+    private Module[] modules = new Module[6];
+    //	private JLabel[] labels = new JLabel[6];
+    private JButton[] editButton = new JButton[6];
+
+    private JButton addModuleButton;
+    private JLabel label;
+    private JButton searchButton;
+    private JTextField searchTextField;
+
+    public ProjectModuleListWindow(User user) {
+        super(user);
+        setTitle("ثبت اطلاعات تغییر ماژول ها");
 //		Rectangle r = new Rectangle(0, 0, 100, 100);
 //		super.panel.add(r);
-		
-		label = new JLabel("لیست ماژول ها");
-		label.setSize(60, 25);
-		label.setLocation(600,90);
-		super.panel.add(label);
-		
-		searchTextField = new JTextField();
-		searchTextField.setSize(300, 25);
-		searchTextField.setLocation(250,150);
-		super.panel.add(searchTextField);
-		
-		searchButton = new JButton("جستجو");
-		searchButton.setSize(65, 25);
-		searchButton.setLocation(200,150);
-		super.panel.add(searchButton);
-		 
+
+        label = new JLabel("لیست ماژول ها");
+        label.setSize(60, 25);
+        label.setLocation(600, 90);
+        super.panel.add(label);
+
+        searchTextField = new JTextField();
+        searchTextField.setSize(300, 25);
+        searchTextField.setLocation(250, 150);
+        super.panel.add(searchTextField);
+
+        searchButton = new JButton("جستجو");
+        searchButton.setSize(65, 25);
+        searchButton.setLocation(200, 150);
+        super.panel.add(searchButton);
+
 //==================================> خوندن از دیتابیس
 
-		for (int i = 0; i < 6; i++) {
-			editButton[i] = new JButton("ماژول  "+(i+1));
-			editButton[i].setSize(180, 25);
-			editButton[i].setLocation(300,200+30*i);
-			super.panel.add(editButton[i]);
-			
+        for (int i = 0; i < 6; i++) {
+            editButton[i] = new JButton("ماژول  " + (i + 1));
+            editButton[i].setSize(180, 25);
+            editButton[i].setLocation(300, 200 + 30 * i);
+            super.panel.add(editButton[i]);
+
 //			labels[i] = new JLabel("نام ماژول");
 //			labels[i].setSize(120, 25);
 //			labels[i].setLocation(600,200+30*i);
 //			super.panel.add(labels[i]);
-		}
-		
-		addModuleButton = new JButton("افزودن ماژول جدید");
-		addModuleButton.setSize(280, 25);
-		addModuleButton.setLocation(250,200+30*8);
-		super.panel.add(addModuleButton);
-		
+        }
 
-	}
-	
-	 @Override
-	    public void paint(Graphics g){
-		    Graphics2D g2 = (Graphics2D) g;
-	        super.paint(g2);
-	        Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[]{5}, 0);
-	        g2.setStroke(dashed);
-	        g2.drawRect(115, 150, 560, 370);
-	        
-	    }
-	
-	}
-	
+        addModuleButton = new JButton("افزودن ماژول جدید");
+        addModuleButton.setSize(280, 25);
+        addModuleButton.setLocation(250, 200 + 30 * 8);
+        super.panel.add(addModuleButton);
+
+
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        super.paint(g2);
+        Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[]{5}, 0);
+        g2.setStroke(dashed);
+        g2.drawRect(115, 150, 560, 370);
+
+    }
+
+    public void editModule(Module module) {
+
+    }
+
+    public void search() {
+
+    }
+
+    public void addModule() {
+
+    }
+}
+
 	
 
 

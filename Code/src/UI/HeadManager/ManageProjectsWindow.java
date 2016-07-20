@@ -51,4 +51,13 @@ public class ManageProjectsWindow extends UI.Employee.UserWindow {
 	
 
 
+
+    public void viewProjectsList() {
+
+    }
+
+    public void newProject() {
+
+    }
+
 }

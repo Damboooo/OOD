@@ -105,4 +105,8 @@ public class NewProjectWindow extends UI.Employee.UserWindow {
 	    }
 	
 
+
+    public boolean saveChanges() {
+        return false;
+    }
 }
