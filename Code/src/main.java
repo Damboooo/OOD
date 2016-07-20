@@ -16,11 +16,9 @@ import UI.Report.*;
 //import UI.Report.ResourceReportWindow;
 public class main {
 
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
-		new FirstWindow();
+		//new FirstWindow();
 //		new RegisterWindow(new User());
 	//	ResourcePredictWindow x = new ResourcePredictWindow(new User());
 		
@@ -59,9 +57,6 @@ public class main {
 //		new ProjectRequiermentsWindow(null);
 	//	new ProjectResourcesWindow(null);
 		//new ProjectRequiermentsWindow(null);
-<<<<<<< HEAD
-//		new ProjectRequiermentsWindow(null);
-=======
 	//	new ProjectRequiermentsWindow(null);
 	//	new AccountsListWindow(null);
 	//	new GuestsListWindow(null);
@@ -71,7 +66,7 @@ public class main {
 	//	new ManageResourcesWindow(null);
 	//	new AddProjectResourcesWindow(null);
 			new NewProjectWindow(null);
->>>>>>> da3250a40c72b06599a49a9f79d56bf54bf33520
+
 	}
 
 }
