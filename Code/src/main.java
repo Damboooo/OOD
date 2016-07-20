@@ -51,7 +51,10 @@ public class main {
 	//	new ProjectListWindow (null);
 		//new ProjectManagementMainWindow(null);
 		//new ProjectModuleListWindow(null);
-		new ProjectDetailsWindow(null);
+		//new ProjectDetailsWindow(null);
+		//new ProjectModuleWindow(null);
+		//new ProjectResourceWindow(null);
+		new ProjectRequiermentsWindow(null);
 	}
 
 }
