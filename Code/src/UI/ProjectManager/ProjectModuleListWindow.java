@@ -13,10 +13,10 @@ public class   ProjectModuleListWindow extends UI.Employee.UserWindow{
 	private Module[] modules = new Module[6];
 //	private JLabel[] labels = new JLabel[6];
 	private JButton[] editButton = new JButton[6];
-	private JButton searchButton;
+	
 	private JButton addModuleButton;
 	private JLabel label;
-	
+	private JButton searchButton;
 	private JTextField searchTextField;
 
 	public ProjectModuleListWindow(User user) {

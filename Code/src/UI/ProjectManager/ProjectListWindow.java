@@ -11,14 +11,14 @@ public class ProjectListWindow  extends UI.Employee.UserWindow {
 	private Module[] projects = new Module[6];
 	private JLabel[] labels = new JLabel[6];
 	private JButton[] editButton = new JButton[6];
-	private JButton searchButton;
+	
 	private JLabel label;
-
+	private JButton searchButton;
 	private JTextField searchTextField;
 
 	public ProjectListWindow (User user) {
 		super(user);
-		setTitle("پنل مدیریت");
+		setTitle("پنل مدیریت پروژه");
 		// Rectangle r = new Rectangle(0, 0, 100, 100);
 		// super.panel.add(r);
 
