@@ -11,7 +11,7 @@ import ResourceManagement.Resource;
 import ResourceManagement.User;
 
 
-public class ReportWindow extends UI.Employee.UserWindow {
+public class ReportWindow extends UserWindow {
 
 	JCheckBox[] checkBoxes = new JCheckBox[100];
 	JCheckBox checkBoxAll = new JCheckBox();

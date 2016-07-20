@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 import ResourceManagement.User;
 
 
-public class ProjectRequiermentsWindow extends UI.Employee.UserWindow {
+public class ProjectRequiermentsWindow extends UserWindow {
 
 
 	private JButton[] editButtons = new JButton[100];

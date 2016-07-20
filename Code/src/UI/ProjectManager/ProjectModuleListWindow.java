@@ -8,7 +8,7 @@ import javax.swing.*;
 import ProjectManagement.Module;
 import ResourceManagement.User;
 
-public class   ProjectModuleListWindow extends UI.Employee.UserWindow{
+public class   ProjectModuleListWindow extends UserWindow{
 	
 	private Module[] modules = new Module[6];
 //	private JLabel[] labels = new JLabel[6];

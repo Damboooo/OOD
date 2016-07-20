@@ -2,6 +2,9 @@ package UI.Accounting;
 //import java.awt.*;
 //import java.text.*;
 //import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 //
 //import org.jdatepicker.*;
@@ -76,11 +79,31 @@ public class RegisterWindow extends UserDetailsWindow {
 	 	firstButton = new JButton("ثبت اطلاعات");
 	 	firstButton.setSize(90, 25);
 	 	firstButton.setLocation(500,40+30*13);
+	 	firstButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				if(userNameTextField.getText().length() == 0)
+					return;
+				FirstWindow rw = new FirstWindow();
+				dispose();
+			}
+		});
 		panel.add(firstButton);
 		
 		secondButton = new JButton("انصراف");
 		secondButton.setSize(90, 25);
 		secondButton.setLocation(400,40+30*13);
+		secondButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				FirstWindow rw = new FirstWindow();
+				dispose();
+			}
+		});
 		panel.add(secondButton);
 		
 	}
