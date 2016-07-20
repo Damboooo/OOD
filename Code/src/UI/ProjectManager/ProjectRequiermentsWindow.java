@@ -31,8 +31,8 @@ public class   ProjectRequiermentsWindow extends UI.Employee.UserWindow{
 		
 		createLabel("نیازمندی یک" , 510,150+30);
 		createLabel("نیازمندی دو" , 510,150+60);
-		createLabel("نیازمندی دو" , 510,150+90);
-		createLabel("نیازمندی دو" , 510,150+120);
+		createLabel("نیازمندی سه" , 510,150+90);
+		createLabel("نیازمندی چهار" , 510,150+120);
 		createbutton("مشاهده و ویرایش", 180, 150+30);
 		createbutton("مشاهده و ویرایش", 180,150+60 );
 		createbutton("مشاهده و ویرایش", 180,150+90 );
