@@ -46,7 +46,7 @@ public class   GuestsListWindow extends UI.Employee.UserWindow{
 		createbutton("تایید", 180+40,150+90,60 );
 		createbutton("تایید", 180+40,150+120,60);
 
-
+    }
     public void editUserProfile(User user) {
 
     }
@@ -63,8 +63,8 @@ public class   GuestsListWindow extends UI.Employee.UserWindow{
 
     }
 
-}
-	}
+
+	
     private void createLabel(String s , int x , int y ){
 		JLabel t = new JLabel(s);
 		t.setSize(250,25);

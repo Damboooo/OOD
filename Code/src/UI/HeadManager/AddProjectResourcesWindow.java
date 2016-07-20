@@ -112,15 +112,7 @@ public class AddProjectResourcesWindow extends UI.Employee.UserWindow {
 		}
 
 
-import ProjectManagement.Project;
-import ResourceManagement.User;
 
-public class AddProjectResourcesWindow {
-
-
-    public AddProjectResourcesWindow(User user, Project project) {
-
-    }
 
     public boolean saveChanges() {
         return false;

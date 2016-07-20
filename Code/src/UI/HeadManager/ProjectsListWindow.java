@@ -3,6 +3,7 @@ package UI.HeadManager;
 import java.awt.*;
 import javax.swing.*;
 import ProjectManagement.Module;
+import ProjectManagement.Project;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
 
