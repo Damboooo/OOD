@@ -19,7 +19,7 @@ public class main {
 	
 	public static void main(String[] args) {
 
-		//new FirstWindow();
+		new FirstWindow();
 
 //		new RegisterWindow(new User());
 	//	ResourcePredictWindow x = new ResourcePredictWindow(new User());
@@ -69,9 +69,10 @@ public class main {
 	//	new EditUserProfileWindow(null);
 		//new ManageProjectsWindow(null);
 		//new ProjectsListWindow(null);
-	//	new ManageResourcesWindow(null);
+		//new ManageResourcesWindow(null);
 	//	new AddProjectResourcesWindow(null);
-			new NewProjectWindow(null);
+		//	new NewProjectWindow(null);
+		new EditResourceWindow(null,null);
 
 	}
 
