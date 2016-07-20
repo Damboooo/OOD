@@ -80,7 +80,6 @@ public class RegisterWindow extends UserDetailsWindow {
 	 	firstButton.setLocation(500,40+30*13);
 	 	firstButton.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				if(userNameTextField.getText().length() == 0)
@@ -96,7 +95,7 @@ public class RegisterWindow extends UserDetailsWindow {
 		secondButton.setLocation(400,40+30*13);
 		secondButton.addActionListener(new ActionListener() {
 
-			@Override
+	
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				FirstWindow rw = new FirstWindow();

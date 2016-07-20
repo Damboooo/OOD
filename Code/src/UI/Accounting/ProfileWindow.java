@@ -12,7 +12,6 @@ import UI.ProjectManager.ProjectListWindow;
 
 public class ProfileWindow extends UserDetailsWindow {
 
-<<<<<<< HEAD
 	private JLabel nameLabel = new JLabel();
 	private JLabel familyNameLabel = new JLabel();
 	private JLabel nationalIDLabel = new JLabel();
@@ -69,7 +68,6 @@ public class ProfileWindow extends UserDetailsWindow {
 		changePasswordButton.setLocation(100, 20);
 		changePasswordButton.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				ChangePasswordWindow cp = new ChangePasswordWindow(user);
@@ -88,7 +86,6 @@ public class ProfileWindow extends UserDetailsWindow {
 		firstButton.setLocation(500, 40 + 30 * 13);
 		firstButton.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				ProjectListWindow pl;
 				HeadManagerMainWindow hm;
@@ -112,7 +109,6 @@ public class ProfileWindow extends UserDetailsWindow {
 		secondButton.setLocation(400, 40 + 30 * 13);
 		secondButton.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				ProjectListWindow pl;
 				HeadManagerMainWindow hm;
@@ -141,20 +137,20 @@ public class ProfileWindow extends UserDetailsWindow {
 		return t;
 	}
 
-    public void edit() {
+	public void edit() {
 
-    }
+	}
 
-    public void back() {
+	public void back() {
 
-    }
+	}
 
-    public boolean confirmEdit() {
-        return false;
-    }
+	public boolean confirmEdit() {
+		return false;
+	}
 
-    public void changePassword() {
+	public void changePassword() {
 
-    }
+	}
 
 }

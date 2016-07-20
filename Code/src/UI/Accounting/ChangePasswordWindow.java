@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-<<<<<<< HEAD
 import ResourceManagement.User;
 
 public class ChangePasswordWindow  extends JFrame{
@@ -50,7 +49,7 @@ public class ChangePasswordWindow  extends JFrame{
 		acceptButton.setLocation(200,115);
 		acceptButton.addActionListener(new ActionListener() {
 
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				ProfileWindow cp = new ProfileWindow(user);
@@ -64,7 +63,7 @@ public class ChangePasswordWindow  extends JFrame{
 		cancelButton.setLocation(100,115);
 		cancelButton.addActionListener(new ActionListener() {
 
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				ProfileWindow cp = new ProfileWindow(user);

@@ -40,7 +40,7 @@ public class ForgetPasswordWindow  extends JFrame{
 		sendEmailButton.setLocation(200,85);
 		sendEmailButton.addActionListener(new ActionListener() {
 
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				alertLabel = new JLabel("نام کاربری و کلمه عبور به ایمیل شما ارسال شد!");
@@ -56,7 +56,7 @@ public class ForgetPasswordWindow  extends JFrame{
 		returnButton.setLocation(100,85);
 		returnButton.addActionListener(new ActionListener() {
 
-			@Override
+	
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				LoginWindow lw = new LoginWindow();

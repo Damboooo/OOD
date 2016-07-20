@@ -70,6 +70,7 @@ public class AddProjectResourcesWindow extends UI.Employee.UserWindow {
 
 	}
 
+
 	private void createLabel(String s, int x, int y) {
 		JLabel t = new JLabel(s);
 		t.setSize(200, 25);
@@ -101,7 +102,6 @@ public class AddProjectResourcesWindow extends UI.Employee.UserWindow {
 	}
 
 	private JCheckBox createCheckBox(String s, int x, int y, int size) {
-
 		JCheckBox checkBoxes = new JCheckBox(s);
 		checkBoxes.setSize(size, 20);
 		checkBoxes.setLocation(x, y);

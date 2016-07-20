@@ -50,7 +50,7 @@ public class ModuleListWindow extends UserWindow {
 			editButton[i].setLocation(300,200+30*i);
 			editButton[i].addActionListener(new ActionListener() {
 
-				@Override
+			
 				public void actionPerformed(ActionEvent e) {
 					// display/center the jdialog when the button is pressed
 					EditModuleWindow em = new EditModuleWindow(new Module(),user);

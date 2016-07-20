@@ -16,9 +16,7 @@ public class GuestsListWindow extends UI.Employee.UserWindow {
 		// Rectangle r = new Rectangle(0, 0, 100, 100);
 		// super.panel.add(r);
 
-		createLabel(
-				"فهرست حساب های کاربری تایید نشده",
-				500, 90 - 50);
+		createLabel("فهرست حساب های کاربری تایید نشده", 500, 90 - 50);
 
 		searchTextField = new JTextField();
 		searchTextField.setSize(300, 25);
@@ -49,7 +47,6 @@ public class GuestsListWindow extends UI.Employee.UserWindow {
 	}
 
 	public void editUserProfile(User user) {
-
 	}
 
 	public void acceptAccount(User user) {
@@ -61,7 +58,6 @@ public class GuestsListWindow extends UI.Employee.UserWindow {
 	}
 
 	public void search() {
-
 	}
 
 	private void createLabel(String s, int x, int y) {
@@ -84,8 +80,7 @@ public class GuestsListWindow extends UI.Employee.UserWindow {
 	public void paint(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		super.paint(g2);
-		Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT,
-				BasicStroke.JOIN_BEVEL, 0, new float[] { 5 }, 0);
+		Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[] { 5 }, 0);
 		g2.setStroke(dashed);
 		g2.drawRect(115, 150, 560, 370);
 

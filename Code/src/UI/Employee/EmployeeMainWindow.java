@@ -23,7 +23,7 @@ public class EmployeeMainWindow extends UserWindow {
 		changeModuleInformationButton.setLocation(300,230);
 		changeModuleInformationButton.addActionListener(new ActionListener() {
 
-			@Override
+			
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				ModuleListWindow rw = new ModuleListWindow(user);
@@ -37,7 +37,7 @@ public class EmployeeMainWindow extends UserWindow {
 		tasksListButton.setLocation(300,280);
 		tasksListButton.addActionListener(new ActionListener() {
 
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				TasksListWindow rw = new TasksListWindow(user);

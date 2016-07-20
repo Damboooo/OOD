@@ -72,7 +72,7 @@ public class EditProfileWindow extends UserDetailsWindow {
 	 	firstButton.setLocation(500,40+30*13);
 	 	firstButton.addActionListener(new ActionListener() {
 
-			@Override
+
 			public void actionPerformed(ActionEvent e) {
 				ProjectListWindow pl;
 				HeadManagerMainWindow hm;
@@ -96,7 +96,7 @@ public class EditProfileWindow extends UserDetailsWindow {
 		secondButton.setLocation(400,40+30*13);
 		secondButton.addActionListener(new ActionListener() {
 
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				ProjectListWindow pl;
 				HeadManagerMainWindow hm;

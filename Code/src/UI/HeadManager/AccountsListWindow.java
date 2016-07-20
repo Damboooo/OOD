@@ -43,6 +43,32 @@ public class   AccountsListWindow extends UI.Employee.UserWindow{
 
 	}
 
+    private void createLabel(String s , int x , int y ){
+    	 		JLabel t = new JLabel(s);
+    	 		t.setSize(200,25);
+    	 		t.setLocation(x,y+50);
+    	 		panel.add(t);
+    	 		//return t;
+    	 	}
+    	 
+    	 
+    	    private JButton createbutton(String s , int x , int y , int size ){
+    	 		JButton t = new JButton(s);
+    	 		t.setSize(size,20);
+    	 		t.setLocation(x,y+50);
+    	 		panel.add(t);
+    	 		return t;
+    	 	}
+    	 
+    	 	 @Override
+    	 	    public void paint(Graphics g){
+    	 		    Graphics2D g2 = (Graphics2D) g;
+    	 	        super.paint(g2);
+    	 	        Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[]{5}, 0);
+    	 	        g2.setStroke(dashed);
+    	 	        g2.drawRect(115, 150, 560, 370);
+    	 	        
+    	 	    }
     public void editUserProfile(User user) {
 
     }

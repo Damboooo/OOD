@@ -56,7 +56,6 @@ public class TasksListWindow extends UserWindow {
 		saveButton.setLocation(100, 520);
 		saveButton.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				EmployeeMainWindow em = new EmployeeMainWindow(user);

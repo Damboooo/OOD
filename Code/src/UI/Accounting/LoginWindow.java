@@ -58,7 +58,6 @@ public class LoginWindow extends JFrame {
 		loginButton.setLocation(100, 70);
 		loginButton.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 				ProjectListWindow pl;
 				HeadManagerMainWindow hm;
@@ -83,7 +82,6 @@ public class LoginWindow extends JFrame {
 		cancelButton.setSize(80, 25);
 		cancelButton.setLocation(200, 70);
 		cancelButton.addActionListener(new ActionListener() {
-			
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				FirstWindow rw = new FirstWindow();
@@ -97,7 +95,7 @@ public class LoginWindow extends JFrame {
 		retrieveButton.setLocation(100, 115);
 		retrieveButton.addActionListener(new ActionListener() {
 
-			@Override
+		
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				ForgetPasswordWindow fp = new ForgetPasswordWindow();

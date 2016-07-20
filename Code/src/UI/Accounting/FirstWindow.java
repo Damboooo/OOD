@@ -27,7 +27,7 @@ public class FirstWindow extends JFrame{
 		loginButton.addActionListener(new ActionListener()
 		{
 
-		@Override
+			
 		  public void actionPerformed(ActionEvent e)
 		  {
 		    // display/center the jdialog when the button is pressed
@@ -43,7 +43,7 @@ public class FirstWindow extends JFrame{
 		registerButton.addActionListener(new ActionListener()
 		{
 
-		@Override
+			
 		  public void actionPerformed(ActionEvent e)
 		  {
 		    // display/center the jdialog when the button is pressed
