@@ -12,7 +12,7 @@ import ResourceManagement.User;
 public class   ModuleListWindow extends UserWindow{
 	
 	private Module[] modules = new Module[6];
-	private JLabel[] labels = new JLabel[6];
+	//private JLabel[] labels = new JLabel[6];
 	private JButton[] editButton = new JButton[6];
 	private JButton searchButton;
 	private JLabel label;
