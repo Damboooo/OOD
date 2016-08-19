@@ -1,108 +1,185 @@
 package DB;
 
-import java.util.List;
-
 import ProjectManagement.Module;
 import ProjectManagement.Project;
 import ProjectManagement.Task;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
 
+import java.sql.*;
+import java.util.List;
+
 public class DBManager {
 
-	private Project getProject(int id) {
-		return null;
-	}
+    private Connection connect = null;
+    private Statement statement = null;
+    private PreparedStatement preparedStatement = null;
+    private ResultSet resultSet = null;
 
-	private List<Project> getProjects() {
-		return null;
-	}
+    public DBManager() {
 
-	private List<Project> getProjects(User user) {
-		return null;
-	}
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connect = DriverManager
+                    .getConnection("jdbc:mysql://localhost/ood_database?"
+                            + "user=root&password=1234");
 
-	private List<Project> getUndedicatedProjects() {
-		return null;
-	}
+        } catch (Exception ignored) {
 
-	private void addProject(Project project) {
+        }
+    }
 
-	}
+    public void addUser(User user) {
 
-	private User getUesr(int id) {
-		return null;
-	}
+        try {
 
-	private List<User> getProjectManagers() {
-		return null;
-	}
+            preparedStatement = connect
+                    .prepareStatement("insert into ood_database.test values (?, ?)");
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.setString(2, user.getUsername());
+            preparedStatement.executeUpdate();
 
-	private List<Resource> getRequirements(int ProjectID) {
-		return null;
-	}
+        } catch (Exception ignored) {
 
-	private List<Resource> getResources(int ProjectID) {
-		return null;
-	}
+        } finally {
+            close();
+        }
+    }
 
-	private List<Resource> getResources(int ProjectID, int from, int to) {
-		return null;
-	}
+    public User getUser(int id) {
 
-	private List<Resource> getResources() {
-		return null;
-	}
+        try {
 
-	private Resource getResource(int ResourceID) {
-		return null;
-	}
+            String query = "select * from ood_database.test where ID=?";
 
-	private List<Task> getTasks(int projectID) {
-		return null;
-	}
+            preparedStatement = connect
+                    .prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
 
-	private Task getTask(int taskID) {
-		return null;
-	}
 
-	private void addUser(User user) {
+            User user = new User();
+            user.setId(id);
 
-	}
 
-	private void addResource(Resource resource) {
+            while (resultSet.next()) {
+                user.setUsername(resultSet.getString("username"));
+            }
 
-	}
 
-	private void addTask(Task task) {
+            return user;
 
-	}
+        } catch (Exception ignored) {
 
-	private void addModule(Module module) {
+        } finally {
+            close();
+        }
+        return null;
+    }
 
-	}
 
-	private void updateTask(int taskID, Task task) {
+    private Project getProject(int id) {
+        return null;
+    }
 
-	}
+    private List<Project> getProjects() {
+        return null;
+    }
 
-	private void updateResource(int resourceID, Resource resource) {
+    private List<Project> getProjects(User user) {
+        return null;
+    }
 
-	}
+    private List<Project> getUndedicatedProjects() {
+        return null;
+    }
 
-	private void updateProject(int projectID, Project project) {
+    private void addProject(Project project) {
 
-	}
+    }
 
-	private void updateUser(int userID, User user) {
 
-	}
+    private List<User> getProjectManagers() {
+        return null;
+    }
 
-	private void updateModule(int moduleID, Module module) {
+    private List<Resource> getRequirements(int ProjectID) {
+        return null;
+    }
 
-	}
-	
-	private Module getModule(int moduleID) {
-		return null;
-	}
+    private List<Resource> getResources(int ProjectID) {
+        return null;
+    }
+
+    private List<Resource> getResources(int ProjectID, int from, int to) {
+        return null;
+    }
+
+    private List<Resource> getResources() {
+        return null;
+    }
+
+    private Resource getResource(int ResourceID) {
+        return null;
+    }
+
+    private List<Task> getTasks(int projectID) {
+        return null;
+    }
+
+    private Task getTask(int taskID) {
+        return null;
+    }
+
+
+    private void addResource(Resource resource) {
+
+    }
+
+    private void addTask(Task task) {
+
+    }
+
+    private void addModule(Module module) {
+
+    }
+
+    private void updateTask(int taskID, Task task) {
+
+    }
+
+    private void updateResource(int resourceID, Resource resource) {
+
+    }
+
+    private void updateProject(int projectID, Project project) {
+
+    }
+
+    private void updateUser(int userID, User user) {
+
+    }
+
+    private void updateModule(int moduleID, Module module) {
+
+    }
+
+    private Module getModule(int moduleID) {
+        return null;
+    }
+
+    private void close() {
+        try {
+            if (resultSet != null) {
+                resultSet.close();
+            }
+
+            if (statement != null) {
+                statement.close();
+            }
+
+        } catch (Exception e) {
+
+        }
+    }
 }
