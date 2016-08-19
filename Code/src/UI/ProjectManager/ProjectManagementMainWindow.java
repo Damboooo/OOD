@@ -1,10 +1,14 @@
 package UI.ProjectManager;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ResourceManagement.User;
+import UI.Accounting.FirstWindow;
 
 
 public class ProjectManagementMainWindow extends UserWindow {
@@ -17,17 +21,51 @@ public class ProjectManagementMainWindow extends UserWindow {
     private JButton projectRequirementsButton;
     //private JPanel panel;
 
-    public ProjectManagementMainWindow(User user) {
+    public ProjectManagementMainWindow(final User user) {
         super(user);
         setTitle("پنل مدیریت پروژه");
 
 
         projectDetailsButton = createbutton("اطلاعات تجمیعی پروژه", 300, 180);
-        projectModulesButton = createbutton("ماژول ها", 300, 230);
-        projectResourcesButton = createbutton("منابع", 300, 230 + 50);
-        projectTasksButton = createbutton("وظیفه ها", 300, 330);
-        projectRequirementsButton = createbutton("نیازمندی ها", 300, 330 + 50);
+        projectDetailsButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				ProjectDetailsWindow pd = new ProjectDetailsWindow(user, null);
 
+			}
+		});
+        projectModulesButton = createbutton("ماژول ها", 300, 230);
+        projectModulesButton.addActionListener(new ActionListener() {
+     			public void actionPerformed(ActionEvent e) {
+     				// display/center the jdialog when the button is pressed
+     				ProjectModuleListWindow pd = new ProjectModuleListWindow(user);
+     		
+     			}
+     		});
+        projectResourcesButton = createbutton("منابع", 300, 230 + 50);
+        projectResourcesButton.addActionListener(new ActionListener() {
+ 			public void actionPerformed(ActionEvent e) {
+ 				// display/center the jdialog when the button is pressed
+ 				ProjectResourcesWindow pd = new ProjectResourcesWindow(user);
+ 				
+ 			}
+ 		});
+        projectTasksButton = createbutton("وظیفه ها", 300, 330);
+        projectTasksButton.addActionListener(new ActionListener() {
+ 			public void actionPerformed(ActionEvent e) {
+ 				// display/center the jdialog when the button is pressed
+ 				ProjectResourcesWindow pd = new ProjectResourcesWindow(user);
+ 			
+ 			}
+ 		});
+        projectRequirementsButton = createbutton("نیازمندی ها", 300, 330 + 50);
+        projectRequirementsButton.addActionListener(new ActionListener() {
+ 			public void actionPerformed(ActionEvent e) {
+ 				// display/center the jdialog when the button is pressed
+ 				ProjectRequiermentsWindow pd = new ProjectRequiermentsWindow(user);
+ 			
+ 			}
+ 		});
 
     }
 

@@ -4,6 +4,8 @@ import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -28,6 +30,12 @@ public class UserWindow extends JFrame {
 		userProfileButton = new JButton("مدیریت صفحه شخصی");
 		logoutButton = new JButton("خروچ");
 		returnButton = new JButton("بازگشت");
+		returnButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				dispose();
+			}
+		});
 		userProfileButton.setBounds(100, 10, 180, 25);
 		panel.add(userProfileButton);
 		logoutButton.setBounds(10, 10, 80, 25);
