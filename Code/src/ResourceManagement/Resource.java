@@ -4,7 +4,7 @@ package ResourceManagement;
 public class Resource {
 
     private String name;
-    int id;
+    private int id;
 
     public String getName() {
         return name;

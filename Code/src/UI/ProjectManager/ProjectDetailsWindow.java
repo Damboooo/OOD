@@ -29,7 +29,6 @@ public class ProjectDetailsWindow extends UserWindow {
     public ProjectDetailsWindow(User user, Project project) {
         super(user);
         setTitle("پنل مدیریت پروژه");
-        ;
         createLabel("اطلاعات تجمیعی پروژه یک:", 550, 90);
         createLabel("تعداد نیروی انسانی ایجاد کننده:", 440, 180 + 35 * 0);
         createLabel("تعداد کاربران:", 440, 180 + 35 * 1);
