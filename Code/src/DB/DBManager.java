@@ -7,7 +7,10 @@ import ResourceManagement.Resource;
 import ResourceManagement.User;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
+
+import MainPackage.Main;
 
 public class DBManager {
 
@@ -25,7 +28,6 @@ public class DBManager {
                             + "user=root&password=1234");
 
         } catch (Exception ignored) {
-
         }
     }
 
@@ -40,7 +42,7 @@ public class DBManager {
             preparedStatement.executeUpdate();
 
         } catch (Exception ignored) {
-
+        	
         } finally {
             close();
         }
@@ -78,97 +80,120 @@ public class DBManager {
     }
 
 
-    private Project getProject(int id) {
+    public Project getProject(int id) {
         return null;
     }
 
-    private List<Project> getProjects() {
+    public List<Project> getProjects() {
+/////////////alaki
+	List<Project> p = new ArrayList<>();
+	Project r = new Project();
+	r.setName("پروژه یک");
+	Project r2 = new Project();
+	r2.setName("پروژه دو");
+	p.add(r);
+	p.add(r2);
+
+
+    return p;
+    }
+
+    public List<Project> getProjects(User user) {
         return null;
     }
 
-    private List<Project> getProjects(User user) {
+    public List<Project> getUndedicatedProjects() {
         return null;
     }
 
-    private List<Project> getUndedicatedProjects() {
+    public void addProject(Project project) {
+
+    }
+
+
+    public List<User> getProjectManagers() {
         return null;
     }
 
-    private void addProject(Project project) {
-
-    }
-
-
-    private List<User> getProjectManagers() {
+    public List<Resource> getRequirements(int ProjectID) {
         return null;
     }
 
-    private List<Resource> getRequirements(int ProjectID) {
+    public List<Resource> getResources(int ProjectID) {
         return null;
     }
 
-    private List<Resource> getResources(int ProjectID) {
+    public List<Resource> getResources(int ProjectID, int from, int to) {
+    	return null;
+    }
+
+    public List<Resource> getResources() {
+
+    	/////////////alaki
+    	List<Resource> resources = new ArrayList<>();
+    	Resource r = new Resource();
+    	r.setName("منبع یک");
+    	Resource r2 = new Resource();
+    	r2.setName("منبع دو");
+    	Resource r3 = new Resource();
+    	r3.setName("منبع سه");
+    	resources.add(r);
+    	resources.add(r2);
+    	resources.add(r3);
+
+        return resources;
+    }
+
+    public Resource getResource(int ResourceID) {
         return null;
     }
 
-    private List<Resource> getResources(int ProjectID, int from, int to) {
+    public List<Task> getTasks(int projectID) {
         return null;
     }
 
-    private List<Resource> getResources() {
-        return null;
-    }
-
-    private Resource getResource(int ResourceID) {
-        return null;
-    }
-
-    private List<Task> getTasks(int projectID) {
-        return null;
-    }
-
-    private Task getTask(int taskID) {
+    public Task getTask(int taskID) {
         return null;
     }
 
 
-    private void addResource(Resource resource) {
+    public void addResource(Resource resource) {
 
     }
 
-    private void addTask(Task task) {
+    public void addTask(Task task) {
 
     }
 
-    private void addModule(Module module) {
+    public void addModule(Module module) {
 
     }
 
-    private void updateTask(int taskID, Task task) {
+    public void updateTask(int taskID, Task task) {
 
     }
 
-    private void updateResource(int resourceID, Resource resource) {
+    public void updateResource(int resourceID, Resource resource) {
 
     }
 
-    private void updateProject(int projectID, Project project) {
+    public void updateProject(int projectID, Project project) {
 
     }
 
-    private void updateUser(int userID, User user) {
+    public void updateUser(int userID, User user) {
 
     }
 
-    private void updateModule(int moduleID, Module module) {
+    public void updateModule(int moduleID, Module module) {
 
     }
 
-    private Module getModule(int moduleID) {
+    public Module getModule(int moduleID) {
         return null;
     }
 
-    private void close() {
+    public void close() {
         try {
             if (resultSet != null) {
                 resultSet.close();
@@ -182,4 +207,20 @@ public class DBManager {
 
         }
     }
+
+	public List<Resource> getTechnologies() {
+		/////////////alaki
+    	List<Resource> technologies = new ArrayList<>();
+    	Resource r = new Resource();
+    	r.setName("تکنولوژی یک");
+    	Resource r2 = new Resource();
+    	r2.setName("تکنولوژی دو");
+    	Resource r3 = new Resource();
+    	r3.setName("تکنولوژی سه");
+    	technologies.add(r);
+    	technologies.add(r2);
+    	technologies.add(r3);
+
+        return technologies;
+	}
 }

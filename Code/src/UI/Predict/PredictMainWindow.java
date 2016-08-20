@@ -4,12 +4,15 @@ import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import ResourceManagement.User;
+import UI.Accounting.LoginWindow;
 
 public class PredictMainWindow extends UserWindow {
 
@@ -32,12 +35,21 @@ public class PredictMainWindow extends UserWindow {
         resourcePredictButton.setSize(180, 25);
         resourcePredictButton.setLocation(300, 230);
         super.panel.add(resourcePredictButton);
+        resourcePredictButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            resourcePredict();
+            }
+        });
 
         requirementPredictButton = new JButton("پیش بینی نیازمندی های ضروری");
         requirementPredictButton.setSize(180, 25);
         requirementPredictButton.setLocation(300, 280);
         super.panel.add(requirementPredictButton);
-
+        requirementPredictButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            requirementPredict();
+            }
+        });
     }
 
     //@Override
@@ -57,10 +69,15 @@ public class PredictMainWindow extends UserWindow {
 //	}
 
     public void resourcePredict() {
+   
+        ResourcePredictWindow rpw = new ResourcePredictWindow(user);
+        dispose();
 
     }
 
     public void requirementPredict() {
+    	RequirementPredictWindow qpw = new RequirementPredictWindow(user);
+    	dispose();
 
     }
 
