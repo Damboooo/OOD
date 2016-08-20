@@ -1,28 +1,30 @@
+package Main;
 import DB.DBManager;
 import ResourceManagement.User;
+import UI.Accounting.*;
 
-public class main {
+public class Main {
 
-
+	public static DBManager dbManager;
     public static void main(String[] args) throws Exception {
 
 
-        DBManager dbManager = new DBManager();
-        User user = new User();
-        user.setId(8);
-        user.setUsername("Shamim");
-
-        dbManager.addUser(user);
-
-        User result = dbManager.getUser(1);
-
-        System.out.println(result.getUsername());
+        dbManager = new DBManager();
+//        User user = new User();
+//        user.setId(8);
+//        user.setUsername("Shamim");
+//
+//        dbManager.addUser(user);
+//
+//        User result = dbManager.getUser(1);
+//
+//        System.out.println(result.getUsername());
 
 
 //        new FirstWindow();
 
         // Accounting
-//        new ChangePasswordWindow(new User());
+        new ChangePasswordWindow(new User());
 //        new EditProfileWindow(new User());
 //        new ForgetPasswordWindow(new User());
 //        new ProfileWindow(new User());

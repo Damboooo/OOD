@@ -156,7 +156,7 @@ public class DBManager {
 
     }
 
-    private void updateUser(int userID, User user) {
+    public void updateUser(int userID, User user) {
 
     }
 
@@ -181,5 +181,14 @@ public class DBManager {
         } catch (Exception e) {
 
         }
+    }
+    
+    public static User getUserByUsername(String username){
+    	User user = new User();
+    	return user;
+    }
+    public static User getUserByEmail(String email){
+    	User user = new User();
+    	return user;
     }
 }

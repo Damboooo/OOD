@@ -10,6 +10,8 @@ import ResourceManagement.User;
 import UI.Employee.EmployeeMainWindow;
 import UI.HeadManager.HeadManagerMainWindow;
 import UI.ProjectManager.ProjectListWindow;
+import DB.DBManager;
+import Main.Main;
 
 public class LoginWindow extends JFrame {
 
@@ -59,21 +61,7 @@ public class LoginWindow extends JFrame {
 		loginButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				ProjectListWindow pl;
-				HeadManagerMainWindow hm;
-				EmployeeMainWindow em;
-				User user = new User();
-				user.setUsername(usernameTextField.getText());
-				// display/center the jdialog when the button is pressed
-				if (usernameTextField.getText().toCharArray().length == 0)
-					return;
-				if (usernameTextField.getText().toCharArray()[0] == 'm')
-					pl = new ProjectListWindow(user);
-				else if (usernameTextField.getText().toCharArray()[0] == 'h')
-					hm = new HeadManagerMainWindow(user);
-				else
-					em = new EmployeeMainWindow(user);
-				dispose();
+				login();
 			}
 		});
 		panel.add(loginButton);
@@ -83,9 +71,7 @@ public class LoginWindow extends JFrame {
 		cancelButton.setLocation(200, 70);
 		cancelButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// display/center the jdialog when the button is pressed
-				FirstWindow rw = new FirstWindow();
-				dispose();
+				cancel();
 			}
 		});
 		panel.add(cancelButton);
@@ -94,12 +80,8 @@ public class LoginWindow extends JFrame {
 		retrieveButton.setSize(180, 25);
 		retrieveButton.setLocation(100, 115);
 		retrieveButton.addActionListener(new ActionListener() {
-
-		
 			public void actionPerformed(ActionEvent e) {
-				// display/center the jdialog when the button is pressed
-				ForgetPasswordWindow fp = new ForgetPasswordWindow();
-				dispose();
+				forgetPassword();
 			}
 		});
 		panel.add(retrieveButton);
@@ -107,14 +89,51 @@ public class LoginWindow extends JFrame {
 	}
 
 	private void login() {
-
+		ProjectListWindow pl;
+		HeadManagerMainWindow hm;
+		EmployeeMainWindow em;
+		User user = Main.dbManager.getUserByUsername(usernameTextField.getText());
+		if(user.getPassword().equals(passwordLabel.getText()))
+		{
+			switch(user.getRole()){
+			case "manager":
+				pl = new ProjectListWindow(user);
+				break;
+			case "headmanager":
+				hm = new HeadManagerMainWindow(user);
+				break;
+			case "employee":
+				em = new EmployeeMainWindow(user);
+				break;
+			}
+		}
+		else
+		{
+			System.out.println("Wrong password!");
+		}
+//		User user = new User();
+//		user.setUsername(usernameTextField.getText());
+//		// display/center the jdialog when the button is pressed
+//		if (usernameTextField.getText().toCharArray().length == 0)
+//			return;
+//		if (usernameTextField.getText().toCharArray()[0] == 'm')
+//			pl = new ProjectListWindow(user);
+//		else if (usernameTextField.getText().toCharArray()[0] == 'h')
+//			hm = new HeadManagerMainWindow(user);
+//		else
+//			em = new EmployeeMainWindow(user);
+		dispose();
 	}
 
 	private void cancel() {
-
+		// display/center the jdialog when the button is pressed
+		FirstWindow rw = new FirstWindow();
+		dispose();
 	}
 
 	private void forgetPassword() {
-
+		// display/center the jdialog when the button is pressed
+		ForgetPasswordWindow fp = new ForgetPasswordWindow();
+		dispose();
 	}
 }

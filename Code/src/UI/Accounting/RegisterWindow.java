@@ -11,11 +11,11 @@ import javax.swing.*;
 //import org.jdatepicker.impl.*;
 
 import ResourceManagement.User;
-
+import Main.Main;
 public class RegisterWindow extends UserDetailsWindow {
     //   private JPanel panel = new JPanel();
     private JPasswordField passwordField1;
-    private JPasswordField passwordField2;
+    private JPasswordField passwordField2; 
     private JTextField nameTextField = new JTextField();
     private JTextField familyNameTextField = new JTextField();
     private JTextField nationalIDTextField = new JTextField();
@@ -79,13 +79,8 @@ public class RegisterWindow extends UserDetailsWindow {
 	 	firstButton.setSize(90, 25);
 	 	firstButton.setLocation(500,40+30*13);
 	 	firstButton.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
-				// display/center the jdialog when the button is pressed
-				if(userNameTextField.getText().length() == 0)
-					return;
-				FirstWindow rw = new FirstWindow();
-				dispose();
+				register();
 			}
 		});
 		panel.add(firstButton);
@@ -98,8 +93,7 @@ public class RegisterWindow extends UserDetailsWindow {
 	
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
-				FirstWindow rw = new FirstWindow();
-				dispose();
+				cancel();
 			}
 		});
 		panel.add(secondButton);
@@ -119,12 +113,35 @@ public class RegisterWindow extends UserDetailsWindow {
 		return t;
 	}
 
-   public boolean register() {
+   public boolean register(){
+	// display/center the jdialog when the button is pressed
+		//TODO if empty fields
+	   try{
+		User user = new User();
+		user.setFirstName(nameTextField.getText());
+		user.setLastName(familyNameTextField.getText());
+		user.setName(userNameTextField.getText());
+		user.setNatID(Integer.parseInt(nationalIDTextField.getText()));
+		user.setPhoneNumber(phoneNumber1.getText());
+		user.setPassword(passwordField1.getPassword().toString());
+		if(passwordField1.getPassword().equals(passwordField2.getPassword()))
+			Main.dbManager.addUser(user);
+		else
+			System.out.println("رمز مجدد را اشتباه وارد کرده اید!");
+	   }
+	   catch(Exception e){
+		   System.out.println("لطفا اطلاعات شخصی خود را کامل کنید");
+	   }
+//		if(userNameTextField.getText().length() == 0)
+//			return;
+		FirstWindow rw = new FirstWindow();
+		dispose();
        return false;
    }
 
    public void cancel() {
-
+	   FirstWindow rw = new FirstWindow();
+		dispose();
    }
 
    }

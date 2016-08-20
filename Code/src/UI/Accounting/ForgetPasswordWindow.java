@@ -5,6 +5,7 @@ import ResourceManagement.User;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import Main.Main;
 
 public class ForgetPasswordWindow extends JFrame {
 
@@ -28,7 +29,16 @@ public class ForgetPasswordWindow extends JFrame {
         add(panel);
         setVisible(true);
 
+        mailTextField = new JTextField();
+        mailTextField.setSize(120, 25);
+        mailTextField.setLocation(100, 25);
+        panel.add(mailTextField);
 
+        currentPasswordLabel = new JLabel("ایمیل:");
+        currentPasswordLabel.setSize(80, 25);
+        currentPasswordLabel.setLocation(250, 25);
+        panel.add(currentPasswordLabel);
+        
         sendEmailButton = new JButton("ارسال ایمیل");
         sendEmailButton.setSize(80, 25);
         sendEmailButton.setLocation(200, 85);
@@ -37,6 +47,8 @@ public class ForgetPasswordWindow extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
                 // display/center the jdialog when the button is pressed
+            	User user = Main.dbManager.getUserByEmail(mailTextField.getText());
+            	
                 alertLabel = new JLabel("نام کاربری و کلمه عبور به ایمیل شما ارسال شد!");
                 alertLabel.setSize(280, 25);
                 alertLabel.setLocation(100, 55);
@@ -59,15 +71,6 @@ public class ForgetPasswordWindow extends JFrame {
         });
         panel.add(returnButton);
 
-        mailTextField = new JTextField();
-        mailTextField.setSize(120, 25);
-        mailTextField.setLocation(100, 25);
-        panel.add(mailTextField);
-
-        currentPasswordLabel = new JLabel("ایمیل:");
-        currentPasswordLabel.setSize(80, 25);
-        currentPasswordLabel.setLocation(250, 25);
-        panel.add(currentPasswordLabel);
 
     }
 
