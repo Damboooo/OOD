@@ -10,9 +10,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import ResourceManagement.User;
 import UI.Accounting.LoginWindow;
+import UI.Accounting.FirstWindow;
+
 
 public class PredictMainWindow extends UserWindow {
 
@@ -22,7 +23,7 @@ public class PredictMainWindow extends UserWindow {
 
     // private JPanel panel;
 
-    public PredictMainWindow(User user) {
+    public PredictMainWindow(final User user) {
         super(user);
         setTitle("پنل پیش بینی");
 
@@ -34,6 +35,12 @@ public class PredictMainWindow extends UserWindow {
         resourcePredictButton = new JButton("پیش بینی منابع");
         resourcePredictButton.setSize(180, 25);
         resourcePredictButton.setLocation(300, 230);
+        resourcePredictButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				ResourcePredictWindow rw = new ResourcePredictWindow(user);
+			}
+		});
         super.panel.add(resourcePredictButton);
         resourcePredictButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -44,6 +51,12 @@ public class PredictMainWindow extends UserWindow {
         requirementPredictButton = new JButton("پیش بینی نیازمندی های ضروری");
         requirementPredictButton.setSize(180, 25);
         requirementPredictButton.setLocation(300, 280);
+        requirementPredictButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				RequirementPredictWindow rw = new RequirementPredictWindow(user);
+			}
+		});
         super.panel.add(requirementPredictButton);
         requirementPredictButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
