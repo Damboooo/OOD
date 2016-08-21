@@ -24,10 +24,10 @@ public class Main {
 //        new FirstWindow();
 
         // Accounting
-//        new ChangePasswordWindow(new User());
+//        new ChangePasswordWindow(dbManager.getUser(1));
 //        new EditProfileWindow(dbManager.getUser(1));
-        new ForgetPasswordWindow();
-//        new ProfileWindow(new User());
+//        new ForgetPasswordWindow();
+//        new ProfileWindow(dbManager.getUser(1));
 //        new RegisterWindow(new User());
 //        new UserDetailsWindow(new User());
 

@@ -14,6 +14,11 @@ import UI.ProjectManager.ProjectListWindow;
 
 public class EditProfileWindow extends UserDetailsWindow {
 
+
+	private ProjectListWindow pl;
+	private HeadManagerMainWindow hm;
+	private EmployeeMainWindow em;
+	
 	private JTextField nameTextField = new JTextField();
 	private JTextField familyNameTextField = new JTextField();
 	private JTextField nationalIDTextField = new JTextField();
@@ -43,10 +48,8 @@ public class EditProfileWindow extends UserDetailsWindow {
 		nationalIDTextField = createTextField("", 480, 40 + 30 * 2);
 		nationalIDTextField.setText(user.getNatID() + "");
 
-		phoneNumber1 = createTextField("", 480, 40 + 30 * 9);
-		phoneNumber1.setText(user.getPhoneNumber());
-		phoneNumber2 = createTextField("", 330, 40 + 30 * 9);
-		phoneNumber2.setText(user.getPhoneNumber());
+		phoneNumber1 = createTextField(user.getPhoneNumber1(), 480, 40 + 30 * 9);
+		phoneNumber2 = createTextField(user.getPhoneNumber2(), 330, 40 + 30 * 9);
 
 		// JPanel radioPanel = new JPanel();
 		// add(radioPanel);
@@ -89,7 +92,7 @@ public class EditProfileWindow extends UserDetailsWindow {
 		secondButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				// cancel();
+				cancel(user);
 			}
 		});
 		panel.add(secondButton);
@@ -108,26 +111,43 @@ public class EditProfileWindow extends UserDetailsWindow {
 		user.setFirstName(nameTextField.getText());
 		user.setLastName(familyNameTextField.getText());
 		user.setNatID(Integer.parseInt(nationalIDTextField.getText()));
-		user.setPhoneNumber(phoneNumber1.getText());
-		Main.dbManager.updateUser(user.getId(), user);
+		user.setPhoneNumber1(phoneNumber1.getText());
+		user.setPhoneNumber2(phoneNumber2.getText());
+		Main.dbManager.updateUser(user.getId(), user);switch (user.getRole()) {
+		case "مدیر":
+			pl = new ProjectListWindow(new User());
+			break;
+		case "مدیرکل":
+			hm = new HeadManagerMainWindow(user);
+			break;
+		case "کارمند":
+			em = new EmployeeMainWindow(new User());
+			break;
+		default:
+			em = new EmployeeMainWindow(new User());
+			break;
+		}
+		dispose();
 		return true;
 	}
 
 	public boolean cancel(User user) {
-		ProjectListWindow pl;
-		HeadManagerMainWindow hm;
-		EmployeeMainWindow em;
 		// display/center the jdialog when the button is pressed
-		if (usernameLabel.getText().toCharArray().length == 0)
-			return false;
-		if (usernameLabel.getText().toCharArray()[0] == 'm')
+		switch (user.getRole()) {
+		case "مدیر":
 			pl = new ProjectListWindow(new User());
-		else if (usernameLabel.getText().toCharArray()[0] == 'h')
+			break;
+		case "مدیرکل":
 			hm = new HeadManagerMainWindow(user);
-		else
+			break;
+		case "کارمند":
 			em = new EmployeeMainWindow(new User());
+			break;
+		default:
+			em = new EmployeeMainWindow(new User());
+			break;
+		}
 		dispose();
 		return false;
 	}
-
 }

@@ -13,7 +13,8 @@ public class User extends Resource {
     private String licence;
     private int jobExperience;
     private String role;
-    private String phoneNumber;
+    private String phoneNumber1;
+    private String phoneNumber2;
     private String username;
     private String password;
 
@@ -129,14 +130,21 @@ public class User extends Resource {
         this.role = role;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhoneNumber1() {
+        return phoneNumber1;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber1(String phoneNumber) {
+        this.phoneNumber1 = phoneNumber;
     }
 
+    public String getPhoneNumber2() {
+        return phoneNumber2;
+    }
+
+    public void setPhoneNumber2(String phoneNumber) {
+        this.phoneNumber2 = phoneNumber;
+    }
     public String getUsername() {
         return username;
     }

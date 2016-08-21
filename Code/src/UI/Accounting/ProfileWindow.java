@@ -12,6 +12,13 @@ import UI.ProjectManager.ProjectListWindow;
 
 public class ProfileWindow extends UserDetailsWindow {
 
+
+	private ProjectListWindow pl;
+	private HeadManagerMainWindow hm;
+	private EmployeeMainWindow em;
+	
+	private User user;
+	
 	private JLabel nameLabel = new JLabel();
 	private JLabel familyNameLabel = new JLabel();
 	private JLabel nationalIDLabel = new JLabel();
@@ -34,16 +41,17 @@ public class ProfileWindow extends UserDetailsWindow {
 
 	public ProfileWindow(final User user) {
 		super(user);
+		this.user = user;
 		setTitle("ویرایش اطلاعات");
 		createLabel("سمت:", 630, 10);
 
-		jobPositionLabel = createLabel("مدیر پروژه", 480, 10);
-		nameLabel = createLabel("مجید", 480, 40);
-		familyNameLabel = createLabel("کریمی", 480, 40 + 30);
-		nationalIDLabel = createLabel("4120429202", 480, 40 + 30 * 2);
+		jobPositionLabel = createLabel(user.getRole(), 480, 10);
+		nameLabel = createLabel(user.getFirstName(), 480, 40);
+		familyNameLabel = createLabel(user.getLastName(), 480, 40 + 30);
+		nationalIDLabel = createLabel(user.getNatID()+"", 480, 40 + 30 * 2);
 
-		phoneNumber1 = createLabel("09330667372", 480, 40 + 30 * 9);
-		phoneNumber2 = createLabel("09357689038", 330, 40 + 30 * 9);
+		phoneNumber1 = createLabel(user.getPhoneNumber1(), 480, 40 + 30 * 9);
+		phoneNumber2 = createLabel(user.getPhoneNumber2(), 330, 40 + 30 * 9);
 		jobExperienceLabel = createLabel("2.5", 480, 40 + 30 * 10);
 		jobExperienceLabel = createLabel("2.5", 480, 40 + 30 * 10);
 		createLabel("سابقه کار", 630, 40 + 30 * 10);
@@ -69,9 +77,7 @@ public class ProfileWindow extends UserDetailsWindow {
 		changePasswordButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				// display/center the jdialog when the button is pressed
-				ChangePasswordWindow cp = new ChangePasswordWindow(user);
-				dispose();
+				changePassword();
 			}
 		});
 		panel.add(changePasswordButton);
@@ -87,19 +93,7 @@ public class ProfileWindow extends UserDetailsWindow {
 		firstButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				ProjectListWindow pl;
-				HeadManagerMainWindow hm;
-				EmployeeMainWindow em;
-				// display/center the jdialog when the button is pressed
-				if (usernameLabel.getText().toCharArray().length == 0)
-					return;
-				if (usernameLabel.getText().toCharArray()[0] == 'm')
-					pl = new ProjectListWindow(new User());
-				else if (usernameLabel.getText().toCharArray()[0] == 'h')
-					hm = new HeadManagerMainWindow(user);
-				else
-					em = new EmployeeMainWindow(new User());
-				dispose();
+				edit();
 			}
 		});
 		panel.add(firstButton);
@@ -110,19 +104,7 @@ public class ProfileWindow extends UserDetailsWindow {
 		secondButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				ProjectListWindow pl;
-				HeadManagerMainWindow hm;
-				EmployeeMainWindow em;
-				// display/center the jdialog when the button is pressed
-				if (usernameLabel.getText().toCharArray().length == 0)
-					return;
-				if (usernameLabel.getText().toCharArray()[0] == 'm')
-					pl = new ProjectListWindow(new User());
-				else if (usernameLabel.getText().toCharArray()[0] == 'h')
-					hm = new HeadManagerMainWindow(user);
-				else
-					em = new EmployeeMainWindow(new User());
-				dispose();
+				back();
 			}
 		});
 		panel.add(secondButton);
@@ -138,19 +120,33 @@ public class ProfileWindow extends UserDetailsWindow {
 	}
 
 	public void edit() {
-
+		EditProfileWindow editProfileWindow = new EditProfileWindow(user);
+		dispose();
 	}
 
 	public void back() {
-
-	}
-
-	public boolean confirmEdit() {
-		return false;
+		// display/center the jdialog when the button is pressed
+		switch (user.getRole()) {
+		case "مدیر":
+			pl = new ProjectListWindow(new User());
+			break;
+		case "مدیرکل":
+			hm = new HeadManagerMainWindow(user);
+			break;
+		case "کارمند":
+			em = new EmployeeMainWindow(new User());
+			break;
+		default:
+			em = new EmployeeMainWindow(new User());
+			break;
+		}
+		dispose();
 	}
 
 	public void changePassword() {
-
+		// display/center the jdialog when the button is pressed
+		ChangePasswordWindow cp = new ChangePasswordWindow(user);
+		dispose();
 	}
 
 }

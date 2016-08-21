@@ -82,7 +82,8 @@ public class DBManager {
             user.setUsername("ALA");
             user.setNatID(2);
             user.setPassword("1234");
-            user.setPhoneNumber("0912456789");
+            user.setPhoneNumber1("0912456789");
+            user.setPhoneNumber2("0215678976");
             user.setRole("Modir");
                      
             return user;
@@ -241,7 +242,8 @@ public class DBManager {
         user.setUsername("ALA");
         user.setNatID(2);
         user.setPassword("1234");
-        user.setPhoneNumber("0912456789");
+        user.setPhoneNumber1("0912456789");
+        user.setPhoneNumber2("0215678987");
         user.setRole("Modir");
                  
         return user;
