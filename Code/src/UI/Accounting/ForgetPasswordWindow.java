@@ -20,6 +20,7 @@ public class ForgetPasswordWindow extends JFrame {
 
 
     public ForgetPasswordWindow() {
+        this.user = user;
         //setLayout(null);
         setTitle("بازیابی نام کاربری و کلمه عبور");
         setSize(400, 200);
@@ -47,12 +48,7 @@ public class ForgetPasswordWindow extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
                 // display/center the jdialog when the button is pressed
-            	User user = Main.dbManager.getUserByEmail(mailTextField.getText());
-            	
-                alertLabel = new JLabel("نام کاربری و کلمه عبور به ایمیل شما ارسال شد!");
-                alertLabel.setSize(280, 25);
-                alertLabel.setLocation(100, 55);
-                panel.add(alertLabel);
+            	sendEmail();
             }
         });
         panel.add(sendEmailButton);
@@ -74,11 +70,12 @@ public class ForgetPasswordWindow extends JFrame {
 
     }
 
-    public ForgetPasswordWindow(User user) {
-        this.user = user;
-    }
-
     public void sendEmail() {
-
+    	User user = Main.dbManager.getUserByEmail(mailTextField.getText());
+    	
+        alertLabel = new JLabel("نام کاربری و کلمه عبور به ایمیل شما ارسال شد!");
+        alertLabel.setSize(280, 25);
+        alertLabel.setLocation(100, 55);
+        panel.add(alertLabel);
     }
 }

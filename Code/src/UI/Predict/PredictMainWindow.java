@@ -10,9 +10,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import ResourceManagement.User;
+import UI.Accounting.LoginWindow;
 import UI.Accounting.FirstWindow;
+
 
 public class PredictMainWindow extends UserWindow {
 
@@ -41,6 +42,11 @@ public class PredictMainWindow extends UserWindow {
 			}
 		});
         super.panel.add(resourcePredictButton);
+        resourcePredictButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            resourcePredict();
+            }
+        });
 
         requirementPredictButton = new JButton("پیش بینی نیازمندی های ضروری");
         requirementPredictButton.setSize(180, 25);
@@ -52,7 +58,11 @@ public class PredictMainWindow extends UserWindow {
 			}
 		});
         super.panel.add(requirementPredictButton);
-
+        requirementPredictButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            requirementPredict();
+            }
+        });
     }
 
     //@Override
@@ -72,10 +82,15 @@ public class PredictMainWindow extends UserWindow {
 //	}
 
     public void resourcePredict() {
+   
+        ResourcePredictWindow rpw = new ResourcePredictWindow(user);
+        dispose();
 
     }
 
     public void requirementPredict() {
+    	RequirementPredictWindow qpw = new RequirementPredictWindow(user);
+    	dispose();
 
     }
 

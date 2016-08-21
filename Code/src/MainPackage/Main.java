@@ -1,14 +1,14 @@
-package Main;
+package MainPackage;
 import DB.DBManager;
 import ResourceManagement.User;
-import UI.Accounting.*;
+import UI.Predict.*;
 
 public class Main {
 
 	public static DBManager dbManager;
+	
     public static void main(String[] args) throws Exception {
-
-
+    	
         dbManager = new DBManager();
 //        User user = new User();
 //        user.setId(8);
@@ -16,17 +16,17 @@ public class Main {
 //
 //        dbManager.addUser(user);
 //
-//        User result = dbManager.getUser(1);
-//
+//        User result = dbManager.getUser(8);
+//        
 //        System.out.println(result.getUsername());
 
 
-//        new FirstWindow();
+//       new FirstWindow();
 
         // Accounting
 //        new ChangePasswordWindow(new User());
-//        new EditProfileWindow(dbManager.getUser(1));
-        new ForgetPasswordWindow();
+//        new EditProfileWindow(new User());
+//        new ForgetPasswordWindow(new User());
 //        new ProfileWindow(new User());
 //        new RegisterWindow(new User());
 //        new UserDetailsWindow(new User());
@@ -51,9 +51,9 @@ public class Main {
 //        new ProjectsListWindow(new User());
 
         // Predict
-//        new PredictMainWindow(new User());
-//        new RequirementPredictWindow(new User());
-//        new ResourcePredictWindow(new User());
+     // new PredictMainWindow(new User());
+   //    new RequirementPredictWindow(new User());
+      new ResourcePredictWindow(new User());
 //        new ResultPredictWindow(new User());
 
         // Report

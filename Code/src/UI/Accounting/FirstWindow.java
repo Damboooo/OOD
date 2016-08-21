@@ -28,9 +28,7 @@ public class FirstWindow extends JFrame {
 
 
             public void actionPerformed(ActionEvent e) {
-                // display/center the jdialog when the button is pressed
-                LoginWindow lw = new LoginWindow();
-                dispose();
+                login();
             }
         });
         panel.add(loginButton);
@@ -42,9 +40,7 @@ public class FirstWindow extends JFrame {
 
 
             public void actionPerformed(ActionEvent e) {
-                // display/center the jdialog when the button is pressed
-                RegisterWindow rw = new RegisterWindow(null);
-                dispose();
+            	register();
             }
         });
         panel.add(registerButton);
@@ -54,10 +50,14 @@ public class FirstWindow extends JFrame {
 
 
     private void login() {
-
+        // display/center the jdialog when the button is pressed
+        LoginWindow lw = new LoginWindow();
+        dispose();
     }
 
     private void register() {
-
+        // display/center the jdialog when the button is pressed
+        RegisterWindow rw = new RegisterWindow(null);
+        dispose();
     }
 }
