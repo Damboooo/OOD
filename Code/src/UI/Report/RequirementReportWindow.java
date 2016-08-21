@@ -16,7 +16,7 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
-import MainPackage.Main;
+import Main.Main;
 import Predict.Predict;
 import ProjectManagement.Module;
 import ProjectManagement.Project;

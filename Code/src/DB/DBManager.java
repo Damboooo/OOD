@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import MainPackage.Main;
+import Main.Main;
 
 public class DBManager {
 
@@ -262,5 +262,10 @@ public class DBManager {
     	technologies.add(r3);
 
         return technologies;
+	}
+
+	public ArrayList<Module> getModules() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

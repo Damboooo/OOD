@@ -12,7 +12,7 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
-import MainPackage.Main;
+import Main.Main;
 import ProjectManagement.Module;
 import ProjectManagement.Project;
 import ProjectManagement.Task;

@@ -8,7 +8,7 @@ import java.util.List;
 
 import javax.swing.*;
 
-import MainPackage.Main;
+import Main.Main;
 import ProjectManagement.Module;
 import ProjectManagement.Task;
 import ResourceManagement.Resource;

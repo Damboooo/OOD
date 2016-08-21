@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import MainPackage.Main;
+import Main.Main;
 import ProjectManagement.Module;
 import ProjectManagement.Project;
 import ResourceManagement.Resource;

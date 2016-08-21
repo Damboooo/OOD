@@ -4,6 +4,7 @@ import ProjectManagement.Module;
 import ResourceManagement.User;
 import UI.Accounting.*;
 import UI.Employee.EditModuleWindow;
+import UI.Employee.*;
 import UI.Predict.PredictMainWindow;
 import UI.Report.ReportMainWindow;
 
@@ -35,9 +36,10 @@ public class Main {
 //        new UserDetailsWindow(new User());
 
         // Employee
+//        dbManager.getResources();
 //        new EditModuleWindow(new Module(), dbManager.getUser(1));
-//        new EmployeeMainWindow(new User());
-//        new ModuleListWindow(new User());
+//        new EmployeeMainWindow(dbManager.getUser(1));
+        new ModuleListWindow(dbManager.getUser(1));
 //        new TasksListWindow(new User());
 
         // Head Manager
@@ -54,7 +56,7 @@ public class Main {
 //        new ProjectsListWindow(new User());
 
         // Predict
-        new PredictMainWindow(new User());
+//        new PredictMainWindow(new User());
 //        new RequirementPredictWindow(new User());
 //        new ResourcePredictWindow(new User());
 //        new ResultPredictWindow(new User());

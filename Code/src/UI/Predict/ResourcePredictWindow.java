@@ -11,7 +11,7 @@ import java.util.List;
 
 import javax.swing.*;
 
-import MainPackage.Main;
+import Main.Main;
 import Predict.Predict;
 import ProjectManagement.Module;
 import ProjectManagement.Project;
