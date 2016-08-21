@@ -5,9 +5,10 @@ import java.util.Date;
 
 public class User extends Resource {
 
+    private String email;
     private String firstName;
     private String lastName;
-    private int natID;
+    private String natID;
     private Date birthday;
     private int marriageStatus;
     private String licence;
@@ -18,52 +19,13 @@ public class User extends Resource {
     private String username;
     private String password;
 
-    public void showSpecifications() {
 
+    public String getEmail() {
+        return email;
     }
 
-    public void exit() {
-
-    }
-
-    public void sendingPasswordEmail() {
-
-    }
-
-    public void validation() {
-
-    }
-
-    public void changePassword(String password) {
-
-    }
-
-    public void changeUserPosition(int natID, String role) {
-
-    }
-
-    public void showAcceptanceRequest() {
-
-    }
-
-    public void storeChanges() {
-
-    }
-
-    public void enter() {
-
-    }
-
-    public void updateJobExperience(int jobExperience) {
-
-    }
-
-    public void showSignupForm() {
-
-    }
-
-    public void addToWaitingList() {
-
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFirstName() {
@@ -82,11 +44,11 @@ public class User extends Resource {
         this.lastName = lastName;
     }
 
-    public int getNatID() {
+    public String getNatID() {
         return natID;
     }
 
-    public void setNatID(int natID) {
+    public void setNatID(String natID) {
         this.natID = natID;
     }
 
@@ -134,17 +96,18 @@ public class User extends Resource {
         return phoneNumber1;
     }
 
-    public void setPhoneNumber1(String phoneNumber) {
-        this.phoneNumber1 = phoneNumber;
+    public void setPhoneNumber1(String phoneNumber1) {
+        this.phoneNumber1 = phoneNumber1;
     }
 
     public String getPhoneNumber2() {
         return phoneNumber2;
     }
 
-    public void setPhoneNumber2(String phoneNumber) {
-        this.phoneNumber2 = phoneNumber;
+    public void setPhoneNumber2(String phoneNumber2) {
+        this.phoneNumber2 = phoneNumber2;
     }
+
     public String getUsername() {
         return username;
     }
@@ -160,4 +123,6 @@ public class User extends Resource {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }

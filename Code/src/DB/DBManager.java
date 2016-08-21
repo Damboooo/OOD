@@ -14,40 +14,40 @@ import java.util.List;
 import Main.Main;
 
 public class DBManager {
+	
+    private Connection connect = null;
+    private Statement statement = null;
+    private PreparedStatement preparedStatement = null;
+    private ResultSet resultSet = null;
 
-	private Connection connect = null;
-	private Statement statement = null;
-	private PreparedStatement preparedStatement = null;
-	private ResultSet resultSet = null;
+    public DBManager() {
 
-	public DBManager() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connect = DriverManager
+                    .getConnection("jdbc:mysql://localhost/ood_database?"
+                            + "user=root&password=1234");
 
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager
-					.getConnection("jdbc:mysql://localhost/ood_database?"
-							+ "user=root&password=1234");
+        } catch (Exception ignored) {
+        }
+    }
 
-		} catch (Exception ignored) {
-		}
-	}
+    public void addUser(User user) {
 
-	public void addUser(User user) {
+        try {
 
-		try {
+            preparedStatement = connect
+                    .prepareStatement("insert into ood_database.test values (?, ?)");
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.setString(2, user.getUsername());
+            preparedStatement.executeUpdate();
 
-			preparedStatement = connect
-					.prepareStatement("insert into ood_database.test values (?, ?)");
-			preparedStatement.setInt(1, user.getId());
-			preparedStatement.setString(2, user.getUsername());
-			preparedStatement.executeUpdate();
-
-		} catch (Exception ignored) {
-
-		} finally {
-			close();
-		}
-	}
+        } catch (Exception ignored) {
+        	
+        } finally {
+            close();
+        }
+    }
 
 	public User getUser(int id) {
 
@@ -79,7 +79,7 @@ public class DBManager {
 		user.setLicence("LISANSE");
 		user.setMarriageStatus(1);
 		user.setUsername("ALA");
-		user.setNatID(2);
+		user.setNatID("2");
 		user.setPassword("1234");
 		user.setPhoneNumber1("0912456789");
 		user.setPhoneNumber2("0215678976");
@@ -176,7 +176,7 @@ public class DBManager {
 		user.setLicence("LISANSE");
 		user.setMarriageStatus(1);
 		user.setUsername("ALA");
-		user.setNatID(2);
+		user.setNatID("2");
 		user.setPassword("1234");
 		user.setPhoneNumber1("0912456789");
 		user.setPhoneNumber2("0215678987");
@@ -262,23 +262,22 @@ public class DBManager {
 	public static User getUserByEmail(String email) {
 		// ///////////alaki
 		User user = new User();
-		user.setFirstName("Ali");
-		user.setId(1);
-		user.setBirthday(new Date());
-		user.setJobExperience(5);
-		user.setLastName("Alavi");
-		user.setLicence("LISANSE");
-		user.setMarriageStatus(1);
-		user.setUsername("ALA");
-		user.setNatID(2);
-		user.setPassword("1234");
-		user.setPhoneNumber1("0912456789");
-		user.setPhoneNumber2("0215678987");
-		user.setRole("Modir");
-
-		return user;
-	}
-
+	    user.setFirstName("Ali");
+        user.setId(1);
+        user.setBirthday(new Date());
+        user.setJobExperience(5);
+        user.setLastName("Alavi");
+        user.setLicence("LISANSE");
+        user.setMarriageStatus(1);
+        user.setUsername("ALA");
+        user.setNatID("9879782");
+        user.setPassword("1234");
+        user.setPhoneNumber1("0912456789");
+        user.setPhoneNumber2("0215678987");
+        user.setRole("Modir");
+                 
+        return user;
+    }
 	public List<Resource> getTechnologies() {
 		// ///////////alaki
 		List<Resource> technologies = new ArrayList<>();
@@ -308,7 +307,7 @@ public class DBManager {
 		user.setLicence("LISANSE");
 		user.setMarriageStatus(1);
 		user.setUsername("ALA");
-		user.setNatID(2);
+		user.setNatID("2");
 		user.setPassword("1234");
 		user.setPhoneNumber1("0912456789");
 		user.setPhoneNumber2("0215678987");
