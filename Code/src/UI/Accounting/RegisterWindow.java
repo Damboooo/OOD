@@ -121,7 +121,7 @@ public class RegisterWindow extends UserDetailsWindow {
 		user.setFirstName(nameTextField.getText());
 		user.setLastName(familyNameTextField.getText());
 		user.setName(userNameTextField.getText());
-		user.setNatID(Integer.parseInt(nationalIDTextField.getText()));
+		user.setNatID(nationalIDTextField.getText());
 		user.setPhoneNumber1(phoneNumber1.getText());
 		user.setPhoneNumber2(phoneNumber2.getText());
 		user.setPassword(passwordField1.getPassword().toString());
