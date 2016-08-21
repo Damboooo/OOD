@@ -1,7 +1,12 @@
 package Main;
 import DB.DBManager;
+import ProjectManagement.Module;
 import ResourceManagement.User;
 import UI.Accounting.*;
+import UI.Employee.EditModuleWindow;
+import UI.Employee.*;
+import UI.Predict.PredictMainWindow;
+import UI.Report.ReportMainWindow;
 
 public class Main {
 
@@ -20,7 +25,6 @@ public class Main {
 //
 //        System.out.println(result.getUsername());
 
-
 //        new FirstWindow();
 
         // Accounting
@@ -32,9 +36,10 @@ public class Main {
 //        new UserDetailsWindow(new User());
 
         // Employee
-//        new EditModuleWindow(new Module(), new User());
-//        new EmployeeMainWindow(new User());
-//        new ModuleListWindow(new User());
+//        dbManager.getResources();
+//        new EditModuleWindow(new Module(), dbManager.getUser(1));
+//        new EmployeeMainWindow(dbManager.getUser(1));
+        new ModuleListWindow(dbManager.getUser(1));
 //        new TasksListWindow(new User());
 
         // Head Manager

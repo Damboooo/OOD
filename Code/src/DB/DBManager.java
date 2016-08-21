@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import MainPackage.Main;
+import Main.Main;
 
 public class DBManager {
 
@@ -80,7 +80,7 @@ public class DBManager {
             user.setLicence("LISANSE");
             user.setMarriageStatus(1);
             user.setUsername("ALA");
-            user.setNatID(2);
+            user.setNatID("lkjsdc");
             user.setPassword("1234");
             user.setPhoneNumber1("0912456789");
             user.setPhoneNumber2("0215678976");
@@ -243,7 +243,7 @@ public class DBManager {
         user.setLicence("LISANSE");
         user.setMarriageStatus(1);
         user.setUsername("ALA");
-        user.setNatID(2);
+        user.setNatID("9879782");
         user.setPassword("1234");
         user.setPhoneNumber1("0912456789");
         user.setPhoneNumber2("0215678987");
@@ -265,5 +265,10 @@ public class DBManager {
     	technologies.add(r3);
 
         return technologies;
+	}
+
+	public ArrayList<Module> getModules() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

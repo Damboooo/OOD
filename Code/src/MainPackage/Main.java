@@ -1,26 +1,16 @@
 package MainPackage;
+
 import DB.DBManager;
 import ResourceManagement.User;
 import UI.Predict.*;
-import UI.Report.ReportMainWindow;
 
 public class Main {
 
-	public static DBManager dbManager;
-	
-    public static void main(String[] args) throws Exception {
-    	
-        dbManager = new DBManager();
-//        User user = new User();
-//        user.setId(8);
-//        user.setUsername("Shamim");
-//
-//        dbManager.addUser(user);
-//
-//        User result = dbManager.getUser(8);
-//        
-//        System.out.println(result.getUsername());
+    public static DBManager dbManager;
 
+    public static void main(String[] args) throws Exception {
+
+        DatabaseTest databaseTest = new DatabaseTest();
 
 //       new FirstWindow();
 
@@ -52,13 +42,13 @@ public class Main {
 //        new ProjectsListWindow(new User());
 
         // Predict
-     // new PredictMainWindow(new User());
-   //    new RequirementPredictWindow(new User());
-   //   new ResourcePredictWindow(new User());
+        new PredictMainWindow(new User());
+        //    new RequirementPredictWindow(new User());
+        //   new ResourcePredictWindow(new User());
 //        new ResultPredictWindow(new User());
 
         // Report
-       new ReportMainWindow(new User());
+//        new ReportMainWindow(new User());
 //        new ReportWindow(new User());
 //        new RequirementReportWindow(new User());
 //        new UsageReportWindow(new User());

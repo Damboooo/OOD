@@ -3,17 +3,17 @@ package ProjectManagement;
 
 import ResourceManagement.Resource;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+import Main.Main;
 public class Module {
 
+	private int moduleId;
     private String name;
-    private List<String> changeList;
-    private Date startTime;
-    private Date endTime;
-    private List<Resource> resourceList;
-
+    private List<Change> changeList;
+    private ArrayList<Resource> resourceList;
+    
     public void showChangeModulesFields(){
 
     }
@@ -26,35 +26,32 @@ public class Module {
         this.name = name;
     }
 
-    public List<String> getChangeList() {
+    public List<Change> getChangeList() {
         return changeList;
     }
 
-    public void setChangeList(List<String> changeList) {
+    public void setChangeList(List<Change> changeList) {
         this.changeList = changeList;
     }
-
-    public Date getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public List<Resource> getResourceList() {
+    
+    public ArrayList<Resource> getResourceList() {
         return resourceList;
     }
 
-    public void setResourceList(List<Resource> resourceList) {
+    public void setResourceList(ArrayList<Resource> resourceList) {
         this.resourceList = resourceList;
     }
+
+	public int getModuleId() {
+		return moduleId;
+	}
+
+	public void setModuleId(int moduleId) {
+		this.moduleId = moduleId;
+	}
+	public void addChange(Change change)
+	{
+		changeList.add(change);
+		Main.dbManager.updateModule(moduleId, this);
+	}
 }

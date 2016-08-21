@@ -1,7 +1,7 @@
 package UI.Predict;
 
 import java.awt.BasicStroke;
-import MainPackage.Main;
+import Main.Main;
 import Predict.Predict;
 import ProjectManagement.Project;
 
@@ -54,7 +54,8 @@ public class RequirementPredictWindow extends UserWindow {
 		// resourceTextField.setHorizontalAlignment(SwingConstants.RIGHT);
 		// panel.add(resourceTextField);
 
-		List<Resource> resources = Main.dbManager.getResources();
+		List<Resource> resources = Main.dbManager.
+				getResources();
 		for (int i = 0; i < resources.size(); i++) {
 			resourceComboBox.addItem(resources.get(i).getName());
 		}

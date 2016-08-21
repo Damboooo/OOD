@@ -15,7 +15,7 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
-import MainPackage.Main;
+import Main.Main;
 import ProjectManagement.Module;
 import ProjectManagement.Project;
 import ProjectManagement.Task;
@@ -126,7 +126,7 @@ public class UsageReportWindow extends ReportWindow {
 			if (checkBoxes[i].isSelected()) {
 //				selectedProjects.add(checkBoxes[i].getText());
 				for (int j = 0; j < projects.get(i).getResourceList().size(); j++) {
-					if(projects.get(i).getResourceList().get(j).getName().contains(resources.get(i).getName())){
+					if(projects.get(i).getResourceList().get(j).getResource().getName().contains(resources.get(i).getName())){
 						
 //						model.addRow(new Object[]{
 //								
@@ -134,7 +134,8 @@ public class UsageReportWindow extends ReportWindow {
 //								resources.get(i).getName()
 //								});
 //					
-				}}
+				}
+				}
 //				resourceList = resourceList.substring(0,resourceList.length()-2);
 			
 
