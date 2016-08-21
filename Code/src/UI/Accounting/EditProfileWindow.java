@@ -15,6 +15,7 @@ import UI.ProjectManager.ProjectListWindow;
 public class EditProfileWindow extends UserDetailsWindow {
 
 
+	private int controler;
     private ProjectListWindow pl;
     private HeadManagerMainWindow hm;
     private EmployeeMainWindow em;
@@ -37,9 +38,11 @@ public class EditProfileWindow extends UserDetailsWindow {
     // private JDatePicker birthDate = new
     // JDatePicker;=================================>
 
-    public EditProfileWindow(final User user) {
+    public EditProfileWindow(final User user, int controler) {
         super(user);
         setTitle("ویرایش اطلاعات");
+        
+        this.controler = controler;
 
         nameTextField = createTextField("", 480, 40);
         nameTextField.setText(user.getFirstName());
@@ -108,6 +111,11 @@ public class EditProfileWindow extends UserDetailsWindow {
     }
 
     public boolean confirm(User user) {
+    	if(controler == 1)
+    	{
+    		dispose();
+    		return false;
+    	}
         user.setFirstName(nameTextField.getText());
         user.setLastName(familyNameTextField.getText());
         user.setNatID(nationalIDTextField.getText());
@@ -133,6 +141,11 @@ public class EditProfileWindow extends UserDetailsWindow {
     }
 
     public boolean cancel(User user) {
+    	if(controler == 1)
+    	{
+    		dispose();
+    		return false;
+    	}
         // display/center the jdialog when the button is pressed
         switch (user.getRole()) {
             case "مدیر":

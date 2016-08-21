@@ -4,6 +4,8 @@ import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -22,8 +24,17 @@ public class ManageProjectsWindow extends UI.Employee.UserWindow {
 		setTitle("پنل مدیریت ");
 		
 		projectsListButton = createbutton("مشاهده فهرست پروژه ها" , 300,230+50);
+		projectsListButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				viewProjectsList();
+			}
+		});
 		newProjectButton = createbutton("ایجاد پروژه جدید" , 300,330);
-
+		newProjectButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				newProject();
+			}
+		});
 		JLabel t = new JLabel("مدیریت پروژه ها");
 		t.setSize(120,25);
 		t.setLocation(550,90);
@@ -53,11 +64,11 @@ public class ManageProjectsWindow extends UI.Employee.UserWindow {
 
 
     public void viewProjectsList() {
-
+    	new ProjectsListWindow(user);
     }
 
     public void newProject() {
-
+    	new NewProjectWindow(user);
     }
 
 }

@@ -4,6 +4,8 @@ import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -17,12 +19,22 @@ public class ManageAccountsWindow extends UI.Employee.UserWindow {
 
 	//private JPanel panel;
 	
-	public ManageAccountsWindow(User user) {
+	public ManageAccountsWindow(final User user) {
 		super(user);
 		setTitle("پنل مدیریت ");
 		
 		accountsListButton = createbutton("مشاهده فهرست حساب های کاربری" , 300,230+50);
 		guestsListButton = createbutton("مشاهده فهرست کاربران تایید نشده" , 300,330);
+		accountsListButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				viewAccountsList();
+			}
+		});
+		guestsListButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				viewGuestsList();
+			}
+		});
 
 		JLabel t = new JLabel("مدیریت حساب های کاربری");
 		t.setSize(120,25);
@@ -53,11 +65,11 @@ public class ManageAccountsWindow extends UI.Employee.UserWindow {
 
 
     public void viewAccountsList() {
-
+    	new AccountsListWindow(user);
     }
 
     public void viewGuestsList() {
-
+    	new GuestsListWindow(user);
     }
 
 }

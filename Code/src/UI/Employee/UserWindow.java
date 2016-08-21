@@ -15,7 +15,7 @@ import ResourceManagement.User;
 import UI.Accounting.ProfileWindow;
 
 public class UserWindow extends JFrame {
-	User user;
+	protected User user;
 	private JButton userProfileButton;
 	private JButton logoutButton;
 	private JButton returnButton;
@@ -34,7 +34,6 @@ public class UserWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				new ProfileWindow(user);
-				dispose();
 			}
 		});
 		logoutButton = new JButton("خروچ");

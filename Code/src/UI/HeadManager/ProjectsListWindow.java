@@ -1,28 +1,37 @@
 package UI.HeadManager;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 import javax.swing.*;
 import ProjectManagement.Module;
 import ProjectManagement.Project;
+import ProjectManagement.ProjectCatalogue;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
+import UI.ProjectManager.ProjectDetailsWindow;
 
 public class ProjectsListWindow  extends UI.Employee.UserWindow {
 
-	private Module[] projects = new Module[6];
 	private JLabel[] labels = new JLabel[6];
-	private JButton[] editButton = new JButton[6];
-
+	private ArrayList<JButton> editButtons = new ArrayList<>();
+	private int counter;
+	
 	private JLabel label;
 	private JButton searchButton;
 	private JTextField searchTextField;
-
+	private ArrayList<Project> projects;
+	
 	public ProjectsListWindow (User user) {
 		super(user);
 		setTitle("پنل مدیریت پروژه");
 		// Rectangle r = new Rectangle(0, 0, 100, 100);
 		// super.panel.add(r);
 
+		projects = ProjectCatalogue.getInstance().getProjectList();
+		
 		label = new JLabel("لیست پروژه ها");
 		label.setSize(60, 25);
 		label.setLocation(600, 90);
@@ -41,25 +50,19 @@ public class ProjectsListWindow  extends UI.Employee.UserWindow {
 
 		// ==================================> خوندن از دیتابیس
 
-		for (int i = 0; i < 6; i++) {
-			editButton[i] = new JButton("پروژه " + (i + 1));
-			editButton[i].setSize(180, 25);
-			editButton[i].setLocation(300, 200 + 30 * i);
-			super.panel.add(editButton[i]);
-
-			// labels[i] = new JLabel("نام ماژول");
-			// labels[i].setSize(120, 25);
-			// labels[i].setLocation(600,200+30*i);
-			// super.panel.add(labels[i]);
+		for (counter = 0; counter < projects.size(); counter++) {
+			JButton editButton = new JButton(projects.get(counter).getName());
+			editButton.setSize(180, 25);
+			editButton.setLocation(300, 200 + 30 * counter);
+			editButton.addActionListener(new ActionListener() {
+				Project p = projects.get(counter);
+				public void actionPerformed(ActionEvent e) {
+					editProject(p);
+				}
+			});
+			editButtons.add(editButton);
+			super.panel.add(editButton);
 		}
-
-	}
-
-	private boolean addResources() {
-		return false;
-	}
-
-	private void predict() {
 
 	}
 
@@ -83,7 +86,7 @@ public class ProjectsListWindow  extends UI.Employee.UserWindow {
 	}
 
     public void editProject(Project project) {
-
+    	new ProjectDetailsWindow(user, project);
     }
 
     public void search() {

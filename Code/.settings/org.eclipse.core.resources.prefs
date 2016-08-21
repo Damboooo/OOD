@@ -4,6 +4,7 @@
 eclipse.preferences.version=1
 encoding//src/DB/DBManager.java=UTF-8
 encoding//src/ProjectManagement/Project.java=UTF-8
+encoding//src/ResourceManagement/Resource.java=UTF-8
 encoding//src/UI/Accounting/ChangePasswordWindow.java=UTF-8
 encoding//src/UI/Accounting/EditProfileWindow.java=UTF-8
 encoding//src/UI/Accounting/FirstWindow.java=UTF-8
@@ -35,7 +36,6 @@ encoding//src/UI/Predict/ResourcePredictWindow.java=UTF-8
 encoding//src/UI/Predict/ResultPredictWindow.java=UTF-8
 encoding//src/UI/Predict/UserWindow.java=UTF-8
 encoding//src/UI/ProjectManager/ProjectDetailsWindow.java=UTF-8
-encoding//src/UI/ProjectManager/ProjectListWindow.java=UTF-8
 encoding//src/UI/ProjectManager/ProjectManagementMainWindow.java=UTF-8
 encoding//src/UI/ProjectManager/ProjectModuleListWindow.java=UTF-8
 encoding//src/UI/ProjectManager/ProjectModuleWindow.java=UTF-8

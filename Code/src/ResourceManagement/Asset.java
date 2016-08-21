@@ -4,7 +4,7 @@ package ResourceManagement;
 import java.util.Date;
 import java.util.List;
 
-public class Asset {
+public class Asset extends Resource {
 
     private List<Date> freeTimes;
     private String type;

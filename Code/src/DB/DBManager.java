@@ -103,9 +103,9 @@ public class DBManager {
 		// ///////////alaki
 		List<Project> p = new ArrayList<>();
 		Project r = new Project();
-		r.setName("پروژه یک");
+		r.setName("پروژه همراه اول");
 		Project r2 = new Project();
-		r2.setName("پروژه دو");
+		r2.setName("پروژه پیامک رسان پیشرو");
 		p.add(r);
 		p.add(r2);
 
@@ -158,7 +158,10 @@ public class DBManager {
 	}
 
 	public Resource getResource(int ResourceID) {
-		return null;
+		Resource resource = new Resource();
+		resource.setId(11);
+		resource.setName("دیتابیس");
+		return resource;
 	}
 
 	public List<Task> getTasks(int projectID) {
@@ -328,5 +331,31 @@ public class DBManager {
 		m.add(m2);
 		m.add(m3);
 		return m;
+	}
+
+	public ArrayList<User> getUsers() {
+		ArrayList<User> users = new ArrayList<>();
+		User user = new User();
+		user.setFirstName("مریم");
+		user.setLastName("غضنفری");
+		user.setUsername("damboooo");
+		users.add(user);
+		User user1 = new User();
+		user1.setFirstName("میرزا");
+		user1.setLastName("کوچک خانی");
+		user1.setUsername("jimboooo");
+		users.add(user1);
+		User user2 = new User();
+		user2.setFirstName("عباس");
+		user2.setLastName("عبوس");
+		user2.setUsername("zknazana");
+		users.add(user2);
+		return users;
+		// TODO Auto-generated method stub
+	}
+
+	public void removeUser(User user) {
+		// TODO Auto-generated method stub
+		
 	}
 }

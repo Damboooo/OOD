@@ -1,10 +1,16 @@
 package Main;
 import DB.DBManager;
 import ProjectManagement.Module;
+import ProjectManagement.Project;
+import ResourceManagement.Resource;
 import ResourceManagement.User;
 import UI.Accounting.*;
 import UI.Employee.*;
+import UI.HeadManager.*;
 import UI.Predict.PredictMainWindow;
+import UI.ProjectManager.ProjectDetailsWindow;
+import UI.ProjectManager.ProjectManagementMainWindow;
+import UI.ProjectManager.ProjectModuleListWindow;
 import UI.ProjectManager.ProjectModuleWindow;
 import UI.Report.ReportMainWindow;
 
@@ -29,7 +35,7 @@ public class Main {
 
         // Accounting
 //        new ChangePasswordWindow(dbManager.getUser(1));
-//        new EditProfileWindow(dbManager.getUser(1));
+//        new EditProfileWindow(dbManager.getUser(1),0);
 //        new ForgetPasswordWindow();
 //        new ProfileWindow(dbManager.getUser(1));
 //        new RegisterWindow(new User());
@@ -40,12 +46,12 @@ public class Main {
 //        new EditModuleWindow(new Module(), dbManager.getUser(1));
 //        new EmployeeMainWindow(dbManager.getUser(1));
 //        new ModuleListWindow(dbManager.getUser(1));
-        new TasksListWindow(dbManager.getUser(1));
+//        new TasksListWindow(dbManager.getUser(1));
 
         // Head Manager
 //        new AccountsListWindow(new User());
 //        new AddProjectResourcesWindow(new User());
-//        new EditResourceWindow(new User(), new Resource());
+//        new EditResourceWindow(dbManager.getUser(1), dbManager.getResource(1));
 //        new EditUserProfileWindow(new User());
 //        new GuestsListWindow(new User());
 //        new HeadManagerMainWindow(new User());
@@ -68,7 +74,10 @@ public class Main {
 //        new UsageReportWindow(new User());
 
         //Project Manager
-//        new ProjectModuleWindow(new User());
-
+//        new ProjectModuleWindow(dbManager.getUser(1));
+//        new ProjectDetailsWindow(dbManager.getUser(1), new Project());
+//        new ProjectsListWindow(dbManager.getUser(1));
+//        new ProjectManagementMainWindow(dbManager.getUser(1));
+        new ProjectModuleListWindow(dbManager.getUser(1));
     }
 }

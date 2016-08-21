@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import ResourceManagement.User;
 
 public class UserWindow extends JFrame {
-	User user;
+	protected User user;
 	private JButton userProfileButton;
 	private JButton logoutButton;
 	private JButton returnButton;

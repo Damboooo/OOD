@@ -4,6 +4,8 @@ import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -26,7 +28,7 @@ public class ProjectDetailsWindow extends UserWindow {
     private JButton saveButton;
     //private JPanel panel;
 
-    public ProjectDetailsWindow(User user, Project project) {
+    public ProjectDetailsWindow(User user, final Project project) {
         super(user);
         setTitle("پنل مدیریت پروژه");
         createLabel("اطلاعات تجمیعی پروژه یک:", 550, 90);
@@ -39,10 +41,12 @@ public class ProjectDetailsWindow extends UserWindow {
         createLabel("هزینه نگهداری:", 440, 180 + 35 * 5);
         createLabel("منابع فیزیکی:", 440, 180 + 35 * 6);
 
-        humanResourcesTextField = createTextField("28", 220, 180 + 35 * 0);
-        userCountTextField = createTextField("100-250", 220, 180 + 35 * 1);
-        moduleCountTextField = createTextField("16", 220, 180 + 35 * 2);
-        technologiesTextField = createTextField("Django-MySQL-Html/CSS", 220, 180 + 35 * 3);
+        humanResourcesTextField = createTextField(project.getHumanResourceList().size()+"", 220, 180 + 35 * 0);
+        humanResourcesTextField.setEditable(false);
+        userCountTextField = createTextField(project.getNumberOfUsers()+"", 220, 180 + 35 * 1);
+        moduleCountTextField = createTextField(project.getModuleList().size()+"", 220, 180 + 35 * 2);
+        moduleCountTextField.setEditable(false);
+        technologiesTextField = createTextField(project.getTechnologies(), 220, 180 + 35 * 3);
         developementsCostsTextField = createTextField("یک میلیارد تومان", 220, 180 + 35 * 4);
         maintainanceCostsTextField = createTextField("-", 220, 180 + 35 * 5);
         physicalResourcesTextField = createTextField("سرور - دیتابیس", 220, 180 + 35 * 6);
@@ -50,6 +54,11 @@ public class ProjectDetailsWindow extends UserWindow {
         saveButton = new JButton("ثبت تغییرات");
         saveButton.setSize(80, 25);
         saveButton.setLocation(100, 520);
+        saveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				confirmChanges(project);
+			}
+		});
         panel.add(saveButton);
 
 
@@ -81,11 +90,10 @@ public class ProjectDetailsWindow extends UserWindow {
 
     }
 
-    public void edit() {
+    public boolean confirmChanges(Project project) {
+    	project.setNumberOfUsers(Integer.parseInt(userCountTextField.getText()));
+    	project.setTechnologies(technologiesTextField.getText());
 
-    }
-
-    public boolean confirmChanges() {
         return false;
     }
 

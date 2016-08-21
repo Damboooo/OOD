@@ -3,19 +3,21 @@ package ProjectManagement;
 
 import ResourceManagement.User;
 
+import java.util.ArrayList;
 import java.util.List;
-
+import Main.Main;
 public class ProjectCatalogue {
 
     private static ProjectCatalogue projectCatalogue = new ProjectCatalogue();
 
-    private List<Project> projectList;
+    private static ArrayList<Project> projectList;
 
     public static ProjectCatalogue getInstance() {
+    	projectList = (ArrayList<Project>)Main.dbManager.getProjects();
         return projectCatalogue;
     }
 
-    public List<Project> getProjectList() {
+    public ArrayList<Project> getProjectList() {
         return projectList;
     }
 

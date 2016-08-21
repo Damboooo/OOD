@@ -120,26 +120,12 @@ public class ProfileWindow extends UserDetailsWindow {
 	}
 
 	public void edit() {
-		EditProfileWindow editProfileWindow = new EditProfileWindow(user);
+		EditProfileWindow editProfileWindow = new EditProfileWindow(user,0);
 		dispose();
 	}
 
 	public void back() {
 		// display/center the jdialog when the button is pressed
-		switch (user.getRole()) {
-		case "مدیر":
-			pl = new ProjectListWindow(new User());
-			break;
-		case "مدیرکل":
-			hm = new HeadManagerMainWindow(user);
-			break;
-		case "کارمند":
-			em = new EmployeeMainWindow(new User());
-			break;
-		default:
-			em = new EmployeeMainWindow(new User());
-			break;
-		}
 		dispose();
 	}
 

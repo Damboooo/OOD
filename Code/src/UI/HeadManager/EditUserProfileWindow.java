@@ -1,13 +1,18 @@
 package UI.HeadManager;
 
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 import ResourceManagement.User;
+import ResourceManagement.UserCatalogue;
 
 public class EditUserProfileWindow extends UI.Accounting.UserDetailsWindow {
 
-
+	private User user;
+	
     private JLabel nameLabel = new JLabel();
     private JLabel familyNameLabel = new JLabel();
     private JLabel nationalIDLabel = new JLabel();
@@ -25,24 +30,26 @@ public class EditUserProfileWindow extends UI.Accounting.UserDetailsWindow {
 //	private JRadioButton marriageStatusButton = new JRadioButton("وضعیت تاهل");
     //private JDatePicker birthDate = new JDatePicker;=================================>
 
-    public EditUserProfileWindow(User user) {
+    public EditUserProfileWindow(final User user) {
         super(user);
+        
+        this.user = user;
         setTitle("ویرایش اطلاعات");
         createLabel("سمت:", 630, 10);
 
-        jobPositionTextfield = new JTextField("مدیر پروژه");
+        jobPositionTextfield = new JTextField(user.getRole());
         jobPositionTextfield.setSize(120, 25);
         jobPositionTextfield.setLocation(470, 10);
         panel.add(jobPositionTextfield);
 
-        nameLabel = createLabel("مجید", 480, 40);
-        familyNameLabel = createLabel("کریمی", 480, 40 + 30);
-        nationalIDLabel = createLabel("4120429202", 480, 40 + 30 * 2);
+        nameLabel = createLabel(user.getFirstName(), 480, 40);
+        familyNameLabel = createLabel(user.getLastName(), 480, 40 + 30);
+        nationalIDLabel = createLabel(user.getNatID(), 480, 40 + 30 * 2);
 
-        phoneNumber1 = createLabel("09330667372", 480, 40 + 30 * 9);
-        phoneNumber2 = createLabel("09357689038", 330, 40 + 30 * 9);
-        jobExperienceLabel = createLabel("2.5", 480, 40 + 30 * 10);
-        jobExperienceLabel = createLabel("2.5", 480, 40 + 30 * 10);
+        phoneNumber1 = createLabel(user.getPhoneNumber1(), 480, 40 + 30 * 9);
+        phoneNumber2 = createLabel(user.getPhoneNumber2(), 330, 40 + 30 * 9);
+        jobExperienceLabel = createLabel(user.getJobExperience()+"", 480, 40 + 30 * 10);
+        jobExperienceLabel = createLabel(user.getJobExperience()+"", 480, 40 + 30 * 10);
         createLabel("سابقه کار", 630, 40 + 30 * 10);
         jobExperienceLabel.setEnabled(false);
 
@@ -62,7 +69,7 @@ public class EditUserProfileWindow extends UI.Accounting.UserDetailsWindow {
 //		      married.setSelected(true);
 
 
-        usernameLabel = new JLabel("majidK");
+        usernameLabel = new JLabel(user.getUsername());
         usernameLabel.setSize(90, 25);
         usernameLabel.setLocation(40, 20);
         panel.add(usernameLabel);
@@ -71,11 +78,21 @@ public class EditUserProfileWindow extends UI.Accounting.UserDetailsWindow {
         firstButton = new JButton("ثبت تغییرات");
         firstButton.setSize(110, 25);
         firstButton.setLocation(500, 40 + 30 * 13);
+        firstButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				saveChanges(user);
+			}
+		});
         panel.add(firstButton);
 
         secondButton = new JButton("بازگشت");
         secondButton.setSize(90, 25);
         secondButton.setLocation(400, 40 + 30 * 13);
+        secondButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				back();
+			}
+		});
         panel.add(secondButton);
 
     }
@@ -88,12 +105,15 @@ public class EditUserProfileWindow extends UI.Accounting.UserDetailsWindow {
         return t;
     }
 
-    public boolean saveChanges() {
+    public boolean saveChanges(User user) {
+    	user.setRole(jobPositionTextfield.getText());
+    	UserCatalogue.getInstance().updateUser(user);
+    	dispose();
         return false;
     }
 
     public void back() {
-
+    	dispose();
     }
 
 }
