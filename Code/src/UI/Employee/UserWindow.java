@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import ResourceManagement.User;
+import UI.Accounting.ProfileWindow;
 
 public class UserWindow extends JFrame {
 	User user;
@@ -20,7 +21,8 @@ public class UserWindow extends JFrame {
 	private JButton returnButton;
 	protected JPanel panel;
 
-	public UserWindow(User user) {
+	public UserWindow(final User user) {
+		this.user = user;
 		setBounds(300, 100, 800, 600);
 		panel = new JPanel();
 		add(panel);
@@ -28,7 +30,20 @@ public class UserWindow extends JFrame {
 		setVisible(true);
 
 		userProfileButton = new JButton("مدیریت صفحه شخصی");
+		userProfileButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				new ProfileWindow(user);
+				dispose();
+			}
+		});
 		logoutButton = new JButton("خروچ");
+		logoutButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// display/center the jdialog when the button is pressed
+				dispose();
+			}
+		});
 		returnButton = new JButton("بازگشت");
 		returnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -8,15 +8,19 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import ProjectManagement.Module;
+import ProjectManagement.ModuleCatalogue;
 import ProjectManagement.Task;
+import ProjectManagement.TaskCatalogue;
+import ResourceManagement.Resource;
 import ResourceManagement.User;
 import UI.Accounting.FirstWindow;
 
 public class TasksListWindow extends UserWindow {
 
-	private Task[] modules = new Task[100];
-	private JLabel[] taskLabel = new JLabel[100];
-	JCheckBox[] checkBoxes = new JCheckBox[100];
+	private ArrayList<Task> tasks = new ArrayList<>();
+	private ArrayList<JLabel> taskLabels = new ArrayList<>();
+	private ArrayList<JLabel> descriptionLabels = new ArrayList<>();
+	private ArrayList<JCheckBox> checkBoxes = new ArrayList<>();
 	private JButton saveButton;
 	private JLabel label;
 
@@ -24,32 +28,37 @@ public class TasksListWindow extends UserWindow {
 		super(user);
 		setTitle("پنل کارمند");
 
+		ArrayList<Task> allTasks = TaskCatalogue.getInstance().getTaskList();
+		System.out.println(allTasks.size());
+		for (int i = 0; i < allTasks.size(); i++) {
+			ArrayList<User> taskUsers = allTasks.get(i).getUsers();
+			for (int j = 0; j < taskUsers.size(); j++) {
+				System.out.println(user.getId());
+				if (taskUsers.get(j).getId() == user.getId()) {
+					tasks.add(allTasks.get(i));
+					break;
+				}
+			}
+		}
+
 		label = new JLabel("فهرست وطیفه ها");
 		label.setSize(80, 25);
 		label.setLocation(600, 90);
 		super.panel.add(label);
-		taskLabel[0] = createLabel("وظیف یک", 500, 200 + 60 * 0);
-		taskLabel[1] = createLabel("وظیفه  دو", 500, 200 + 60 * 1);
-		taskLabel[2] = createLabel("وظیفه  سه", 500, 200 + 60 * 2);
-		taskLabel[3] = createLabel("وظیفه چهار", 500, 200 + 60 * 3);
-		taskLabel[4] = createLabel(
-				"شرح وظیفه:    این وظیفه به معنی انجام وظیفه یک است.", 340,
-				225 + 60 * 0);
-		taskLabel[5] = createLabel(
-				"شرح وظیفه:    این وظیفه به معنی انجام وظیفه دو است.", 340,
-				225 + 60 * 1);
-		taskLabel[6] = createLabel(
-				"شرح وظیفه:    این وظیفه به معنی انجام وظیفه سه است.", 340,
-				225 + 60 * 2);
-		taskLabel[7] = createLabel(
-				"شرح وظیفه:    این وظیفه به معنی انجام وظیفه چهار است.", 340,
-				225 + 60 * 3);
-
-		checkBoxes[0] = createCheckBox("انجام شد", 200, 225 + 60 * 0);
-		checkBoxes[1] = createCheckBox("انجام شد", 200, 225 + 60 * 1);
-		checkBoxes[2] = createCheckBox("انجام شد", 200, 225 + 60 * 2);
-		checkBoxes[3] = createCheckBox("انجام شد", 200, 225 + 60 * 3);
-		checkBoxes[0].setSelected(true);
+		System.out.println(tasks.size());
+		for (int i = 0; i < tasks.size(); i++) {
+			JLabel taskLabel = new JLabel();
+			taskLabel = createLabel(tasks.get(i).getName(), 500, 200 + 60 * i);
+			taskLabels.add(taskLabel);
+			JLabel descriptionLabel = new JLabel();
+			descriptionLabel = createLabel(tasks.get(i).getDescription(), 340,
+					225 + 60 * i);
+			descriptionLabels.add(descriptionLabel);
+			JCheckBox checkBox = createCheckBox("انجام شد", 200, 225 + 60 * i);
+			if (tasks.get(i).getIsFinished())
+				checkBox.setSelected(true);
+			checkBoxes.add(checkBox);
+		}
 
 		saveButton = new JButton("تایید");
 		saveButton.setSize(70, 25);
@@ -57,9 +66,7 @@ public class TasksListWindow extends UserWindow {
 		saveButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				// display/center the jdialog when the button is pressed
-				EmployeeMainWindow em = new EmployeeMainWindow(user);
-				dispose();
+				confirmChanges();
 			}
 		});
 		panel.add(saveButton);
@@ -88,10 +95,13 @@ public class TasksListWindow extends UserWindow {
 		Graphics2D g2 = (Graphics2D) g;
 		super.paint(g2);
 
-		g2.drawRect(180, 230, 420, 50);
-		g2.drawRect(180, 230 + 60, 420, 50);
-		g2.drawRect(180, 230 + 60 * 2, 420, 50);
-		g2.drawRect(180, 230 + 60 * 3, 420, 50);
+		for (int i = 0; i < tasks.size(); i++) {
+			g2.drawRect(180, 230 + 60 * i, 420, 50);
+		}
+		// g2.drawRect(180, 230, 420, 50);
+		// g2.drawRect(180, 230 + 60, 420, 50);
+		// g2.drawRect(180, 230 + 60 * 2, 420, 50);
+		// g2.drawRect(180, 230 + 60 * 3, 420, 50);
 
 		Stroke dashed = new BasicStroke(1, BasicStroke.CAP_BUTT,
 				BasicStroke.JOIN_BEVEL, 0, new float[] { 5 }, 0);
@@ -103,11 +113,17 @@ public class TasksListWindow extends UserWindow {
 
 	}
 
-    public boolean doneTask() {
-        return false;
-    }
+	public boolean doneTask() {
+		return false;
+	}
 
-    public boolean confirmChanges() {
-        return false;
-    }
+	public boolean confirmChanges() {
+		// display/center the jdialog when the button is pressed
+		for (int i = 0; i < tasks.size(); i++) {
+			tasks.get(i).setIsFinished(checkBoxes.get(i).isSelected());
+		}
+		EmployeeMainWindow em = new EmployeeMainWindow(user);
+		dispose();
+		return false;
+	}
 }

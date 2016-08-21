@@ -29,14 +29,16 @@ public class ModuleListWindow extends UserWindow {
 		// Rectangle r = new Rectangle(0, 0, 100, 100);
 		// super.panel.add(r);
 
-		modules = ModuleCatalogue.getInstance().getModuleList();
-		for (int i = 0; i < modules.size(); i++) {
-			ArrayList<Resource> moduleResources = modules.get(i)
+		ArrayList<Module> allModules = ModuleCatalogue.getInstance().getModuleList();
+		System.out.println(allModules.size());
+		for (int i = 0; i < allModules.size(); i++) {
+			ArrayList<Resource> moduleResources = allModules.get(i)
 					.getResourceList();
+			System.out.println(moduleResources.size());
 			for (int j = 0; j < moduleResources.size(); j++) {
 				if (moduleResources.get(j) instanceof User
 						&& moduleResources.get(j).getId() == user.getId()) {
-					modules.add(modules.get(i));
+					modules.add(allModules.get(i));
 					break;
 				}
 			}

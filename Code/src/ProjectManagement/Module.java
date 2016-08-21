@@ -11,8 +11,8 @@ public class Module {
 
 	private int moduleId;
     private String name;
-    private List<Change> changeList;
-    private ArrayList<Resource> resourceList;
+    private List<Change> changeList = new ArrayList<>();
+    private ArrayList<Resource> resourceList = new ArrayList<>();
     
     public void showChangeModulesFields(){
 
@@ -53,5 +53,9 @@ public class Module {
 	{
 		changeList.add(change);
 		Main.dbManager.updateModule(moduleId, this);
+	}
+	public void addResource(Resource resource)
+	{
+		resourceList.add(resource);
 	}
 }

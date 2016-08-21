@@ -1,14 +1,18 @@
 package ProjectManagement;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import Main.Main;
 
 public class TaskCatalogue {
 
-    List<Task> taskList;
+    static ArrayList<Task> taskList;
 
     private static TaskCatalogue taskCatalogue = new TaskCatalogue();
 
     public static TaskCatalogue getInstance() {
+    	taskList = Main.dbManager.getTasks();
         return taskCatalogue;
     }
 
@@ -28,7 +32,7 @@ public class TaskCatalogue {
 
     }
 
-    public List<Task> getTaskList() {
+    public ArrayList<Task> getTaskList() {
         return taskList;
     }
 }

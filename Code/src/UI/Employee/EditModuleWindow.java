@@ -48,7 +48,7 @@ public class EditModuleWindow extends UserWindow {
 		createLabel("نوع تغییر:", 580, 160 + 40);
 		createLabel("میزان زمان تغییر:", 580, 160 + 40 * 2);
 		createLabel("منابع مورد استفاده:", 580, 160 + 40 * 3);
-		moduleNameLabel = createLabel("ماژول یک", 500, 160);
+		moduleNameLabel = createLabel(module.getName(), 450, 160);
 
 		createLabel("از تاریخ:", 500, 160 + 40 * 2);
 		createLabel("تا تاریخ:", 320, 160 + 40 * 2);
