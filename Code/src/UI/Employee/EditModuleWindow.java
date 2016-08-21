@@ -1,6 +1,7 @@
 package UI.Employee;
 
 import java.awt.BasicStroke;
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
@@ -8,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.*;
+import javax.swing.table.JTableHeader;
 
 import ProjectManagement.Module;
 import ResourceManagement.Resource;
@@ -27,6 +29,8 @@ public class EditModuleWindow extends UserWindow {
 	
 	public EditModuleWindow(Module module,final User user) {
 		super(user);
+		
+		
 		setTitle("پنل کارمند");
 		
 		createLabel("ثبت تغییرات ماژول" , 580,90);
