@@ -107,9 +107,12 @@ public class DBManager {
 	Project r = new Project();
 	r.setName("پروژه یک");
 	Project r2 = new Project();
+	Project r3 = new Project();
 	r2.setName("پروژه دو");
+	r3.setName("پروژه سه");
 	p.add(r);
 	p.add(r2);
+	p.add(r3);
 
 
     return p;

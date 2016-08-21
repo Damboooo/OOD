@@ -116,34 +116,43 @@ public class RequirementReportWindow extends ReportWindow {
 
     }
     public void report() {
-    	List<String> selectedProjects = new ArrayList<>();
+    	if(table != null)
+        	panel.remove(table);
+        	model = new DefaultTableModel(); 
+        	table = new JTable(model); 
+        	model.addColumn("منابع مورد نیاز");
+          	model.addColumn("نام پروژه"); 
+           
+        	  JScrollPane scrollPane = new JScrollPane( table );
+        	   panel.add( scrollPane, BorderLayout.CENTER );
+        	   
+        	   scrollPane.setBounds(250, 200, 350, 200);
+            table.setLocation(250,200);
+          	table.setSize(350,200);
+            table.setFillsViewportHeight(true);
+            
+    	 selectedProjects = new ArrayList<>();
+    	 String resourceList = new String();
     	for (int i = 0; i < projects.size(); i++) {
+    		resourceList = "";
 			if (checkBoxes[i].isSelected()) {
-				selectedProjects.add(checkBoxes[i].getText());
+//				selectedProjects.add(checkBoxes[i].getText());
+				for (int j = 0; j < projects.get(i).getResourceList().size(); j++) {
+					resourceList = resourceList+projects.get(i).getResourceList().get(j).getName()+" ، ";
+				}
+				resourceList = resourceList.substring(0,resourceList.length()-2);
+				model.addRow(new Object[]{ resourceList ,projects.get(i).getName()});
+
 			}
 		}
     
-    	result = rep.requirementReport(selectedProjects);
+//    	result = rep.requirementReport(selectedProjects);
    
  
-//    	DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
-//    	rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
-//    	table.getColumn(1).setCellRenderer(rightRenderer);	
-//    	table.getColumn(2).setCellRenderer(rightRenderer);	
-    	if(table != null)
-    	panel.remove(table);
-    	model = new DefaultTableModel(); 
-    	table = new JTable(model); 
-      	model.addColumn("نام پروژه"); 
-      	model.addColumn("منابع مورد نیاز"); 
-       	model.addRow(new Object[]{"v1", "v2"});
-    	model.addRow(new Object[]{"v1", "v2"});
-  
-        table.setLocation(250,200);
-      	table.setSize(350,200);
-        panel.add(table);
-        table.setFillsViewportHeight(true);
+    	
 //        panel.add(table.getTableHeader(), BorderLayout.NORTH);
     }
+
+	
 
 }

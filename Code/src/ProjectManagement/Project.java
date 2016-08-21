@@ -14,13 +14,14 @@ public class Project {
 	// private int size;
 	private int numberOfUsers;
 	private List<Resource> resourceList;
+	private List<String> usage;
 	private List<Task> taskList;
 	private List<Module> moduleList;
 	private List<Resource> technologies;
 
-	public List<Resource> getResources() {
-		return resourceList;
-	}
+//	public List<Resource> getResources() {
+//		return resourceList;
+//	}
 
 	public void acceptanceRequest() {
 
@@ -202,5 +203,6 @@ public class Project {
 		}
 		return false;
 	}
+
 
 }
