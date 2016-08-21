@@ -2,6 +2,7 @@ package UI.Report;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import javax.swing.*;
@@ -11,7 +12,9 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
+import MainPackage.Main;
 import ProjectManagement.Module;
+import ProjectManagement.Project;
 import ProjectManagement.Task;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
@@ -22,10 +25,19 @@ public class UsageReportWindow extends ReportWindow {
     private JLabel from;
     private JLabel to;
     private JDatePickerImpl fromDate;
+	private List<Resource> resources;
 
     public UsageReportWindow(User user) {
         super(user);
 
+        ArrayList<String> resourcesName = new ArrayList<>();
+      		resources = Main.dbManager.getResources();
+
+      		for (int i = 0; i < resources.size(); i++) {
+      			resourcesName.add(resources.get(i).getName());
+      		}
+      		makeCheckList(resourcesName);
+      		
         label = new JLabel("گزارش جریان چرخشی مصرف");
         label.setSize(120, 25);
         label.setLocation(600, 90);
@@ -43,8 +55,6 @@ public class UsageReportWindow extends ReportWindow {
 
     }
 
-    private void report(Resource[] resourceList) {
-    }
 
     private JLabel createLabel(String s, int x, int y) {
         JLabel label = new JLabel(s);
@@ -73,8 +83,9 @@ public class UsageReportWindow extends ReportWindow {
         g2.setStroke(dashed);
         g2.drawRect(115, 150, 560, 370);
 
-        // Stroke simple = new BasicStroke(1, BasicStroke.JOIN_ROUND,
-        // BasicStroke.JOIN_ROUND, 0, new float[]{5},0);
+    }
+    
+    public void report(List<String> resources) {
 
     }
 

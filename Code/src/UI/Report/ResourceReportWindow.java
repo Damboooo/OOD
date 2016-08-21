@@ -1,10 +1,14 @@
 package UI.Report;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.*;
 
+import MainPackage.Main;
 import ProjectManagement.Module;
 import ProjectManagement.Task;
 import ResourceManagement.Resource;
@@ -15,10 +19,18 @@ public class ResourceReportWindow extends ReportWindow {
     private JButton searchButton;
     private JTextField searchTextField;
     private JLabel label;
+	private List<Resource> resources;
 
     public ResourceReportWindow(User user) {
         super(user);
+        ArrayList<String> resourcesName = new ArrayList<>();
+  		resources = Main.dbManager.getResources();
 
+  		for (int i = 0; i < resources.size(); i++) {
+  			resourcesName.add(resources.get(i).getName());
+  		}
+  		makeCheckList(resourcesName);
+  		
         label = new JLabel("گزارش منابع موجود");
         label.setSize(80, 25);
         label.setLocation(600, 90);
@@ -33,6 +45,11 @@ public class ResourceReportWindow extends ReportWindow {
         searchButton.setSize(65, 25);
         searchButton.setLocation(200, 135);
         super.panel.add(searchButton);
+        searchButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				search();
+			}
+		});
 
     }
 
@@ -73,4 +90,10 @@ public class ResourceReportWindow extends ReportWindow {
     public void search() {
 
     }
+    
+    public void report(List<String> resources) {
+
+    }
+    
+
 }

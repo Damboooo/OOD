@@ -1,6 +1,8 @@
 package UI.Report;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.*;
@@ -16,21 +18,13 @@ public class ReportWindow extends UserWindow {
     JCheckBox[] checkBoxes = new JCheckBox[100];
     JCheckBox checkBoxAll = new JCheckBox();
     JCheckBox checkBoxNone = new JCheckBox();
-    private JButton reportButton;
+    protected JButton reportButton;
     private JTable reportTable;
 
     public ReportWindow(User user) {
         super(user);
         setTitle("پنل مدیریت");
-
-        checkBoxes[0] = createCheckBox("منبع 1", 110, 225 + 10 * 0);
-        checkBoxes[1] = createCheckBox("منبع 2", 110, 225 + 20 * 1);
-        checkBoxes[2] = createCheckBox("منبع 3", 110, 225 + 20 * 2);
-        checkBoxes[3] = createCheckBox("منبع 4", 110, 225 + 20 * 3);
-        checkBoxes[0].setSelected(true);
-
-        checkBoxNone = createCheckBox("هیچکدام", 180, 175);
-        checkBoxAll = createCheckBox("همه موارد", 110, 175);
+      
 
         reportButton = new JButton("گزارش گیری");
         reportButton.setSize(100, 25);
@@ -40,10 +34,47 @@ public class ReportWindow extends UserWindow {
 
     }
 
-    private void report(Resource[] resourceList) {
-    }
+    protected void makeCheckList(final ArrayList<String> checkList) {
+    	
+    	for (int i = 0; i < checkList.size(); i++) {
+      	  checkBoxes[i] = createCheckBox(checkList.get(i), 110, 225 + 20 * i);
+      	  checkBoxes[i].addActionListener(new ActionListener() {
+      		public void actionPerformed(ActionEvent e) {
+    			
+    		checkBoxNone.setSelected(false);
+    		checkBoxAll.setSelected(false);
+    		}
+    	});
 
-    private JLabel createLabel(String s, int x, int y) {
+		}
+
+          checkBoxNone = createCheckBox("هیچکدام", 180, 175);
+          checkBoxAll = createCheckBox("همه موارد", 110, 175);
+  checkBoxNone.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			if(checkBoxNone.isSelected()){
+			for (int i = 0; i < checkList.size(); i++) {
+				checkBoxes[i].setSelected(false);
+			}
+			checkBoxAll.setSelected(false);
+		}
+		}
+	});
+  checkBoxAll.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			if(checkBoxAll.isSelected()){
+			for (int i = 0; i < checkList.size(); i++) {
+				checkBoxes[i].setSelected(true);
+			}
+			checkBoxNone.setSelected(false);
+			}
+		}
+	});
+
+
+	}
+
+	private JLabel createLabel(String s, int x, int y) {
         JLabel label = new JLabel(s);
         label.setSize(400, 25);
         label.setLocation(x, y);
@@ -74,8 +105,6 @@ public class ReportWindow extends UserWindow {
         // BasicStroke.JOIN_ROUND, 0, new float[]{5},0);
 
     }
-
-    public void report(ArrayList<Resource> resourceList) {
-    }
+    
 
 }

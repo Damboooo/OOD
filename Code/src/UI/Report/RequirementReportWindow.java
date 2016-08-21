@@ -1,31 +1,62 @@
 package UI.Report;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.text.DateFormatter;
 
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
+import MainPackage.Main;
+import Predict.Predict;
 import ProjectManagement.Module;
+import ProjectManagement.Project;
 import ProjectManagement.Task;
+import Report.Report;
 import ResourceManagement.Resource;
 import ResourceManagement.User;
+import UI.Predict.ResultPredictWindow;
 
 public class RequirementReportWindow extends ReportWindow {
 
     private JButton searchButton;
     private JTextField searchTextField;
     private JLabel label;
+    private List<Project> projects;
+    private List<Project> result;
+    private Report rep = new Report();
+	private DefaultTableModel model; 
+	private JTable table;
+	List<String> selectedProjects;
+
 
 
     public RequirementReportWindow(User user) {
         super(user);
+        ArrayList<String> projectsName = new ArrayList<>();
+		projects = Main.dbManager.getProjects();
 
+		for (int i = 0; i < projects.size(); i++) {
+			projectsName.add(projects.get(i).getName());
+		}
+		makeCheckList(projectsName);
+		reportButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				report();
+			}
+		});
+		
+      
+		
         label = new JLabel("گزارش منابع مورد نیاز");
         label.setSize(120, 25);
         label.setLocation(600, 90);
@@ -41,6 +72,11 @@ public class RequirementReportWindow extends ReportWindow {
         searchButton.setSize(65, 25);
         searchButton.setLocation(200, 135);
         super.panel.add(searchButton);
+        searchButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				search();
+			}
+		});
 
     }
 
@@ -78,6 +114,36 @@ public class RequirementReportWindow extends ReportWindow {
 
     public void search() {
 
+    }
+    public void report() {
+    	List<String> selectedProjects = new ArrayList<>();
+    	for (int i = 0; i < projects.size(); i++) {
+			if (checkBoxes[i].isSelected()) {
+				selectedProjects.add(checkBoxes[i].getText());
+			}
+		}
+    
+    	result = rep.requirementReport(selectedProjects);
+   
+ 
+//    	DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+//    	rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+//    	table.getColumn(1).setCellRenderer(rightRenderer);	
+//    	table.getColumn(2).setCellRenderer(rightRenderer);	
+    	if(table != null)
+    	panel.remove(table);
+    	model = new DefaultTableModel(); 
+    	table = new JTable(model); 
+      	model.addColumn("نام پروژه"); 
+      	model.addColumn("منابع مورد نیاز"); 
+       	model.addRow(new Object[]{"v1", "v2"});
+    	model.addRow(new Object[]{"v1", "v2"});
+  
+        table.setLocation(250,200);
+      	table.setSize(350,200);
+        panel.add(table);
+        table.setFillsViewportHeight(true);
+//        panel.add(table.getTableHeader(), BorderLayout.NORTH);
     }
 
 }

@@ -71,13 +71,13 @@ public class PredictMainWindow extends UserWindow {
 
     public void resourcePredict() {
    
-        ResourcePredictWindow rpw = new ResourcePredictWindow(user);
+        new ResourcePredictWindow(user);
         dispose();
 
     }
 
     public void requirementPredict() {
-    	RequirementPredictWindow qpw = new RequirementPredictWindow(user);
+    	new RequirementPredictWindow(user);
     	dispose();
 
     }

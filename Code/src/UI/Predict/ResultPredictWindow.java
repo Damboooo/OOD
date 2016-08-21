@@ -4,6 +4,8 @@ import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -47,6 +49,11 @@ public class ResultPredictWindow extends UserWindow {
 		searchButton.setSize(65, 25);
 		searchButton.setLocation(200, 150);
 		super.panel.add(searchButton);
+		  searchButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					search();
+				}
+			});
 
 		for (int i = 0; i < result.size(); i++) {
 			editButton[i] = new JButton(result.get(i).getName());

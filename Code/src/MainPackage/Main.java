@@ -2,6 +2,7 @@ package MainPackage;
 import DB.DBManager;
 import ResourceManagement.User;
 import UI.Predict.*;
+import UI.Report.ReportMainWindow;
 
 public class Main {
 
@@ -51,13 +52,13 @@ public class Main {
 //        new ProjectsListWindow(new User());
 
         // Predict
-      new PredictMainWindow(new User());
+     // new PredictMainWindow(new User());
    //    new RequirementPredictWindow(new User());
    //   new ResourcePredictWindow(new User());
 //        new ResultPredictWindow(new User());
 
         // Report
-//        new ReportMainWindow(new User());
+       new ReportMainWindow(new User());
 //        new ReportWindow(new User());
 //        new RequirementReportWindow(new User());
 //        new UsageReportWindow(new User());
