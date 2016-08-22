@@ -259,22 +259,64 @@ public class DBManager {
 	}
 
 	public static User getUserByUsername(String username) {
-		User user = new User();
-	    user.setFirstName("Ali");
-        user.setId(1);
-        user.setBirthday(new Date());
-        user.setJobExperience(5);
-        user.setLastName("Alavi");
-        user.setLicence("LISANSE");
-        user.setMarriageStatus(1);
-        user.setUsername("ALA");
-        user.setNatID("9879782");
-        user.setPassword("1234");
-        user.setPhoneNumber1("0912456789");
-        user.setPhoneNumber2("0215678987");
-        user.setRole("مدیر");
-                 
-		return user;
+		User user1 = new User();
+	    user1.setFirstName("زهرا");
+        user1.setId(1);
+        user1.setBirthday(new Date());
+        user1.setJobExperience(5);
+        user1.setLastName("کاکاوند");
+        user1.setLicence("LISANSE");
+        user1.setMarriageStatus(1);
+        user1.setUsername("zahra");
+        user1.setNatID("9879782");
+        user1.setPassword("1234");
+        user1.setPhoneNumber1("0912456789");
+        user1.setPhoneNumber2("0215678987");
+        user1.setRole("مدیرکل");
+        
+    	User user2 = new User();
+    	user2.setFirstName("شمیم");
+    	user2.setId(1);
+    	user2.setBirthday(new Date());
+    	user2.setJobExperience(5);
+    	user2.setLastName("کریمی");
+    	user2.setLicence("LISANSE");
+    	user2.setMarriageStatus(1);
+    	user2.setUsername("shamim");
+    	user2.setNatID("9879782");
+    	user2.setPassword("1234");
+    	user2.setPhoneNumber1("0912456789");
+    	user2.setPhoneNumber2("0215678987");
+    	user2.setRole("مدیر");
+        
+    	User user3 = new User();
+    	user3.setFirstName("مجید");
+    	user3.setId(1);
+    	user3.setBirthday(new Date());
+    	user3.setJobExperience(5);
+    	user3.setLastName("قوسیان");
+    	user3.setLicence("LISANSE");
+    	user3.setMarriageStatus(1);
+    	user3.setUsername("majid");
+    	user3.setNatID("9879782");
+    	user3.setPassword("1234");
+    	user3.setPhoneNumber1("0912456789");
+    	user3.setPhoneNumber2("0215678987");
+    	user3.setRole("کارمند");
+        
+                 switch (username) {
+				case "zahra":
+					return user1;
+		
+				case "shamim":
+					return user2;
+					
+				case "majid":
+					return user3;
+				default:
+					return user3;
+				}
+		
 	}
 
 	public static User getUserByEmail(String email) {
