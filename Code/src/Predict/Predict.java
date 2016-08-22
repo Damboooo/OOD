@@ -6,12 +6,7 @@ import ResourceManagement.Resource;
 import UI.Predict.Domain;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-
-import DB.DBManager;
 
 public class Predict {
 

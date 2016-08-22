@@ -104,11 +104,11 @@ public class ResourcePredictWindow extends UserWindow {
 		// technologyTextField.setSize(150, 25);
 		// technologyTextField.setLocation(400, 160 + 40 * 3);
 		// panel.add(technologyTextField);
-
-		List<Resource> technologies = Main.dbManager.getTechnologies();
-		for (int i = 0; i < technologies.size(); i++) {
-			techComboBox.addItem(technologies.get(i).getName());
-		}
+//
+//		List<Resource> technologies = Main.dbManager.getTechnologies();
+//		for (int i = 0; i < technologies.size(); i++) {
+//			techComboBox.addItem(technologies.get(i).getName());
+//		}
 		panel.add(techComboBox);
 		techComboBox.setBounds(400, 160 + 40 * 3, 150, 25);
 		((JLabel) techComboBox.getRenderer()).setHorizontalAlignment(JLabel.RIGHT);

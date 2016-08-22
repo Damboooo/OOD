@@ -1,8 +1,6 @@
 package MainPackage;
 
 import DB.DBManager;
-import ResourceManagement.User;
-import UI.Accounting.ChangePasswordWindow;
 import UI.Accounting.FirstWindow;
 import UI.Employee.EmployeeMainWindow;
 import UI.HeadManager.AccountsListWindow;
@@ -13,6 +11,7 @@ import UI.ProjectManager.ProjectManagementMainWindow;
 import UI.Report.ReportMainWindow;
 import UI.Report.UsageReportWindow;
 
+
 public class Main {
 
     public static DBManager dbManager;
@@ -21,12 +20,18 @@ public class Main {
     	dbManager = new DBManager();
 //    	Main.dbManager.getResources();
 
+
 //        DatabaseTest databaseTest = new DatabaseTest();
-new EditResourceWindow(Main.dbManager.getUser(1), Main.dbManager.getResource(1));
+///new EditResourceWindow(Main.dbManager.getUser(1), Main.dbManager.getResource(1));
        new FirstWindow();
 
+        DatabaseTest databaseTest = new DatabaseTest();
+
+//       new FirstWindow();
+
+
         // Accounting
-//        new ChangePasswordWindow(Main.dbManager.getUser(1));
+//        new ChangePasswordWindow(new User());
 //        new EditProfileWindow(new User());
 //        new ForgetPasswordWindow(new User());
 //        new ProfileWindow(new User());

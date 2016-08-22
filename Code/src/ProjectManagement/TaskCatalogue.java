@@ -12,7 +12,7 @@ public class TaskCatalogue {
     private static TaskCatalogue taskCatalogue = new TaskCatalogue();
 
     public static TaskCatalogue getInstance() {
-    	taskList = Main.dbManager.getTasks();
+    	taskList = (ArrayList<Task>) Main.dbManager.getTasks();
         return taskCatalogue;
     }
 
