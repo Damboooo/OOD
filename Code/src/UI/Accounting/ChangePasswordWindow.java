@@ -24,6 +24,7 @@ public class ChangePasswordWindow extends JFrame {
 	private JLabel currentPasswordLabel;
 	private JLabel newPasswordLabel;
 	private JLabel newPasswordRepeatLabel;
+	private JLabel errorLabel;
 
 	public ChangePasswordWindow(final User user) {
 		// setLayout(null);
@@ -44,6 +45,9 @@ public class ChangePasswordWindow extends JFrame {
 		newPasswordRepeatLabel = createLabel("تکرار کلمه عبور: ", 230, 70);
 		newPasswordRepeatTextField = createPasswordField(100, 70);
 
+		errorLabel = createLabel("", 130, 90);
+		errorLabel.setSize(180, 25);
+		
 		acceptButton = new JButton("تایید");
 		acceptButton.setSize(80, 25);
 		acceptButton.setLocation(200, 115);
@@ -91,6 +95,7 @@ public class ChangePasswordWindow extends JFrame {
 			if (!newPasswordTextField.getPassword().equals(
 					newPasswordRepeatTextField.getPassword())) {
 				System.out.println("تکرار کلمه عبور جدید را مجددا وارد کنید!");
+				errorLabel.setText("تکرار کلمه عبور جدید را مجددا وارد کنید!");
 				return false;
 			}
 			user.setPassword(newPasswordTextField.getPassword().toString());
@@ -100,6 +105,7 @@ public class ChangePasswordWindow extends JFrame {
 			return true;
 		}
 		System.out.println("کلمه عبور قبلی نادرست است!");
+		errorLabel.setText("کلمه عبور قبلی نادرست است!");
 		return false;
 	}
 
