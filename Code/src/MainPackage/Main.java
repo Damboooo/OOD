@@ -22,10 +22,10 @@ public class Main {
 
 //        DatabaseTest databaseTest = new DatabaseTest();
 
-//       new FirstWindow();
+       new FirstWindow();
 
         // Accounting
-        new ChangePasswordWindow(Main.dbManager.getUser(1));
+//        new ChangePasswordWindow(Main.dbManager.getUser(1));
 //        new EditProfileWindow(new User());
 //        new ForgetPasswordWindow(new User());
 //        new ProfileWindow(new User());
