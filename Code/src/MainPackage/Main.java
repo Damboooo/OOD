@@ -6,6 +6,7 @@ import UI.Accounting.ChangePasswordWindow;
 import UI.Accounting.FirstWindow;
 import UI.Employee.EmployeeMainWindow;
 import UI.HeadManager.AccountsListWindow;
+import UI.HeadManager.EditResourceWindow;
 import UI.Predict.*;
 import UI.ProjectManager.ProjectDetailsWindow;
 import UI.ProjectManager.ProjectManagementMainWindow;
@@ -21,7 +22,7 @@ public class Main {
 //    	Main.dbManager.getResources();
 
 //        DatabaseTest databaseTest = new DatabaseTest();
-
+new EditResourceWindow(Main.dbManager.getUser(1), Main.dbManager.getResource(1));
        new FirstWindow();
 
         // Accounting
