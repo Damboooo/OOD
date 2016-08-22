@@ -6,14 +6,14 @@ import java.util.List;
 
 public class Asset extends Resource {
 
-    private List<Date> freeTimes;
+    private String freeTimes;
     private String type;
 
-    public List<Date> getFreeTimes() {
+    public String getFreeTimes() {
         return freeTimes;
     }
 
-    public void setFreeTimes(List<Date> freeTimes) {
+    public void setFreeTimes(String freeTimes) {
         this.freeTimes = freeTimes;
     }
 

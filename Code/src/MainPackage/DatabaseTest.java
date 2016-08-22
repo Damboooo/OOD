@@ -2,9 +2,12 @@ package MainPackage;
 
 import DB.DBManager_2;
 import ProjectManagement.Project;
-import ResourceManagement.User;
+import ProjectManagement.Task;
+import ResourceManagement.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class DatabaseTest {
 
@@ -14,6 +17,8 @@ public class DatabaseTest {
         dbManager = new DBManager_2();
         userTest();
         projectTest();
+        resourceTest();
+        taskTest();
     }
 
     public User userTest() {
@@ -59,6 +64,67 @@ public class DatabaseTest {
 
         Project resultProject = dbManager.getProject(1);
         System.out.println(resultProject.getId() + " " + resultProject.getName());
+
+        List<Project> projects = dbManager.getProjects();
+
+//        for (Project project1: projects){
+//            System.out.print(project1.getId() + ", " + project1.getProjectManager().getUsername() + ", ");
+//        }
+
+    }
+
+    public void resourceTest() {
+
+        Finance finance = new Finance();
+        finance.setName("finance name");
+        finance.setAmount(200);
+
+        dbManager.addFinance(finance);
+
+        Finance financeResult = (Finance) dbManager.getResource(1, "Finance");
+        System.out.println(financeResult.getId() + " " + financeResult.getName());
+
+        Knowledge knowledge = new Knowledge();
+        knowledge.setName("knowledge name");
+        knowledge.setType("knowledge type");
+        knowledge.setDescription("knowledge description");
+
+        dbManager.addKnowledge(knowledge);
+
+        Knowledge knowledgeResult = (Knowledge) dbManager.getResource(1, "Knowledge");
+        System.out.println(knowledgeResult.getId() + " " + knowledgeResult.getName() + " " + knowledgeResult.getDescription());
+
+        Asset asset = new Asset();
+        asset.setName("asset Name");
+        asset.setFreeTimes("free times");
+        asset.setType("asset type");
+
+        dbManager.addAsset(asset);
+
+        Asset assetResult = (Asset) dbManager.getResource(1, "Asset");
+        System.out.println(assetResult.getId() + " " + assetResult.getName() + " " + assetResult.getFreeTimes());
+
+        List<Resource> resources = dbManager.getResources();
+        System.out.println(resources.size());
+
+
+    }
+
+    public void taskTest() {
+
+        Task task = new Task();
+        task.setName("task name");
+        task.setDescription("task description");
+        task.setIsFinished(false);
+        ArrayList<User> users = new ArrayList<>();
+        users.add(userTest());
+        task.setUsers(users);
+
+        dbManager.addTask(task, 1);
+
+        List<Task> taskResult = dbManager.getTasks(1);
+        System.out.println(taskResult.size());
+
 
     }
 

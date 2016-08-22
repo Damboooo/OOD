@@ -6,44 +6,57 @@ import ResourceManagement.User;
 
 public class Task {
 
-	private String name;
-	private String description;
-	private boolean isFinished;
-	private ArrayList<User> users = new ArrayList<>();
+    private int id;
+    private String name;
+    private String description;
+    private boolean isFinished;
+    private ArrayList<User> users = new ArrayList<>();
 
-	public void showFields() {
-		
-	}
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void showFields() {
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public boolean getIsFinished() {
-		return isFinished;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setIsFinished(boolean isFinished) {
-		this.isFinished = isFinished;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public ArrayList<User> getUsers() {
-		return users;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void addUser(User user) {
-		users.add(user);
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean getIsFinished() {
+        return isFinished;
+    }
+
+    public void setIsFinished(boolean isFinished) {
+        this.isFinished = isFinished;
+    }
+
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
+    public void addUser(User user) {
+        users.add(user);
+    }
 }
