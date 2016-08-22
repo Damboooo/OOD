@@ -14,7 +14,7 @@ public class Main {
     	dbManager = new DBManager();
 //    	Main.dbManager.getResources();
 
-      //  DatabaseTest databaseTest = new DatabaseTest();
+        DatabaseTest databaseTest = new DatabaseTest();
 
 //       new FirstWindow();
 

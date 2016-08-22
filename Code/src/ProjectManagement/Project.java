@@ -18,6 +18,7 @@ public class Project {
     private int id;
     private String name;
     private User projectManager;
+    private int projectManagerId;
     // private int size;
     private int numberOfUsers;
     private List<ExistingResource> resourceList;
@@ -25,28 +26,35 @@ public class Project {
     private List<Module> moduleList;
     private String technologies;
 
+    public int getProjectManagerId() {
+        return projectManagerId;
+    }
+
+    public void setProjectManagerId(int projectManagerId) {
+        this.projectManagerId = projectManagerId;
+    }
 
     public void setResourceList(List<ExistingResource> resourceList) {
         this.resourceList = resourceList;
     }
 
     public List<ExistingResource> getResourceList() {
-    	List<ExistingResource> resourcesList = new ArrayList<>();
-		Resource r = new Resource();
-		ExistingResource er = new ExistingResource();
-		ExistingResource er3 = new ExistingResource();
-		ExistingResource er2 = new ExistingResource();
-		r.setName("منبع یک");
-		Resource r2 = new Resource();
-		r2.setName("منبع دو");
-		Resource r3 = new Resource();
-		r3.setName("منبع سه");
-		er.setResource(r);
-		er3.setResource(r3);
-		er2.setResource(r2);
-		resourcesList.add(er);
-		resourcesList.add(er2);
-		resourcesList.add(er3);
+        List<ExistingResource> resourcesList = new ArrayList<>();
+        Resource r = new Resource();
+        ExistingResource er = new ExistingResource();
+        ExistingResource er3 = new ExistingResource();
+        ExistingResource er2 = new ExistingResource();
+        r.setName("منبع یک");
+        Resource r2 = new Resource();
+        r2.setName("منبع دو");
+        Resource r3 = new Resource();
+        r3.setName("منبع سه");
+        er.setResource(r);
+        er3.setResource(r3);
+        er2.setResource(r2);
+        resourcesList.add(er);
+        resourcesList.add(er2);
+        resourcesList.add(er3);
         return resourcesList;
     }
 

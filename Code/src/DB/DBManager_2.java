@@ -3,8 +3,7 @@ package DB;
 import ProjectManagement.Module;
 import ProjectManagement.Project;
 import ProjectManagement.Task;
-import ResourceManagement.Resource;
-import ResourceManagement.User;
+import ResourceManagement.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -165,13 +164,11 @@ public class DBManager_2 {
 
         Project project = new Project();
         try {
-            while (resultSet.next()) {
-                project.setId(resultSet.getInt("id"));
-                project.setNumberOfUsers(resultSet.getInt("number_of_users"));
-                project.setName(resultSet.getString("name"));
-                project.setTechnologies(resultSet.getString("technologies"));
-                project.setProjectManager(getUser(resultSet.getInt("manager_id")));
-            }
+            project.setId(resultSet.getInt("id"));
+            project.setNumberOfUsers(resultSet.getInt("number_of_users"));
+            project.setName(resultSet.getString("name"));
+            project.setTechnologies(resultSet.getString("technologies"));
+            project.setProjectManagerId(resultSet.getInt("manager_id"));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -187,8 +184,11 @@ public class DBManager_2 {
             preparedStatement = connect.prepareStatement(query);
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            Project project = setProjectResults(resultSet);
+            project.setTaskList(getTasks(project.getId()));
 
-            return setProjectResults(resultSet);
+            return project;
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -200,12 +200,31 @@ public class DBManager_2 {
 
     public List<Project> getProjects() {
 
+        List<Project> projects = new ArrayList<>();
+
         try {
-//            String query = "select * from ood.project";
-//            statement = connect.createStatement();
-//            resultSet = statement.executeQuery(query);
-//
-//            return setProjectResults(resultSet);
+            String query = "select * from ood.project";
+            statement = connect.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                projects.add(setProjectResults(resultSet));
+            }
+
+            for (Project project : projects) {
+                project.setProjectManager(getUser(project.getProjectManagerId()));
+            }
+
+            for (Project project : projects) {
+                project.setResourceList(getExistingResourcesOfProject(project.getId()));
+            }
+
+            for (Project project : projects) {
+                project.setTaskList(getTasks(project.getId()));
+            }
+
+
+            return projects;
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -215,6 +234,375 @@ public class DBManager_2 {
         return null;
 
     }
+
+    public List<ExistingResource> getExistingResourcesOfProject(int projectId) {
+
+        List<ExistingResource> existingResources = new ArrayList<>();
+
+        try {
+            String query = "select * from ood.existing_resource where project_id=?";
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setInt(1, projectId);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                existingResources.add(setExistingResourceList(resultSet));
+            }
+
+            for (ExistingResource existingResource : existingResources) {
+                existingResource.setResource(getResource(existingResource.getResourceId(), existingResource.getResourceType()));
+            }
+
+            return existingResources;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            close();
+        }
+        return null;
+
+    }
+
+    public ExistingResource setExistingResourceList(ResultSet resultSet) {
+        ExistingResource existingResource = new ExistingResource();
+        try {
+            existingResource.setFromDate(resultSet.getDate("from_date"));
+            existingResource.setToDate(resultSet.getDate("to_date"));
+            existingResource.setHours(resultSet.getInt("hours"));
+            existingResource.setResourceId(resultSet.getInt("resource_id"));
+            existingResource.setResourceType(resultSet.getString("resource_type"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return existingResource;
+    }
+
+    public Resource getResource(int resourceID, String resourceType) {
+        switch (resourceType) {
+
+            case "User":
+                return getUser(resourceID);
+            case "Finance":
+                return getFinance(resourceID);
+            case "Knowledge":
+                return getKnowledge(resourceID);
+            case "Asset":
+                return getAsset(resourceID);
+        }
+        return null;
+    }
+
+    public void addFinance(Finance finance) {
+
+        try {
+            String query = "insert into ood.finance values (DEFAULT, ?, ?)";
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setString(1, finance.getName());
+            preparedStatement.setInt(2, finance.getAmount());
+
+            preparedStatement.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+        } finally {
+            close();
+        }
+
+    }
+
+    public Finance getFinance(int resourceId) {
+        try {
+            String query = "select * from ood.finance where id=?";
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setInt(1, resourceId);
+            resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return setFinanceResult(resultSet);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            close();
+        }
+        return null;
+    }
+
+    public Finance setFinanceResult(ResultSet resultSet) {
+        Finance finance = new Finance();
+        try {
+            finance.setName(resultSet.getString("name"));
+            finance.setAmount(resultSet.getInt("amount"));
+            finance.setId(resultSet.getInt("id"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return finance;
+    }
+
+    public void addKnowledge(Knowledge knowledge) {
+
+        try {
+            String query = "insert into ood.knowledge values (DEFAULT, ?, ?, ?)";
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setString(1, knowledge.getName());
+            preparedStatement.setString(2, knowledge.getType());
+            preparedStatement.setString(3, knowledge.getDescription());
+
+            preparedStatement.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+        } finally {
+            close();
+        }
+
+    }
+
+    public Knowledge getKnowledge(int resourceId) {
+        try {
+            String query = "select * from ood.knowledge where id=?";
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setInt(1, resourceId);
+            resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return setKnowledgeResult(resultSet);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            close();
+        }
+        return null;
+    }
+
+    public Knowledge setKnowledgeResult(ResultSet resultSet) {
+        Knowledge knowledge = new Knowledge();
+        try {
+            knowledge.setName(resultSet.getString("name"));
+            knowledge.setType(resultSet.getString("type"));
+            knowledge.setDescription(resultSet.getString("description"));
+            knowledge.setId(resultSet.getInt("id"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return knowledge;
+    }
+
+    public void addAsset(Asset asset) {
+        try {
+            String query = "insert into ood.asset values (DEFAULT, ?, ?, ?)";
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setString(1, asset.getName());
+            preparedStatement.setString(2, asset.getType());
+            preparedStatement.setString(3, asset.getFreeTimes());
+
+            preparedStatement.executeUpdate();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+        } finally {
+            close();
+        }
+    }
+
+    public Asset getAsset(int resourceId) {
+        try {
+            String query = "select * from ood.asset where id=?";
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setInt(1, resourceId);
+            resultSet = preparedStatement.executeQuery();
+            resultSet.next();
+            return setAssetResult(resultSet);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            close();
+        }
+        return null;
+    }
+
+    public Asset setAssetResult(ResultSet resultSet) {
+        Asset asset = new Asset();
+        try {
+            asset.setName(resultSet.getString("name"));
+            asset.setType(resultSet.getString("type"));
+            asset.setId(resultSet.getInt("id"));
+            asset.setFreeTimes(resultSet.getString("free_times"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return asset;
+    }
+
+    public List<Resource> getResources() {
+
+        List<Resource> resources = new ArrayList<>();
+
+        try {
+            String query = "select * from ood.user";
+            statement = connect.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                resources.add(setUserResults(resultSet));
+            }
+
+            query = "select * from ood.finance";
+            statement = connect.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                resources.add(setFinanceResult(resultSet));
+            }
+
+            query = "select * from ood.knowledge";
+            statement = connect.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                resources.add(setKnowledgeResult(resultSet));
+            }
+
+            query = "select * from ood.asset";
+            statement = connect.createStatement();
+            resultSet = statement.executeQuery(query);
+
+            while (resultSet.next()) {
+                resources.add(setAssetResult(resultSet));
+            }
+
+            return resources;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            close();
+        }
+        return null;
+    }
+
+    public void addTask(Task task, int projectId) {
+
+        try {
+            String query = "insert into ood.task values (DEFAULT, ?, ?, ?, ?)";
+            preparedStatement = connect.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setString(1, task.getName());
+            preparedStatement.setString(2, task.getDescription());
+            preparedStatement.setBoolean(3, task.getIsFinished());
+            preparedStatement.setInt(4, projectId);
+            preparedStatement.executeUpdate();
+
+            int taskId = 1;
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            if (resultSet.next()) {
+                taskId = resultSet.getInt(1);
+            }
+
+            for (User user : task.getUsers()) {
+
+                query = "insert into ood.user_task values (DEFAULT, ?, ?)";
+                preparedStatement = connect.prepareStatement(query);
+                preparedStatement.setInt(1, taskId);
+                preparedStatement.setInt(2, user.getId());
+                preparedStatement.executeUpdate();
+            }
+
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+
+        } finally {
+            close();
+        }
+    }
+
+    public List<Task> getTasks(int projectID) {
+
+        List<Task> tasks = new ArrayList<>();
+        try {
+            String query = "select * from ood.task where project_id=?";
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setInt(1, projectID);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                tasks.add(setTaskResult(resultSet));
+            }
+
+            for (Task task : tasks) {
+                task.setUsers(getTaskUsers(task));
+            }
+
+            return tasks;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            close();
+        }
+        return null;
+    }
+
+    public ArrayList<User> getTaskUsers(Task task) {
+
+        ArrayList<User> users = new ArrayList<>();
+        try {
+            String query = "select * from ood.user_task where task_id=?";
+            preparedStatement = connect.prepareStatement(query);
+            preparedStatement.setInt(1, task.getId());
+            resultSet = preparedStatement.executeQuery();
+
+            List<Integer> userIds = new ArrayList<>();
+
+            while (resultSet.next()) {
+                userIds.add(resultSet.getInt("user_id"));
+            }
+
+            for (Integer id : userIds) {
+                users.add(getUser(id));
+            }
+
+            return users;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            close();
+        }
+        return null;
+    }
+
+    public Task setTaskResult(ResultSet resultSet) {
+        Task task = new Task();
+        try {
+            task.setName(resultSet.getString("name"));
+            task.setDescription(resultSet.getString("description"));
+            task.setIsFinished(resultSet.getBoolean("is_finished"));
+            task.setId(resultSet.getInt("id"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return task;
+    }
+
+    public void addModule(Module module) {
+
+    }
+
+    public Module getModule(int moduleID) {
+        return null;
+    }
+
 
     public List<Project> getProjects(User user) {
         return null;
@@ -233,55 +621,6 @@ public class DBManager_2 {
         return null;
     }
 
-    public List<Resource> getResources(int ProjectID) {
-        return null;
-    }
-
-    public List<Resource> getResources(int ProjectID, int from, int to) {
-        return null;
-    }
-
-    public List<Resource> getResources() {
-
-        /////////////alaki
-        List<Resource> resources = new ArrayList<>();
-        Resource r = new Resource();
-        r.setName("منبع یک");
-        Resource r2 = new Resource();
-        r2.setName("منبع دو");
-        Resource r3 = new Resource();
-        r3.setName("منبع سه");
-        resources.add(r);
-        resources.add(r2);
-        resources.add(r3);
-
-        return resources;
-    }
-
-    public Resource getResource(int ResourceID) {
-        return null;
-    }
-
-    public List<Task> getTasks(int projectID) {
-        return null;
-    }
-
-    public Task getTask(int taskID) {
-        return null;
-    }
-
-
-    public void addResource(Resource resource) {
-
-    }
-
-    public void addTask(Task task) {
-
-    }
-
-    public void addModule(Module module) {
-
-    }
 
     public void updateTask(int taskID, Task task) {
 
@@ -301,27 +640,6 @@ public class DBManager_2 {
 
     public void updateModule(int moduleID, Module module) {
 
-    }
-
-    public Module getModule(int moduleID) {
-        return null;
-    }
-
-
-    public List<Resource> getTechnologies() {
-        /////////////alaki
-        List<Resource> technologies = new ArrayList<>();
-        Resource r = new Resource();
-        r.setName("تکنولوژی یک");
-        Resource r2 = new Resource();
-        r2.setName("تکنولوژی دو");
-        Resource r3 = new Resource();
-        r3.setName("تکنولوژی سه");
-        technologies.add(r);
-        technologies.add(r2);
-        technologies.add(r3);
-
-        return technologies;
     }
 
 
