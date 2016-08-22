@@ -9,7 +9,7 @@ import java.util.List;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-import Main.Main;
+import MainPackage.Main;
 import ProjectManagement.Module;
 import ProjectManagement.Project;
 import ProjectManagement.Task;
@@ -129,15 +129,16 @@ public class ResourceReportWindow extends ReportWindow {
 //    		resourceList = "";
 			if (checkBoxes[i].isSelected()) {
 //				selectedProjects.add(checkBoxes[i].getText());
-//			
+				for (int k = 0; k < projects.size(); k++) 
+
 //				resourceList = resourceList.substring(0,resourceList.length()-2);
-				for (int j = 0; j < projects.get(i).getResourceList().size(); j++) {
-					if(projects.get(i).getResourceList().get(j).getResource().getName().contains(resources.get(i).getName())){
-//						model.addRow(new Object[]{ 
-//								projects.get(i).getName() ,
-//								projects.get(i).getMosharekat(j) ,
-//								resources.get(i).getName()
-//								});
+				for (int j = 0; j < projects.get(k).getResourceList().size(); j++) {
+					if(projects.get(k).getResourceList().get(j).getResource().getName().contains(resources.get(i).getName())){
+						model.addRow(new Object[]{ 
+								projects.get(k).getName() ,
+								projects.get(k).getResourceList().get(j).getHours()+" ساعت در هفته " ,
+								resources.get(i).getName()
+								});
 				
 				}
 				}

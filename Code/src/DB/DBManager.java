@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import Main.Main;
+import MainPackage.Main;
 
 public class DBManager {
 	
@@ -96,7 +96,9 @@ public class DBManager {
 	}
 
 	public Project getProject(int id) {
-		return null;
+		Project r = new Project();
+		r.setName("پروژه همراه اول");
+		return r;
 	}
 
 	public List<Project> getProjects() {
@@ -153,7 +155,6 @@ public class DBManager {
 		resources.add(r);
 		resources.add(r2);
 		resources.add(r3);
-
 		return resources;
 	}
 
@@ -259,6 +260,20 @@ public class DBManager {
 
 	public static User getUserByUsername(String username) {
 		User user = new User();
+	    user.setFirstName("Ali");
+        user.setId(1);
+        user.setBirthday(new Date());
+        user.setJobExperience(5);
+        user.setLastName("Alavi");
+        user.setLicence("LISANSE");
+        user.setMarriageStatus(1);
+        user.setUsername("ALA");
+        user.setNatID("9879782");
+        user.setPassword("1234");
+        user.setPhoneNumber1("0912456789");
+        user.setPhoneNumber2("0215678987");
+        user.setRole("مدیر");
+                 
 		return user;
 	}
 

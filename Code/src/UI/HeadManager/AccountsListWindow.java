@@ -1,6 +1,6 @@
 package UI.HeadManager;
 
-import Main.Main;
+import MainPackage.Main;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

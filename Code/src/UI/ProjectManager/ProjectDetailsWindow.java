@@ -93,7 +93,7 @@ public class ProjectDetailsWindow extends UserWindow {
     public boolean confirmChanges(Project project) {
     	project.setNumberOfUsers(Integer.parseInt(userCountTextField.getText()));
     	project.setTechnologies(technologiesTextField.getText());
-
+    	dispose();
         return false;
     }
 

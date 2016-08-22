@@ -6,7 +6,7 @@ import java.util.Date;
 
 import javax.swing.*;
 
-import Main.Main;
+import MainPackage.Main;
 import ResourceManagement.User;
 import UI.Employee.EmployeeMainWindow;
 import UI.HeadManager.HeadManagerMainWindow;
@@ -124,7 +124,7 @@ public class EditProfileWindow extends UserDetailsWindow {
         Main.dbManager.updateUser(user.getId(), user);
         switch (user.getRole()) {
             case "مدیر":
-                pl = new ProjectsListWindow(new User());
+            pl = new ProjectsListWindow(new User());
                 break;
             case "مدیرکل":
                 hm = new HeadManagerMainWindow(user);
@@ -149,7 +149,7 @@ public class EditProfileWindow extends UserDetailsWindow {
         // display/center the jdialog when the button is pressed
         switch (user.getRole()) {
             case "مدیر":
-                pl = new ProjectsListWindow(new User());
+              pl = new ProjectsListWindow(new User());
                 break;
             case "مدیرکل":
                 hm = new HeadManagerMainWindow(user);

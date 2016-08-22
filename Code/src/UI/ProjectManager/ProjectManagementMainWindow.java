@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import MainPackage.Main;
+import ProjectManagement.Project;
 import ResourceManagement.User;
 import UI.Accounting.FirstWindow;
 
@@ -21,7 +23,7 @@ public class ProjectManagementMainWindow extends UserWindow {
     private JButton projectRequirementsButton;
     //private JPanel panel;
 
-    public ProjectManagementMainWindow(final User user) {
+    public ProjectManagementMainWindow(final User user,final Project project) {
         super(user);
         setTitle("پنل مدیریت پروژه");
 
@@ -30,7 +32,7 @@ public class ProjectManagementMainWindow extends UserWindow {
         projectDetailsButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
-				ProjectDetailsWindow pd = new ProjectDetailsWindow(user, null);
+				ProjectDetailsWindow pd = new ProjectDetailsWindow(user, project);
 
 			}
 		});
@@ -38,7 +40,7 @@ public class ProjectManagementMainWindow extends UserWindow {
         projectModulesButton.addActionListener(new ActionListener() {
      			public void actionPerformed(ActionEvent e) {
      				// display/center the jdialog when the button is pressed
-     				ProjectModuleListWindow pd = new ProjectModuleListWindow(user);
+     				ProjectModuleListWindow pd = new ProjectModuleListWindow(user,project);
      		
      			}
      		});

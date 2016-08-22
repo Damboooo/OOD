@@ -16,7 +16,7 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
-import Main.Main;
+import MainPackage.Main;
 import Predict.Predict;
 import ProjectManagement.Module;
 import ProjectManagement.Project;
@@ -137,7 +137,15 @@ public class RequirementReportWindow extends ReportWindow {
     		resourceList = "";
 			if (checkBoxes[i].isSelected()) {
 //				selectedProjects.add(checkBoxes[i].getText());
-				for (int j = 0; j < projects.get(i).getResourceList().size(); j++) {
+				System.out.println(projects.get(i)
+						.getResourceList()
+						.get(0).
+						getResource().getName());
+				for (int j = 0; j < projects.
+						get(i).
+						getResourceList()
+						.size();
+						j++) {
 					resourceList = resourceList+projects.get(i).getResourceList().get(j).getResource().getName()+" ، ";
 				}
 				resourceList = resourceList.substring(0,resourceList.length()-2);

@@ -5,7 +5,7 @@ import ResourceManagement.User;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import Main.Main;
+import MainPackage.Main;
 
 public class ForgetPasswordWindow extends JFrame {
 

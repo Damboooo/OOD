@@ -31,7 +31,23 @@ public class Project {
     }
 
     public List<ExistingResource> getResourceList() {
-        return resourceList;
+    	List<ExistingResource> resourcesList = new ArrayList<>();
+		Resource r = new Resource();
+		ExistingResource er = new ExistingResource();
+		ExistingResource er3 = new ExistingResource();
+		ExistingResource er2 = new ExistingResource();
+		r.setName("منبع یک");
+		Resource r2 = new Resource();
+		r2.setName("منبع دو");
+		Resource r3 = new Resource();
+		r3.setName("منبع سه");
+		er.setResource(r);
+		er3.setResource(r3);
+		er2.setResource(r2);
+		resourcesList.add(er);
+		resourcesList.add(er2);
+		resourcesList.add(er3);
+        return resourcesList;
     }
 
     public void acceptanceRequest() {

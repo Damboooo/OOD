@@ -20,22 +20,42 @@ public class ExistingResource {
     }
 
     public Date getFromDate() {
-        return fromDate;
+    	return new Date(95,1,25);
+      //  return fromDate;
     }
 
-    public void setFromDate(Date fromDate) {
-        this.fromDate = fromDate;
+    public boolean setFromDate(Date fromDate) {
+        if(	checkDomain()){
+            this.fromDate = fromDate;
+            return true;
+        }
+        else
+        	return false;
     }
 
     public Date getToDate() {
-        return toDate;
+    	return new Date(95,10,1);
+     //   return toDate;
     }
 
-    public void setToDate(Date toDate) {
+    public boolean setToDate(Date toDate) {
+    if(	checkDomain()){
         this.toDate = toDate;
+        return true;
+    }
+    else
+    	return false;
     }
 
-    public int getHours() {
+    private boolean checkDomain() {
+    	if(this.getFromDate().before(this.getToDate()))
+		return true;
+    	return false;
+    	
+	}
+
+	public int getHours() {
+		hours = 5;
         return hours;
     }
 

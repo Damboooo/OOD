@@ -11,7 +11,7 @@ import UI.Employee.EmployeeMainWindow;
 import UI.HeadManager.HeadManagerMainWindow;
 import UI.HeadManager.ProjectsListWindow;
 import DB.DBManager;
-import Main.Main;
+import MainPackage.Main;
 
 public class LoginWindow extends JFrame {
 
@@ -21,6 +21,7 @@ public class LoginWindow extends JFrame {
 	private JPanel panel;
 	private JTextField usernameTextField;
 	private JPasswordField passwordTextField;
+	private JLabel errorLabel;
 	private JLabel usernameLabel;
 	private JLabel passwordLabel;
 
@@ -34,6 +35,10 @@ public class LoginWindow extends JFrame {
 		add(panel);
 		setVisible(true);
 		// setResizable(false);
+		errorLabel = new JLabel();
+		errorLabel.setSize(60, 15);
+		errorLabel.setLocation(230, 10);
+		panel.add(errorLabel);
 
 		usernameTextField = new JTextField();
 		usernameTextField.setSize(120, 25);
@@ -89,39 +94,45 @@ public class LoginWindow extends JFrame {
 	}
 
 	private void login() {
+
 		ProjectsListWindow pl;
 		HeadManagerMainWindow hm;
 		EmployeeMainWindow em;
-		User user = Main.dbManager.getUserByUsername(usernameTextField.getText());
-		if(user.getPassword().equals(passwordLabel.getText()))
-		{
-			switch(user.getRole()){
-			case "manager":
-				pl = new ProjectsListWindow(user);
-				break;
-			case "headmanager":
-				hm = new HeadManagerMainWindow(user);
-				break;
-			case "employee":
-				em = new EmployeeMainWindow(user);
-				break;
+		User user = Main.dbManager.getUserByUsername(usernameTextField
+				.getText());
+		if (user == null) {
+			errorLabel.setText("این نام در سیستم موجود نمی باشد");
+		} else {
+			System.out.println(passwordTextField.getText()+"-");
+			System.out.println(user.getPassword()+"-");
+			if (user.getPassword().equals(
+					passwordTextField.getText())) {
+				switch (user.getRole()) {
+				case "مدیر":
+					pl = new ProjectsListWindow(user);
+					break;
+				case "مدیرکل":
+					hm = new HeadManagerMainWindow(user);
+					break;
+				case "کارمند":
+					em = new EmployeeMainWindow(user);
+					break;
+				}
+			} else {
+				System.out.println("Wrong password!");
 			}
 		}
-		else
-		{
-			System.out.println("Wrong password!");
-		}
-//		User user = new User();
-//		user.setUsername(usernameTextField.getText());
-//		// display/center the jdialog when the button is pressed
-//		if (usernameTextField.getText().toCharArray().length == 0)
-//			return;
-//		if (usernameTextField.getText().toCharArray()[0] == 'm')
-//			pl = new ProjectListWindow(user);
-//		else if (usernameTextField.getText().toCharArray()[0] == 'h')
-//			hm = new HeadManagerMainWindow(user);
-//		else
-//			em = new EmployeeMainWindow(user);
+		// User user = new User();
+		// user.setUsername(usernameTextField.getText());
+		// // display/center the jdialog when the button is pressed
+		// if (usernameTextField.getText().toCharArray().length == 0)
+		// return;
+		// if (usernameTextField.getText().toCharArray()[0] == 'm')
+		// pl = new ProjectListWindow(user);
+		// else if (usernameTextField.getText().toCharArray()[0] == 'h')
+		// hm = new HeadManagerMainWindow(user);
+		// else
+		// em = new EmployeeMainWindow(user);
 		dispose();
 	}
 
