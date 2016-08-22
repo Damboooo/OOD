@@ -30,7 +30,6 @@ public class HeadManagerMainWindow extends UI.Employee.UserWindow {
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				AccountsListWindow rw = new AccountsListWindow(user);
-				dispose();
 			}
 		});
 		projectModulesButton = createbutton("مدیریت پروژه ها" , 300,230);
@@ -38,7 +37,6 @@ public class HeadManagerMainWindow extends UI.Employee.UserWindow {
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				ManageProjectsWindow rw = new ManageProjectsWindow(user);
-				dispose();
 			}
 		});
 		projectResourcesButton = createbutton("مدیریت منابع" , 300,230+50);
@@ -46,7 +44,6 @@ public class HeadManagerMainWindow extends UI.Employee.UserWindow {
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				ManageResourcesWindow rw = new ManageResourcesWindow(user);
-				dispose();
 			}
 		});
 		projectTasksButton = createbutton("ابزار گزارش گیری" , 300,330);
@@ -54,7 +51,6 @@ public class HeadManagerMainWindow extends UI.Employee.UserWindow {
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				ReportMainWindow rm = new ReportMainWindow(user);
-				dispose();
 			}
 		});
 		projectRequirementsButton = createbutton("ابزار پیش بینی" , 300,330+50);
@@ -62,7 +58,6 @@ public class HeadManagerMainWindow extends UI.Employee.UserWindow {
 			public void actionPerformed(ActionEvent e) {
 				// display/center the jdialog when the button is pressed
 				PredictMainWindow rm = new PredictMainWindow(user);
-				dispose();
 			}
 		});
 

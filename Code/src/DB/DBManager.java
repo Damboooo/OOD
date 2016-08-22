@@ -83,7 +83,7 @@ public class DBManager {
 		user.setPassword("1234");
 		user.setPhoneNumber1("0912456789");
 		user.setPhoneNumber2("0215678976");
-		user.setRole("Modir");
+		user.setRole("مدیرکل");
 
 		return user;
 

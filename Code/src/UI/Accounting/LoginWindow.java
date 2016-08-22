@@ -9,7 +9,7 @@ import javax.swing.*;
 import ResourceManagement.User;
 import UI.Employee.EmployeeMainWindow;
 import UI.HeadManager.HeadManagerMainWindow;
-import UI.HeadManager.ProjectsListWindow;
+import UI.ProjectManager.*;
 import DB.DBManager;
 import MainPackage.Main;
 
