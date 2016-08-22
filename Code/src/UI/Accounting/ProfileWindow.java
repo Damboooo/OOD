@@ -8,12 +8,12 @@ import javax.swing.*;
 import ResourceManagement.User;
 import UI.Employee.EmployeeMainWindow;
 import UI.HeadManager.HeadManagerMainWindow;
-import UI.ProjectManager.ProjectListWindow;
+import UI.HeadManager.ProjectsListWindow;
 
 public class ProfileWindow extends UserDetailsWindow {
 
 
-	private ProjectListWindow pl;
+	private ProjectsListWindow pl;
 	private HeadManagerMainWindow hm;
 	private EmployeeMainWindow em;
 	

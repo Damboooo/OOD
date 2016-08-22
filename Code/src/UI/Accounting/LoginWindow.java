@@ -9,7 +9,7 @@ import javax.swing.*;
 import ResourceManagement.User;
 import UI.Employee.EmployeeMainWindow;
 import UI.HeadManager.HeadManagerMainWindow;
-import UI.ProjectManager.ProjectListWindow;
+import UI.HeadManager.ProjectsListWindow;
 import DB.DBManager;
 import Main.Main;
 
@@ -89,7 +89,7 @@ public class LoginWindow extends JFrame {
 	}
 
 	private void login() {
-		ProjectListWindow pl;
+		ProjectsListWindow pl;
 		HeadManagerMainWindow hm;
 		EmployeeMainWindow em;
 		User user = Main.dbManager.getUserByUsername(usernameTextField.getText());
@@ -97,7 +97,7 @@ public class LoginWindow extends JFrame {
 		{
 			switch(user.getRole()){
 			case "manager":
-				pl = new ProjectListWindow(user);
+				pl = new ProjectsListWindow(user);
 				break;
 			case "headmanager":
 				hm = new HeadManagerMainWindow(user);
