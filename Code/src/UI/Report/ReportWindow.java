@@ -85,7 +85,7 @@ public class ReportWindow extends UserWindow {
     private JCheckBox createCheckBox(String s, int x, int y) {
 
         JCheckBox checkBoxes = new JCheckBox(s);
-        checkBoxes.setSize(100, 20);
+        checkBoxes.setSize(140, 20);
         checkBoxes.setLocation(x, y);
         panel.add(checkBoxes);
         return checkBoxes;

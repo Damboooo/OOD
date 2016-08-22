@@ -13,7 +13,7 @@ import java.util.List;
 import javax.swing.*;
 import javax.swing.table.JTableHeader;
 
-import Main.Main;
+import MainPackage.Main;
 import ProjectManagement.Change;
 import ProjectManagement.Module;
 import ProjectManagement.ModuleCatalogue;

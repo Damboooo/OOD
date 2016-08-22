@@ -11,7 +11,7 @@ import javax.swing.*;
 //import org.jdatepicker.impl.*;
 
 import ResourceManagement.User;
-import Main.Main;
+import MainPackage.Main;
 public class RegisterWindow extends UserDetailsWindow {
     //   private JPanel panel = new JPanel();
     private JPasswordField passwordField1;

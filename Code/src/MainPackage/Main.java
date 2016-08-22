@@ -3,14 +3,18 @@ package MainPackage;
 import DB.DBManager;
 import ResourceManagement.User;
 import UI.Predict.*;
+import UI.Report.ReportMainWindow;
+import UI.Report.UsageReportWindow;
 
 public class Main {
 
     public static DBManager dbManager;
 
     public static void main(String[] args) throws Exception {
+    	dbManager = new DBManager();
+//    	Main.dbManager.getResources();
 
-        DatabaseTest databaseTest = new DatabaseTest();
+      //  DatabaseTest databaseTest = new DatabaseTest();
 
 //       new FirstWindow();
 
@@ -42,16 +46,16 @@ public class Main {
 //        new ProjectsListWindow(new User());
 
         // Predict
-        new PredictMainWindow(new User());
+      //  new PredictMainWindow(new User());
         //    new RequirementPredictWindow(new User());
         //   new ResourcePredictWindow(new User());
 //        new ResultPredictWindow(new User());
 
         // Report
-//        new ReportMainWindow(new User());
+    //    new ReportMainWindow(new User());
 //        new ReportWindow(new User());
 //        new RequirementReportWindow(new User());
-//        new UsageReportWindow(new User());
+        new UsageReportWindow(new User());
 
 
     }

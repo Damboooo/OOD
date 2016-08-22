@@ -1,7 +1,7 @@
 package UI.Predict;
 
 import java.awt.BasicStroke;
-import Main.Main;
+import MainPackage.Main;
 import Predict.Predict;
 import ProjectManagement.Project;
 

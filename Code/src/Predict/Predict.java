@@ -1,6 +1,6 @@
 package Predict;
 
-import Main.Main;
+import MainPackage.Main;
 import ProjectManagement.Project;
 import ResourceManagement.Resource;
 import UI.Predict.Domain;

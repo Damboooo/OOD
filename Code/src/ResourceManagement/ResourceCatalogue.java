@@ -2,7 +2,7 @@ package ResourceManagement;
 
 import java.util.ArrayList;
 import java.util.List;
-import Main.Main;
+import MainPackage.Main;
 
 public class ResourceCatalogue {
 

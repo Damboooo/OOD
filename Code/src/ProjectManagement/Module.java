@@ -6,7 +6,7 @@ import ResourceManagement.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import Main.Main;
+import MainPackage.Main;
 public class Module {
 
 	private int moduleId;

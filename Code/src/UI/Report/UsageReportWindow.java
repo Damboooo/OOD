@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import java.util.Date; 
+//import net.sourceforge.jdatepicker.impl.JDatePanelImpl;
+//import net.sourceforge.jdatepicker.impl.JDatePickerImpl;
+//import net.sourceforge.jdatepicker.impl.UtilDateModel;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.DateFormatter;
@@ -15,7 +20,8 @@ import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
 
-import Main.Main;
+import MainPackage.Main;
+
 import ProjectManagement.Module;
 import ProjectManagement.Project;
 import ProjectManagement.Task;
@@ -36,12 +42,15 @@ public class UsageReportWindow extends ReportWindow {
 	private JTable table;
 	private List<String> selectedProjects;
 	private List<Project> projects;
+	private JDatePickerImpl datePicker;
 
     public UsageReportWindow(User user) {
         super(user);
 
         ArrayList<String> resourcesName = new ArrayList<>();
-      		resources = Main.dbManager.getResources();
+      		resources =
+      				Main.dbManager.
+      				getResources();
       		projects = Main.dbManager.getProjects();
 
       		for (int i = 0; i < resources.size(); i++) {
@@ -63,6 +72,12 @@ public class UsageReportWindow extends ReportWindow {
         from.setSize(80, 25);
         from.setLocation(610, 120);
         super.panel.add(from);
+        
+//        UtilDateModel model=new UtilDateModel();
+//        JDatePanelImpl datePanel = new JDatePanelImpl(model, null);
+//        datePicker = new JDatePickerImpl(datePanel, null);
+//        datePicker.setBounds(500,350,120,30);
+//        super.panel.add(datePicker);
 
         to = new JLabel("تا تاریخ");
         to.setSize(80, 25);
@@ -125,14 +140,26 @@ public class UsageReportWindow extends ReportWindow {
     	
 			if (checkBoxes[i].isSelected()) {
 //				selectedProjects.add(checkBoxes[i].getText());
-				for (int j = 0; j < projects.get(i).getResourceList().size(); j++) {
-					if(projects.get(i).getResourceList().get(j).getResource().getName().contains(resources.get(i).getName())){
+				for (int k = 0; k < projects.size(); k++) 
+					
+				for (int j = 0; j < projects.get(k)
+						.getResourceList()
+						.size(); j++) {
+					if(projects.get(k).getResourceList().get(j).getResource().getName().contains(resources.get(i).getName())){
 						
-//						model.addRow(new Object[]{
-//								
-//								projects.get(j).getName() ,
-//								resources.get(i).getName()
-//								});
+						model.addRow(new Object[]{
+								projects.get(k).getResourceList().get(j).getToDate().getYear()+"/"+
+										projects.get(k).getResourceList().get(j).getToDate().getMonth()+"/"+
+										projects.get(k).getResourceList().get(j).getToDate().getDay()
+						,
+						projects.get(k).getResourceList().get(j).getFromDate().getYear()+"/"+
+								projects.get(k).getResourceList().get(j).getFromDate().getMonth()+"/"+
+								projects.get(k).getResourceList().get(j).getFromDate().getDay()
+				,
+								
+								projects.get(k).getName() ,
+								resources.get(i).getName()
+								});
 //					
 				}
 				}

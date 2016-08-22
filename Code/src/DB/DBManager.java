@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import Main.Main;
+import MainPackage.Main;
 
 public class DBManager {
 	
@@ -153,7 +153,6 @@ public class DBManager {
 		resources.add(r);
 		resources.add(r2);
 		resources.add(r3);
-
 		return resources;
 	}
 
