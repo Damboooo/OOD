@@ -1,6 +1,6 @@
 package MainPackage;
 
-import DB.DBManager_2;
+import DB.DBManager;
 import ProjectManagement.Project;
 import ProjectManagement.Task;
 import ResourceManagement.*;
@@ -11,11 +11,12 @@ import java.util.List;
 
 public class DatabaseTest {
 
-    DBManager_2 dbManager;
+    DBManager dbManager;
+    User user;
 
     public DatabaseTest() {
-        dbManager = new DBManager_2();
-        userTest();
+        dbManager = new DBManager();
+        user = userTest();
         projectTest();
         resourceTest();
         taskTest();
@@ -34,14 +35,14 @@ public class DatabaseTest {
         user.setMarriageStatus(0);
         user.setLicence("my licence");
         user.setJobExperience(5);
-        user.setRole("my role");
+        user.setRole("کارمند");
         user.setPhoneNumber1("676464");
         user.setPhoneNumber2("676464");
         user.setPassword("my password");
 
         dbManager.addUser(user);
 
-        User resultUser = dbManager.getUserByUsername("my username");
+        User resultUser = dbManager.getUserByUsername("1");
         System.out.println(resultUser.getUsername());
 
         resultUser = dbManager.getUser(1);
@@ -67,9 +68,9 @@ public class DatabaseTest {
 
         List<Project> projects = dbManager.getProjects();
 
-//        for (Project project1: projects){
-//            System.out.print(project1.getId() + ", " + project1.getProjectManager().getUsername() + ", ");
-//        }
+        for (Project project1 : projects) {
+            System.out.print(project1.getId() + ", " + project1.getProjectManager().getUsername() + ", ");
+        }
 
     }
 
@@ -117,12 +118,12 @@ public class DatabaseTest {
         task.setDescription("task description");
         task.setIsFinished(false);
         ArrayList<User> users = new ArrayList<>();
-        users.add(userTest());
+        users.add(user);
         task.setUsers(users);
 
         dbManager.addTask(task, 1);
 
-        List<Task> taskResult = dbManager.getTasks(1);
+        List<Task> taskResult = dbManager.getTasks();
         System.out.println(taskResult.size());
 
 

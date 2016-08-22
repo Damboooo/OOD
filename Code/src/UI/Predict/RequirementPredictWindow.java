@@ -14,14 +14,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
-import DB.DBManager;
+
 import ResourceManagement.Resource;
 import ResourceManagement.User;
 

@@ -1,16 +1,12 @@
 package UI.Accounting;
 
-import DB.DBManager;
 import MainPackage.Main;
 import ResourceManagement.User;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-import ResourceManagement.User;
-
 
 
 public class ChangePasswordWindow extends JFrame {
